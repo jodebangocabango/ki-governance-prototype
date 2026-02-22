@@ -1,0 +1,133 @@
+% Kapitel 7: Fazit und Ausblick
+
+\chapter{Fazit und Ausblick}
+\label{chap:fazit}
+
+Abschnitt~\ref{sec:zusammenfassung} fasst die Ergebnisse zusammen, Abschnitt~\ref{sec:implikationen} formuliert Implikationen für Wissenschaft und Praxis, Abschnitt~\ref{sec:ausblick} skizziert Forschungsrichtungen, Abschnitt~\ref{sec:ki-reflexion} reflektiert die eigene KI-Nutzung und Abschnitt~\ref{sec:schlusswort} schließt mit einer Einordnung.
+
+
+\section{Zusammenfassung}
+\label{sec:zusammenfassung}
+
+Ausgangspunkt dieser Arbeit war die Feststellung, dass der EU AI Act Anforderungen stellt, für deren Umsetzung den meisten Organisationen ein geeignetes Instrument fehlt. Das entwickelte Framework -- sechs Dimensionen, 31~Kriterien, ein fünfstufiges Reifegradmodell und zwei Querschnittskategorien (Q1~Organisationale Verankerung, Q2~Kompetenzentwicklung) -- bietet einen strukturierten Ansatz, diese Lücke zu bearbeiten \autocite{Peffers2007}.
+
+Die Arbeit liefert Beiträge auf drei Ebenen. Inhaltlich bilden die 31~Kriterien die Art.~9--15 vollständig ab. Die Querschnittskategorien Q1 und Q2 gehen über den Normtext hinaus und zeigen, dass rein regulatorische Betrachtungen die organisationale Realität nicht erschöpfend erfassen. Technisch hat sich die architektonische Trennung von deterministischem Scoring und nondeterministischer KI-Unterstützung als tragfähig erwiesen. Methodisch demonstriert die Arbeit, wie die Inhaltsanalyse nach Mayring \autocite{Mayring2014} regulatorische Texte systematisch in Designanforderungen übersetzen kann.
+
+Die Evaluation zeigt ein differenziertes Bild \autocite{Venable2016}: Regulatorische Vollständigkeit (100\,\% Coverage), hohe Konsistenz (MW~4,5) und Nützlichkeit (MW~4,1) stehen einem Verbesserungsbedarf bei Verständlichkeit (MW~3,6) und Praxistauglichkeit (MW~3,5) gegenüber. Das konzeptionelle Fundament ist tragfähig; die Bewährung in der organisationalen Praxis steht als nächster Schritt aus.
+
+
+\section{Implikationen}
+\label{sec:implikationen}
+
+\textbf{Wissenschaftliche Implikationen:} Die Übersetzungslogik (Kategorien $\rightarrow$ Dimensionen/Kriterien $\rightarrow$ Indikatoren) bietet eine reproduzierbare Vorlage für regulierungsbezogene Bewertungsinstrumente und ist auf verwandte Regulierungen (Data Governance Act, Cyber Resilience Act) übertragbar \autocite{Gregor2013}. Die Querschnittskategorien Q1/Q2 zeigen die bislang wenig erforschte Rolle organisationaler Enabler in der KI-Governance auf \autocite{Mikalef2022}. Die architektonische Trennung von deterministischer Bewertungslogik und nondeterministischer KI-Unterstützung bietet ein Design-Pattern für regulatorisch sensible KI-Anwendungen.
+
+\textbf{Praktische Implikationen:} Das Framework richtet sich an vier Stakeholder-Gruppen. Organisationen erhalten einen strukturierten Einstieg in die Governance-Bewertung -- von der Standortbestimmung über die Priorisierung der Handlungsbedarfe bis zur Dokumentation für die ab August~2026 geltenden Anforderungen \autocite{EUAIAct2024}. Beratungsunternehmen können es als standardisiertes Assessment-Instrument mit konsistenter Bewertungslogik einsetzen. Regulierungsbehörden erhalten Hinweise, wie sich die Anforderungen der Art.~9--15 in der Praxis operationalisieren lassen \autocite{Kilian2025}. Für KI-Entwickler demonstriert der Prototyp eine verantwortungsvolle KI-Integration in regulatorisch sensible Kontexte.
+
+
+\textbf{Übergreifende Implikationen:} Die Arbeit berührt drei weiterreichende Fragen:
+
+\textit{Regulation by Design vs. Enforcement:} Das Framework verfolgt einen \textit{Regulation-by-Design}-Ansatz, der regulatorische Anforderungen ex~ante in Governance-Strukturen einbettet. Es fungiert als Instrument der \textit{regulierten Selbstregulierung} \autocite{Ebers2025}, das Organisationen zur eigenständigen Compliance-Operationalisierung befähigt, ohne externe Audits zu ersetzen. Ob solche internen Assessment-Frameworks die regulatorische Wirksamkeit stärken oder durch Confirmation Bias untergraben, bleibt ein offenes Forschungsdesiderat.
+
+\textit{Meta-Vertrauen:} Ein KI-Governance-Framework, das selbst KI einsetzt, muss besondere Anforderungen an die Nachvollziehbarkeit erfüllen. Die architektonische Trennung von deterministischer Bewertungslogik und nondeterministischer KI-Unterstützung begegnet diesem Problem. Das resultierende Entwurfsmuster ist auf andere regulatorisch sensible Kontexte wie Finanzaufsicht oder Medizinproduktezulassung übertragbar.
+
+\textit{Lessons Learned für künftige Regulierungstransformation:} Die dreistufige Übersetzungslogik erwies sich als tragfähig für die Operationalisierung regulatorischer Texte. Die Hauptherausforderung lag in der Interpretation unbestimmter Rechtsbegriffe, die ohne harmonisierte Standards erhebliche Spielräume belassen \autocite{Kilian2025}. Für künftige Regulierungen empfiehlt sich eine frühzeitige Parallelisierung von Normgebung und Operationalisierung.
+
+
+\section{Ausblick}
+\label{sec:ausblick}
+
+\subsection{Weiterentwicklung des Artefakts}
+\label{subsec:weiterentwicklung}
+
+Die Weiterentwicklung priorisiert sechs Richtungen nach Dringlichkeit.
+
+Am zeitkritischsten ist die \textbf{Integration der harmonisierten CEN/CENELEC-Standards} (voraussichtlich 2026/2027) \autocite{Kilian2025}. Die Indikatoren und die RAG-Wissensbasis müssen nach deren Veröffentlichung auf Konsistenz geprüft und aktualisiert werden. Die modulare JSON-basierte Architektur ist auf solche Aktualisierungen vorbereitet.
+
+Ebenfalls hoch priorisiert ist die Entwicklung \textbf{branchenspezifischer Module}. Regulierte Sektoren erfordern Zusatzkriterien -- etwa MaRisk im Finanzsektor, Medizinprodukteverordnung im Gesundheitswesen oder IATF~16949 in der Automobilindustrie. Die Architektur unterstützt solche Erweiterungen bereits; die inhaltliche Ausarbeitung erfordert jedoch sektorspezifische Expertise.
+
+Mit mittlerer Priorität folgen die \textbf{empirische Kalibrierung} der Designparameter (Dimensionsgewichtung $w_d$, Gap-Schwellenwerte $\theta$, RAG-Retrieval-Parameter) auf Basis realer Assessments ($n \geq 30$) sowie die \textbf{Optimierung der RAG-Pipeline} durch Cross-Encoder-Reranking und empirische Qualitätsmessung \autocite{Barnett2024}.
+
+Langfristig ist eine \textbf{Multi-Stakeholder-Erweiterung} anzustreben, die Audit-, Betroffenen- und Regulierungsperspektiven einbezieht \autocite{Cath2018}. Zudem wäre die \textbf{Übertragung auf GPAI-Modelle} (Art.~51--56) mit zusätzlichen Dimensionen wie Modell-Governance und systemischer Risikoanalyse möglich, stellt aber ein eigenständiges Forschungsprojekt dar.
+
+
+\subsection{Forschungsdesiderate}
+\label{subsec:forschungsdesiderate}
+
+Tabelle~\ref{tab:desiderate-einordnung} ordnet die fünf priorisierten Forschungsdesiderate ein.
+
+Am dringlichsten ist die \textbf{empirische Validierung} durch eine Mixed-Methods-Studie mit mindestens 30~Assessments in realen Organisationen und ergänzenden Interviews ($n \geq 10$). Ziel ist die externe Validierung der Kriterienstruktur, die Generierung empirischer Benchmarks und die Identifikation branchentypischer Bewertungsmuster \autocite{Ryan2020}.
+
+Ebenfalls hoch priorisiert sind \textbf{longitudinale Studien}, die den Governance-Reifegrad vor und nach dem Inkrafttreten der Hochrisiko-Anforderungen im August~2026 vergleichen. So ließe sich messen, ob die Framework-Nutzung den Reifegrad nachweislich verbessert.
+
+\textbf{Internationale Vergleichsstudien} könnten die Drei-Ebenen-Architektur auf andere Jurisdiktionen übertragen \autocite{Veale2023} und EU-AI-Act-spezifische von jurisdiktionsübergreifenden Governance-Anforderungen trennen.
+
+Im Bereich \textbf{KI-gestützte Governance} könnte der RAG-Assistent zu einem Compliance-Monitoring-System weiterentwickelt werden, das regulatorische Änderungen erkennt und betroffene Indikatoren identifiziert.
+
+Schließlich würde eine \textbf{TAM-basierte Adoptionsstudie} Implementierungsbarrieren und Erfolgsfaktoren untersuchen \autocite{Mikalef2022} -- insbesondere, ob die Divergenz zwischen technischen und juristischen Zielgruppen systematische Adoptionsbarrieren erzeugt.
+
+\begin{table}[htbp]
+\centering
+\caption{Einordnung der Forschungsdesiderate nach Machbarkeit und Forschungsrahmen}
+\label{tab:desiderate-einordnung}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{3.5cm}|l|l|p{4cm}|}
+\hline
+\textbf{Desiderat} & \textbf{Priorität} & \textbf{Rahmen} & \textbf{Kernbeitrag} \\
+\hline
+Empirische Validierung & Hoch & MA/Promotion & Externe Validität, Benchmarks \\
+\hline
+Longitudinale Studien & Hoch & Promotion/DMP & Regulatorische Wirksamkeit \\
+\hline
+Internat. Vergleich & Mittel & DMP & Regulierungseffektivität \\
+\hline
+KI-gest. Governance & Mittel & MA/Promotion & Automatisiertes Monitoring \\
+\hline
+Organisat. Adoption & Mittel & Promotion & Implementierungsbarrieren \\
+\hline
+\multicolumn{4}{l}{\scriptsize MA = Masterarbeit, DMP = Drittmittelprojekt} \\
+\end{tabular}
+\end{table}
+
+Zwei Richtungen sind \textit{vorrangig}: die Integration harmonisierter CEN/CENELEC-Standards (Artefakt-Ebene) zur Sicherung der inhaltlichen Aktualität und die empirische Validierung mit $n \geq 30$ (Forschungsebene) zur Herstellung externer Validität. Die übrigen Maßnahmen bauen auf diesen beiden Schritten auf.
+
+
+\section{Die eigene KI-Nutzung als Governance-Fallstudie}
+\label{sec:ki-reflexion}
+
+Eine Arbeit über KI-Governance, die selbst KI einsetzt, muss die Frage beantworten, ob sie die eigenen Maßstäbe erfüllt. Die KI-Nutzung im Forschungsprozess umfasste drei Bereiche: (1)~Unterstützung bei der Literaturrecherche und -synthese, (2)~den RAG-basierten Prototyp mit Mistral AI als Backend und (3)~den Einsatz von Claude (Anthropic) als Schreibassistent. Das KI-Transparenzverzeichnis (Anhang~\ref{app:ki-nutzung}) dokumentiert den Einsatz gemäß den Richtlinien der Hochschule.
+
+Die eigene KI-Nutzung lässt sich mit dem entwickelten Framework bewerten, was eine Reflexion über die Konsistenz des Ansatzes ermöglicht. Tabelle~\ref{tab:ki-selbstbewertung} zeigt eine exemplarische Selbstbewertung für drei relevante Dimensionen, angewandt auf den Forschungsprozess dieser Arbeit als ``KI-System'' im erweiterten Sinne. Die Dimensionen D1~(Risikomanagement), D2~(Data Governance) und D6~(Technische Robustheit) werden nicht bewertet, da sie auf organisationale KI-Systeme zugeschnitten sind und auf einen Forschungsprozess nicht sinnvoll übertragbar sind.
+
+\begin{table}[htbp]
+\centering
+\caption{Selbstbewertung der KI-Nutzung im Forschungsprozess (exemplarisch)}
+\label{tab:ki-selbstbewertung}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|p{7.5cm}|}
+\hline
+\textbf{Dimension} & \textbf{Score} & \textbf{Begründung} \\
+\hline
+D3 Dokumentation & 3 & Das KI-Transparenzverzeichnis dokumentiert Einsatzbereiche und -grenzen. Die Dokumentation ist standardisiert und vor Abgabe publiziert. Stufe~3: dokumentierter, nachvollziehbarer Prozess. \\
+\hline
+D4 Transparenz & 2 & Der Prototyp nutzt Mistral AI über API; die Modellgrenzen sind im Text benannt, aber eine systematische Qualitätsprüfung der KI-Outputs (Halluzinationserkennung, Quellenverifikation) ist informell, nicht formalisiert. Stufe~2: Maßnahmen vorhanden, nicht standardisiert. \\
+\hline
+D5 Menschl. Aufsicht & 3 & Alle KI-generierten Inhalte wurden manuell geprüft und überarbeitet. Kein KI-Output wurde ungeprüft übernommen. Die deterministische Scoring-Architektur des Prototyps (Abschnitt~\ref{sec:reflexion}) sichert die Human-in-the-Loop-Funktion. Stufe~3. \\
+\hline
+\end{tabular}
+\end{table}
+
+Die Bewertung zeigt eine systematische Asymmetrie: Die Dimensionen, die der Einzelforscher kontrolliert (D3, D5), erreichen Stufe~3; die Dimension, die eine systematische Infrastruktur voraussetzt (D4), bleibt bei Stufe~2. Dieses Muster entspricht dem Befund der Expertenevaluation (Abschnitt~\ref{sec:evaluationsergebnisse}): Organisationale Transparenz erfordert systematische Infrastruktur, die über individuelle Sorgfalt hinausgeht.
+
+Aus dieser Selbstanwendung ergeben sich mehrere Schlüsse. Die Übung demonstriert die \textit{Reflexivität des Frameworks}: Es kann auf seinen eigenen Entstehungsprozess angewandt werden, ohne in Widersprüche zu geraten -- ein Indikator für konzeptionelle Kohärenz. Die D4-Bewertung zeigt zudem, dass das in Abschnitt~\ref{sec:reflexion} beschriebene \textit{Meta-Vertrauensproblem} praktische Relevanz besitzt: Die eigene KI-Nutzung erreicht die Compliance-Baseline bei Transparenz nicht. Die transparente Dokumentation dieses Defizits ersetzt keine formalisierte Qualitätsprüfung, die im Einzelforscher-Setting nicht realisierbar war. Schließlich illustriert die Selbstbewertung, dass die Principle-Practice-Gap auch im wissenschaftlichen Kontext existiert: Die Prinzipien (Transparenz, Dokumentation, menschliche Aufsicht) sind formuliert, ihre vollständige Umsetzung bleibt anspruchsvoll.
+
+
+\section{Schlusswort}
+\label{sec:schlusswort}
+
+Der EU AI Act vollzieht den Übergang von der freiwilligen zur verbindlichen KI-Governance. Die Verordnung begegnet der \textit{Principle-Practice-Gap} \autocite{Hagendorff2020} nicht mit besseren Prinzipien, sondern mit einem sanktionsbewehrten Regulierungsrahmen.
+
+Die Arbeit beschreibt einen methodischen Weg, regulatorische Anforderungen systematisch in ein Bewertungsinstrument zu übersetzen. Die konzeptionelle Architektur hat sich in der Evaluation als tragfähig erwiesen; drei zentrale Einschränkungen begrenzen die Aussagekraft: die Trennschärfe zwischen Stufe~2 und~3 bei einem Viertel der Kriterien, die fehlende Inter-Rater-Reliabilität und die ausstehenden CEN/CENELEC-Standards, die mehrere Indikatoren verändern dürften.
+
+KI-Governance lässt sich nicht auf technische Compliance reduzieren. Die Querschnittskategorien Q1 und Q2 -- organisationale Verankerung und Kompetenzentwicklung -- sind im Normtext kaum explizit verankert, haben sich aber als wesentliche Voraussetzungen für wirksame Governance erwiesen. Technische Maßnahmen ohne organisationale Einbettung bleiben wirkungslos. Ob der EU AI Act diese Erkenntnis in seiner Durchsetzungspraxis berücksichtigen wird, bleibt offen. Das Framework bietet ein Instrument, das diese organisationale Dimension systematisch erfasst.

@@ -1,0 +1,38 @@
+% KI-Verzeichnis
+%
+% A1_KI.tex
+%
+
+\addchap{KI-Verzeichnis}
+\label{app:ki-nutzung}
+
+\noindent Die folgende Tabelle dokumentiert alle Nutzungen von KI-Systemen im Rahmen der vorliegenden Masterarbeit. Die Einträge sind in der Reihenfolge ihrer Verwendung im Text aufgeführt.
+
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.8}
+    \centering
+    \small
+    \begin{tabular}{p{0.15\textwidth} p{0.48\textwidth} p{0.27\textwidth}}
+        \toprule
+        \large System&\large Prompt / Verwendungszweck&\large Verwendung\\
+        \midrule
+        Claude 1 & Unterstützung bei der Strukturierung und Formulierung einzelner Textpassagen der Masterarbeit (iterative Prompts zur Textverbesserung, keine direkte Textübernahme) & weiterentwickelt; alle Formulierungen eigenständig überarbeitet \\
+        \midrule
+        Claude 2 & Unterstützung bei der Entwicklung des Web-Prototyps (Next.js 14 Frontend, FastAPI Backend): Code-Generierung, Debugging, Architekturberatung & verändert: Code-Vorschläge als Ausgangspunkt, eigenständig angepasst und erweitert \\
+        \midrule
+        Claude 3 & Unterstützung bei der Erstellung der LaTeX-Tabellen und TikZ-Diagramme (Formatierung, nicht Inhalt) & verändert: Formatierungs-vorschläge übernommen, Inhalte eigenständig erstellt \\
+        \midrule
+        Mistral AI 1 & KI-Backend des Prototyps: Mistral Large (via API) für Dimensionsanalyse, Executive Summary, Tiefenanalyse und kontextuellen Assistenten & unverändert: LLM-Ausgaben werden im Prototyp live generiert und als KI-generiert gekennzeichnet \\
+        \midrule
+        Mistral AI 2 & Embedding-Modell (mistral-embed) für die RAG-Pipeline des Prototyps: Vektorisierung der Wissensbasis (Thesis-Chunks, Kriterien, Dimensionsbeschreibungen) zur semantischen Retrieval-Unterstützung & unverändert: Embeddings werden zur Laufzeit berechnet und für Similarity Search verwendet \\
+        \bottomrule
+    \end{tabular}
+\caption{Dokumentation der KI-Nutzung im Forschungsprozess}
+\label{tab:ki-verzeichnis}
+\end{table}
+
+\textbf{Erläuterungen:}
+\begin{itemize}
+    \item \textbf{Claude (Anthropic):} Claude wurde als Entwicklungsassistent für Textverbesserung, Code-Entwicklung und LaTeX-Formatierung eingesetzt. Sämtliche inhaltlichen Aussagen, wissenschaftlichen Argumente, Quellenauswahl und Forschungsentscheidungen wurden eigenständig getroffen. Kein Text wurde unverändert aus KI-Ausgaben übernommen.
+    \item \textbf{Mistral AI:} Mistral Large wird als LLM-Backend im Prototyp eingesetzt und generiert kontextuelle Analysen auf Basis der RAG-fundierten Wissensbasis. Das Embedding-Modell (mistral-embed, 1024-dimensionale Vektoren) dient der semantischen Suche in der Wissensbasis. Beide Modelle sind Funktionsbestandteile des evaluierten Artefakts; ihre Ausgaben sind kein Bestandteil des wissenschaftlichen Textes der Masterarbeit.
+\end{itemize}

@@ -1,0 +1,141 @@
+% Kapitel 1: Einleitung
+
+\chapter{Einleitung}
+\label{chap:einleitung}
+
+Algorithmische Kreditscoring-Systeme lehnen Anträge ab, ohne dass betroffene Personen die Entscheidungsgrundlage nachvollziehen können. Solche Fälle sind keine Ausnahme: Täglich fallen tausende automatisierte Entscheidungen auf Basis von Modellen, deren Governance-Strukturen allenfalls rudimentär vorhanden sind \autocite{Floridi2018}. Seit dem 1.~August 2024 gilt der EU AI Act (Verordnung~(EU)~2024/1689) als erster verbindlicher Regulierungsrahmen für Künstliche Intelligenz auf supranationaler Ebene \autocite{EUAIAct2024}. Den meisten Organisationen fehlt dabei nicht das Bewusstsein für die Regulierung. Es fehlt ein Instrument, das ihren Governance-Stand systematisch erfasst und konkrete Handlungsbedarfe aufzeigt. Diese Arbeit entwickelt ein solches Instrument.
+
+
+\section{Problemstellung und Themenrelevanz}
+\label{sec:problemstellung}
+
+Die Umsetzung der AI-Act-Anforderungen scheitert in der Praxis an drei Hürden, die in den folgenden Abschnitten dargestellt werden.
+
+\subsection{Regulatorischer Wandel und Handlungsdruck}
+\label{subsec:regulatorischer-wandel}
+
+Bis zur Verabschiedung des AI Acts beruhte KI-Governance auf freiwilligen Ethikleitlinien, die weder verbindliche Anforderungen noch Sanktionsmechanismen vorsahen \autocite{Smuha2021}. Der EU AI Act beendet diese Phase. Die Verordnung verfolgt einen risikobasierten Ansatz: verbotene KI-Praktiken (Art.~5), Hochrisiko-Systeme mit umfassendem Pflichtenkatalog (Art.~6, Anhang~III), Systeme mit begrenztem Risiko und Transparenzpflichten (Art.~50) sowie Systeme mit minimalem Risiko ohne spezifische Auflagen. Für Hochrisiko-Systeme -- Kreditscoring, Personalauswahl, medizinische Diagnostik -- kodifizieren die Art.~9--15 sechs Anforderungsbereiche: Risikomanagement, Datenqualität, Dokumentation, Transparenz, menschliche Aufsicht und technische Robustheit \autocite{EUAIAct2024, Ebers2025}.
+
+Der Sanktionsrahmen verdeutlicht die Reichweite dieses Wandels: Bis zu 35~Millionen Euro oder sieben~Prozent des weltweiten Jahresumsatzes -- deutlich über dem DSGVO-Niveau. Die Umsetzungsfristen sind gestaffelt: Verbote gelten seit Februar 2025, GPAI-Anforderungen ab August 2025, die vollständigen Hochrisiko-Anforderungen ab August 2026 \autocite{EUAIAct2024}. Die Erfahrung mit der DSGVO-Einführung zeigt, dass Übergangsfristen allein keine rechtzeitige Compliance sicherstellen: Smirnova dokumentiert, dass zahlreiche Organisationen trotz zweijähriger Vorlaufzeit nicht rechtzeitig konform waren \autocite{Smirnova2024}. Da KI-Governance strukturell anspruchsvoller ist als Datenschutz-Compliance -- sie erfordert die gleichzeitige Berücksichtigung technischer, organisationaler und ethischer Anforderungen --, erscheint eine Wiederholung dieses Musters bei der AI-Act-Umsetzung plausibel.
+
+
+\subsection{Praktische Herausforderungen der KI-Governance}
+\label{subsec:praktische-herausforderungen}
+
+Die Regulierung existiert, doch ihre Umsetzung in organisationale Praxis steht aus. Drei Hürden erschweren diese Umsetzung.
+
+\textbf{Regulatorische Fragmentierung.} Der EU AI Act steht nicht isoliert. Er muss im Zusammenspiel mit der DSGVO, sektorspezifischen Vorschriften und -- je nach Branche -- mit MaRisk, der Medizinprodukteverordnung oder IATF-Standards interpretiert werden. Holtz und Ledendal dokumentieren, dass bereits die Schnittstelle zwischen Datenschutz und KI-Transparenz Widersprüche erzeugt: Die Bias-Erkennung nach Art.~10 erfordert die Verarbeitung sensibler Daten, die die DSGVO grundsätzlich verbietet \autocite{Holtz2025}. KMU, die keine spezialisierten Rechtsabteilungen unterhalten, stoßen hier an systematische Grenzen \autocite{Kilian2025}.
+
+\textbf{Technische Grenzen.} Art.~13 verlangt ``hinreichende Transparenz'', Art.~14 ``wirksame menschliche Aufsicht'' -- Formulierungen, die bei einem linearen Regressionsmodell unproblematisch erscheinen, bei einem Transformer-Netzwerk mit Milliarden Parametern aber in offene Forschungsfragen münden. Laux zeigt, dass menschliche Aufsicht nicht nur ein organisatorisches, sondern ein kognitionspsychologisches Problem darstellt \autocite{Laux2024}. Automation Bias -- das übermäßige Vertrauen in KI-Empfehlungen -- und Algorithm Aversion -- deren systematische Ablehnung -- untergraben die Aufsichtsqualität unabhängig von der Prozessgestaltung.
+
+\textbf{Die Principle-Practice-Gap.} Die gravierendste Hürde ist organisatorischer Natur. Jobin et al. zählen 84~ethische Leitlinien für KI, von denen 73~Transparenz fordern \autocite{Jobin2019}. Keine dieser Leitlinien definiert jedoch eine konkrete Metrik für Transparenz. Mittelstadt charakterisiert diesen Zustand als ``ethics washing'' \autocite{Mittelstadt2019}: Organisationen proklamieren Prinzipien, scheitern aber an deren Operationalisierung. Selbst ressourcenstarke Organisationen überbrücken die Kluft zwischen Absichtserklärung und überprüfbarer Praxis nicht \autocite{Moekander2022, Mantymaki2022}. Der EU AI Act verschärft diese Lage, indem er die Umsetzungslücke sanktionsbewehrt adressiert.
+
+
+\subsection{Forschungslücke}
+\label{subsec:forschungsluecke}
+
+An KI-Governance-Instrumenten besteht kein Mangel: Das NIST AI RMF, die ISO/IEC~42001, die HLEG-Leitlinien und mehrere wissenschaftliche Reifegradmodelle \autocite{NISTAIRMF2023, ISO42001, Cho2023, Dotan2024} adressieren das Feld. Keines dieser Instrumente vereint jedoch vier Kriterien: EU-AI-Act-Spezifität, operationalisierbare Bewertungskriterien, abgestufte Reifegradlogik und prototypische Praxisvalidierung. Die meisten Frameworks entstanden vor dem AI Act oder verfolgen bewusst eine jurisdiktionsübergreifende Strategie, die regulatorische Tiefe zugunsten internationaler Anwendbarkeit aufgibt \autocite{Batool2025}. Die vergleichende Analyse in Kapitel~\ref{chap:stand} belegt diese Lücke systematisch.
+
+
+\section{Zielsetzung, Forschungsfrage und Beitrag}
+\label{sec:zielsetzung}
+
+\subsection{Zielsetzung der Arbeit}
+\label{subsec:zielsetzung-arbeit}
+
+Ziel der Arbeit ist es, die Art.~9--15 des EU AI Acts in ein Bewertungsinstrument zu überführen, das den organisationalen KI-Governance-Stand erfasst und konkrete Handlungsbedarfe aufzeigt. Das Artefakt soll die regulatorischen Anforderungen vollständig abbilden, eine differenzierte Reifegradbeurteilung ermöglichen und handlungsorientierte Empfehlungen bereitstellen.
+
+Methodisch folgt die Arbeit dem Design Science Research (DSR) \autocite{Peffers2007, Hevner2004}. Der Wissensbeitrag lässt sich als \textit{Exaptation} nach Gregor und Hevner \autocite{Gregor2013} einordnen: Die Reifegradmodellierung -- seit über drei Jahrzehnten in der IT-Governance bewährt \autocite{Becker2009, Paulk1993} -- wird auf ein neues Problemfeld übertragen, die regulatorische Bewertung von KI-Governance. Ein webbasierter Prototyp mit KI-gestützter Wissensunterstützung macht das Framework anwendbar.
+
+
+\subsection{Forschungsfrage}
+\label{subsec:forschungsfrage}
+
+Aus dieser Problemstellung leitet sich die zentrale Forschungsfrage ab:
+
+\begin{quote}
+\textit{Wie kann ein praxisorientiertes Bewertungsframework gestaltet werden, das die regulatorischen Anforderungen des EU AI Acts (insbesondere Art.~9--15) in operationalisierbare Governance-Dimensionen überführt und Organisationen eine systematische Bewertung und Verbesserung ihrer KI-Governance ermöglicht?}
+\end{quote}
+
+Zur differenzierten Beantwortung werden drei Teilfragen formuliert:
+
+\begin{enumerate}
+    \item \textit{Welche Governance-Dimensionen und Bewertungskriterien lassen sich aus den regulatorischen Anforderungen des EU AI Acts (Art.~9--15) sowie bestehenden KI-Governance-Rahmenwerken systematisch ableiten?}
+
+    Diese Teilfrage betrifft die \textbf{analytische Dimension} der Forschung und wird primär durch die qualitative Inhaltsanalyse (Kapitel~\ref{chap:methodik}) und die theoretische Fundierung (Kapitel~\ref{chap:stand}) beantwortet.
+
+    \item \textit{Wie kann das Bewertungsframework durch eine Reifegradlogik operationalisiert und im Rahmen des Design Science Research Ansatzes iterativ zu einem prototypisch validierten Instrument entwickelt werden?}
+
+    Diese Teilfrage betrifft die \textbf{konstruktive Dimension} und wird durch die Konzeption der fünfstufigen Reifegradlogik und die iterative Artefaktentwicklung über die Prototypversionen V1--V3 (Kapitel~\ref{chap:artefakt}) beantwortet.
+
+    \item \textit{Inwieweit wird das entwickelte Framework von Fachexpertinnen und Fachexperten als praktisch nützlich und anwendbar für die Bewertung der KI-Governance-Readiness eingeschätzt?}
+
+    Diese Teilfrage betrifft die \textbf{evaluative Dimension} und wird durch die strukturierte Artefakt-Evaluation ($n = 8$) und szenariobasierte Demonstration (Kapitel~\ref{chap:demonstration}) beantwortet.
+\end{enumerate}
+
+
+\subsection{Wissenschaftlicher und praktischer Beitrag}
+\label{subsec:beitrag}
+
+Der \textbf{wissenschaftliche Beitrag} liegt auf drei Ebenen. Das Framework ist nach Kenntnisstand des Autors das erste Instrument, das EU-AI-Act-Spezifität, operationalisierbare Kriterien und eine Reifegradlogik integriert (vgl. Tabelle~\ref{tab:frameworks-vergleich}). Darüber hinaus schlägt die Arbeit eine Kategorisierung der KI-Governance-Landschaft in drei Generationen vor -- ethisch (2018--2020), auditierend (2020--2023), operationalisierend (ab 2023). Schließlich zeigt die Integration der Inhaltsanalyse nach Mayring in den DSR-Prozess einen reproduzierbaren Weg, regulatorische Texte in Bewertungsinstrumente zu überführen.
+
+Der \textbf{praktische Beitrag} besteht in einem konkreten Instrument für die Compliance-Vorbereitung \autocite{Moekander2022}. Eine zentrale Designentscheidung ist die konsequente Trennung deterministischer Bewertungslogik von KI-gestützter Unterstützung. Diese Trennung reagiert auf ein grundlegendes Problem: Ein KI-Governance-Instrument, das selbst intransparente KI nutzt, gefährdet seine eigene Glaubwürdigkeit. Dieses \textit{Meta-Vertrauensproblem} prägt die gesamte Prototypentwicklung (Abschnitt~\ref{subsec:designoptionen}).
+
+
+\section{Abgrenzung und Fokus der Arbeit}
+\label{sec:abgrenzung}
+
+Der Fokus der Arbeit wird durch vier Abgrenzungen bestimmt:
+
+\textbf{Inhaltlich} behandelt die Arbeit ausschließlich Hochrisiko-KI-Systeme nach Art.~6 und Anhang~III -- also die Kategorie, die den umfangreichsten und anspruchsvollsten Pflichtenkatalog auslöst. Verbotene Systeme (Art.~5), GPAI-Modelle (Kapitel~V) und Systeme mit begrenztem oder minimalem Risiko erfordern jeweils eigene Governance-Logiken \autocite{Moekander2024} und bleiben außen vor.
+
+\textbf{Organisational} nimmt das Framework die Anbieter- und Betreiberperspektive ein \autocite{Batool2025}. Es dient der Selbsteinschätzung und ersetzt weder die formale Konformitätsbewertung nach Art.~43 noch eine ISO/IEC~42001-Zertifizierung. Die Betroffenenperspektive -- also Personen, über die Hochrisiko-Systeme entscheiden -- fließt indirekt über die Transparenz- und Aufsichtsanforderungen ein, wird aber nicht eigenständig modelliert. Kapitel~\ref{chap:diskussion} reflektiert diese Limitation.
+
+\textbf{Regulatorisch} beschränkt sich die Arbeit auf Art.~9--15. Anbieterpflichten (Art.~16--17), Marktüberwachung und das Zusammenspiel mit Delegierten Rechtsakten sind Folgearbeiten vorbehalten.
+
+\textbf{Methodisch} kombiniert die Evaluation analytische und empirische Komponenten in vier Stufen. Eine naturalistische Evaluation in realen Organisationen war im Rahmen einer Masterarbeit nicht realisierbar \autocite{Venable2016}. Die Arbeit prüft daher die konzeptionelle Tragfähigkeit, nicht die organisationale Wirksamkeit.
+
+
+\section{Aufbau der Arbeit}
+\label{sec:aufbau}
+
+Die Arbeit folgt der Logik des DSR-Prozesses und gliedert sich in sieben Kapitel (Abbildung~\ref{fig:aufbau}). \textbf{Kapitel~2} erarbeitet die theoretischen Grundlagen -- KI-Governance, EU AI Act, bestehende Frameworks, Reifegradtheorie -- und leitet daraus das Forschungsdesiderat ab. \textbf{Kapitel~3} dokumentiert das methodische Vorgehen: DSR als Forschungsrahmen, die systematische Literaturrecherche und die qualitative Inhaltsanalyse nach Mayring. \textbf{Kapitel~4} überführt die Analyseergebnisse in Designanforderungen, konzipiert das Framework und dokumentiert die iterative Entwicklung über drei Prototypversionen. \textbf{Kapitel~5} demonstriert das Framework an zwei Hochrisiko-Szenarien und dokumentiert die vierstufige Evaluation. \textbf{Kapitel~6} diskutiert die Ergebnisse und reflektiert die Limitationen. \textbf{Kapitel~7} formuliert Implikationen und Forschungsdesiderate.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.5cm,
+    box/.style={rectangle, draw=black!60, fill=blue!8, rounded corners=3pt, minimum height=0.8cm, minimum width=8.5cm, text width=8cm, align=left, font=\sffamily\scriptsize},
+    annot/.style={font=\sffamily\tiny, text=black!50, align=left},
+    arrow/.style={-{Stealth[length=2mm]}, thick, black!50}
+]
+\node[box] (k1) {\textbf{Kap.~1: Einleitung} -- Problemstellung, Forschungsfrage, Abgrenzung};
+\node[box, below=of k1] (k2) {\textbf{Kap.~2: Stand der Forschung} -- KI-Governance, EU AI Act, Rahmenwerke, Reifegradtheorie};
+\node[box, below=of k2] (k3) {\textbf{Kap.~3: Methodisches Vorgehen} -- DSR, SLR, Inhaltsanalyse, Evaluation};
+\node[box, below=of k3, fill=green!10] (k4) {\textbf{Kap.~4: Artefaktdesign und Entwicklung} -- Framework, Prototyp (V1--V3), Architektur};
+\node[box, below=of k4, fill=green!10] (k5) {\textbf{Kap.~5: Demonstration und Evaluation} -- Szenarien, Evaluation ($n = 8$), Reflexion};
+\node[box, below=of k5] (k6) {\textbf{Kap.~6: Diskussion} -- Forschungsfrage, Beitrag, Limitationen};
+\node[box, below=of k6] (k7) {\textbf{Kap.~7: Fazit und Ausblick} -- Implikationen, Forschungsdesiderate};
+
+\draw[arrow] (k1) -- (k2);
+\draw[arrow] (k2) -- (k3);
+\draw[arrow] (k3) -- (k4);
+\draw[arrow] (k4) -- (k5);
+\draw[arrow] (k5) -- (k6);
+\draw[arrow] (k6) -- (k7);
+
+% DSR-Zyklen als Klammern rechts (sauber außerhalb der Boxen)
+\draw[decorate, decoration={brace, amplitude=4pt, mirror}, thick, black!40]
+  ([xshift=0.4cm]k2.north east) -- ([xshift=0.4cm]k3.south east)
+  node[annot, midway, right=0.3cm] {Rigor Cycle};
+\draw[decorate, decoration={brace, amplitude=4pt, mirror}, thick, black!40]
+  ([xshift=0.4cm]k4.north east) -- ([xshift=0.4cm]k5.south east)
+  node[annot, midway, right=0.3cm] {Design Cycle};
+\draw[decorate, decoration={brace, amplitude=4pt, mirror}, thick, black!40]
+  ([xshift=0.4cm]k6.north east) -- ([xshift=0.4cm]k7.south east)
+  node[annot, midway, right=0.3cm] {Kommunikation};
+
+\end{tikzpicture}
+\caption{Aufbau der Arbeit und Zuordnung zu DSR-Zyklen}
+\label{fig:aufbau}
+\end{figure}

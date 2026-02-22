@@ -1,0 +1,504 @@
+% Kapitel 4: Artefaktdesign und Entwicklung
+
+\chapter{Artefaktdesign und Entwicklung}
+\label{chap:artefakt}
+
+Dieses Kapitel beschreibt die Überführung der Analyseergebnisse in ein funktionsfähiges Artefakt: Abschnitt~\ref{sec:designanforderungen} leitet die Designanforderungen ab, Abschnitt~\ref{sec:konzeption-framework} konzipiert das Framework, Abschnitt~\ref{sec:prototypisierung} dokumentiert die iterative Prototypisierung und Abschnitt~\ref{sec:technische-architektur} legt die technische Architektur dar.
+
+\begin{table}[htbp]
+\centering
+\caption{Zuordnung der Kapitelabschnitte zu DSR-Prozessphasen}
+\label{tab:kapitel-dsr-mapping}
+\small
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Abschnitt} & \textbf{DSR-Phase} & \textbf{Inhalt} \\
+\hline
+\ref{sec:designanforderungen} & Define Objectives & Ableitung FR/NFR aus Inhaltsanalyse \\
+\ref{sec:konzeption-framework} & Design \& Development & Drei-Ebenen-Architektur, Dimensionen \\
+\ref{sec:prototypisierung} & Development (iterativ) & V1--V3 mit Gap-Analysen \\
+\ref{sec:technische-architektur} & Development (final) & Technische Architektur V3 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{Ableitung der Designanforderungen}
+\label{sec:designanforderungen}
+
+\subsection{Von Kategorien zu Requirements: Übersetzungslogik}
+\label{subsec:uebersetzungslogik}
+
+Die Inhaltsanalyse-Kategorien werden in drei Schritten in Designanforderungen überführt: (1)~Die sechs Hauptkategorien (K1--K6) werden den sechs Governance-Dimensionen (D1--D6) zugeordnet; in Grenzfällen entscheidet der \textit{primäre regulatorische Anker} (vollständige Zuordnung in Anhang~\ref{app:mapping}). (2)~Jede Subkategorie wird in ein messbares Bewertungskriterium transformiert, das eine beobachtbare Governance-Praxis beschreibt \autocite{Moekander2022}. (3)~Die Querschnittskategorien Q1~(Organisationale Verankerung) und Q2~(Kompetenzentwicklung) werden nicht als eigenständige Dimensionen modelliert, da ihnen im Normtext der Art.~9--15 keine explizite Rechtsgrundlage entspricht und eine Doppelzählung in der Aggregation entstünde.
+
+Stattdessen werden Q1 und Q2 als dimensionsübergreifende Gestaltungsprinzipien in die Reifegrad-Indikatoren eingebettet. Q1 manifestiert sich ab Stufe~3 durch Indikatoren, die eine systematische organisationale Verankerung erfordern (Beispiel: D1.1 Stufe~3 fordert ein ``organisationsweit definiertes Risikomanagementsystem mit klaren Verantwortlichkeiten''). Q2 manifestiert sich ab Stufe~4 durch Indikatoren, die nachweisbare Fachkompetenz voraussetzen (Beispiel: D5.2 Stufe~4 fordert ``systematische Kompetenzentwicklungsprogramme mit Wirksamkeitsmessung''). Diese Einbettung stellt sicher, dass organisationale und kompetenzbasierte Aspekte in jeder Dimension bewertet werden, ohne die 1:1-Zuordnung zu den Art.~9--15 aufzubrechen. Abbildung~\ref{fig:uebersetzungslogik} visualisiert diese Logik.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.8cm and 1.8cm,
+    box/.style={rectangle, draw=black!70, fill=blue!8, rounded corners=3pt, minimum height=0.9cm, minimum width=2.8cm, text width=2.6cm, align=center, font=\sffamily\scriptsize},
+    arrow/.style={-{Stealth[length=2.5mm]}, thick, black!60},
+    phase/.style={font=\sffamily\small\bfseries, text=blue!60!black}
+]
+\node[phase] (p1) {Inhaltsanalyse};
+\node[box, below=0.4cm of p1] (k1) {K1 Risikomanagement};
+\node[box, below=0.3cm of k1] (k2) {K2 Data Governance};
+\node[box, below=0.3cm of k2] (k3) {K3 Dokumentation};
+\node[box, below=0.3cm of k3] (k4) {K4 Transparenz};
+\node[box, below=0.3cm of k4] (k5) {K5 Menschl. Aufsicht};
+\node[box, below=0.3cm of k5] (k6) {K6 Techn. Robustheit};
+\node[box, below=0.6cm of k6, fill=orange!10] (q1) {Q1 Org. Verankerung};
+\node[box, below=0.3cm of q1, fill=orange!10] (q2) {Q2 Kompetenz};
+
+\node[phase, right=3.5cm of p1] (p2) {Dimensionen};
+\node[box, below=0.4cm of p2, fill=green!10] (d1) {D1 (Art.~9)\\6 Kriterien};
+\node[box, below=0.3cm of d1, fill=green!10] (d2) {D2 (Art.~10)\\5 Kriterien};
+\node[box, below=0.3cm of d2, fill=green!10] (d3) {D3 (Art.~11--12)\\5 Kriterien};
+\node[box, below=0.3cm of d3, fill=green!10] (d4) {D4 (Art.~13)\\5 Kriterien};
+\node[box, below=0.3cm of d4, fill=green!10] (d5) {D5 (Art.~14)\\5 Kriterien};
+\node[box, below=0.3cm of d5, fill=green!10] (d6) {D6 (Art.~15)\\5 Kriterien};
+
+\node[phase, right=3.5cm of p2] (p3) {Reifegrade};
+\node[box, below=1.2cm of p3, fill=yellow!15, minimum height=3.5cm, text width=2.8cm] (mat) {5 Stufen:\\[3pt]1 Initial\\2 Managed\\3 Defined\\4 Measured\\5 Optimizing};
+
+\foreach \k/\d in {k1/d1, k2/d2, k3/d3, k4/d4, k5/d5, k6/d6}{
+    \draw[arrow] (\k) -- (\d);
+}
+% Q1/Q2: Dashed brace to indicate integration into all dimensions
+\draw[decorate, decoration={brace, amplitude=4pt}, thick, orange!60]
+  ([xshift=-0.3cm]q1.north west) -- ([xshift=-0.3cm]q2.south west)
+  node[midway, left=0.3cm, font=\sffamily\tiny, text=black!50, text width=1.4cm, align=center] {integriert in\\alle D1--D6};
+\draw[arrow, dashed, orange!50] ([yshift=0.2cm]q1.north east) -- ++(1.5,0) |- ([yshift=0.2cm]d1.south west);
+\draw[arrow, dashed, orange!50] ([yshift=-0.2cm]q2.south east) -- ++(1.3,0) |- ([yshift=-0.2cm]d6.south west);
+% Alle Dimensionen → Reifegrade (über D1 und D6 + vertikale Sammelleiste)
+\draw[arrow] (d1.east) -- ++(0.8,0) coordinate (jd1);
+\draw[arrow] (d6.east) -- ++(0.8,0) coordinate (jd6);
+\draw[black!60, thick] (jd1) -- (jd6);
+\draw[arrow] ([yshift=-0.5cm]jd1) -- (mat.west);
+\node[font=\sffamily\tiny, text=black!50, below=0.1cm of p1] {Schritt 1};
+\node[font=\sffamily\tiny, text=black!50, below=0.1cm of p2] {Schritt 2};
+\node[font=\sffamily\tiny, text=black!50, below=0.1cm of p3] {Schritt 3};
+\end{tikzpicture}
+\caption{Übersetzungslogik: Von Inhaltsanalyse-Kategorien zu Bewertungsdimensionen und Reifegraden}
+\label{fig:uebersetzungslogik}
+\end{figure}
+
+
+\subsection{Requirement-Typologie}
+\label{subsec:requirement-typologie}
+
+Die Designanforderungen gliedern sich in funktionale Requirements (FR1--FR6) und nicht-funktionale Requirements (NFR1--NFR5).
+
+Die funktionalen Requirements definieren den Leistungsumfang: Abbildung von sechs Governance-Dimensionen entsprechend Art.~9--15 (FR1), spezifische und bewertbare Kriterien pro Dimension (FR2), ein fünfstufiges Reifegradmodell (FR3), dimensionsspezifische Handlungsempfehlungen pro Reifegrad (FR4), eine aggregierte Gesamtbewertung (FR5) sowie Gap-Identifikation mit Priorisierung der Handlungsbedarfe (FR6).
+
+Die nicht-funktionalen Requirements adressieren Qualitätseigenschaften: Verständlichkeit ohne Spezialwissen (NFR1), vertretbarer Zeitaufwand (NFR2), nachvollziehbare und reproduzierbare Ergebnisse (NFR3), Anpassbarkeit an verschiedene Organisationskontexte (NFR4) und Erweiterbarkeit für regulatorische Änderungen (NFR5).
+
+Die NFRs reflektieren die vier in der Inhaltsanalyse identifizierten Bewertungsbedarfe (Abschnitt~\ref{subsec:bewertungsbedarfe}): NFR3 operationalisiert die Reifegrad-Differenzierung, NFR4 die Kontextabhängigkeit, NFR1/NFR2 die Handlungsorientierung, NFR5 die Erweiterbarkeit.
+
+\begin{table}[htbp]
+\centering
+\caption{Traceability-Matrix: Requirements, Inhaltsanalyse-Kategorien und AI-Act-Artikel}
+\label{tab:traceability}
+\begin{tabular}{|l|p{4cm}|l|l|}
+\hline
+\textbf{Req.} & \textbf{Beschreibung} & \textbf{Kategorie} & \textbf{AI Act} \\
+\hline
+FR1 & Sechs Governance-Dimensionen & K1--K6 & Art.~9--15 \\
+FR2 & Bewertbare Kriterien pro Dimension & Subkat. & Art.~9--15, Anh.~IV \\
+FR3 & Fünfstufiges Reifegradmodell & Bew.-Bedarf 1 & -- \\
+FR4 & Handlungsempfehlungen & Bew.-Bedarf 3 & -- \\
+FR5 & Aggregierte Gesamtbewertung & Bew.-Bedarf 1 & -- \\
+FR6 & Gap-Identifikation und Priorisierung & Bew.-Bedarf 4 & -- \\
+\hline
+NFR1 & Verständlichkeit & Bew.-Bedarf 3, Q1, Q2 & Art.~13 \\
+NFR2 & Effizienz & Bew.-Bedarf 3 & -- \\
+NFR3 & Transparenz & K4, Bew.-Bedarf 4 & Art.~13 \\
+NFR4 & Flexibilität & Bew.-Bedarf 2, Q1, Q2 & -- \\
+NFR5 & Erweiterbarkeit & Q1, Q2 & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{Konzeption des KI-Governance-Bewertungsframeworks}
+\label{sec:konzeption-framework}
+
+\subsection{Drei-Ebenen-Architektur}
+\label{subsec:grundarchitektur}
+
+Das Framework folgt einer dreigliedrigen Architektur: (1)~\textbf{Dimensionsebene} -- sechs Governance-Dimensionen (D1--D6), direkt abgeleitet aus den Art.~9--15; (2)~\textbf{Kriterienebene} -- 31~Bewertungskriterien (5--6 pro Dimension), die konkrete Governance-Praktiken operationalisieren; (3)~\textbf{Reifegradebene} -- fünfstufiges Reifegradmodell mit spezifischen Indikatoren pro Kriterium. Terminologisch unterscheidet die Arbeit drei Ebenen: Das \textit{Bewertungsframework} bezeichnet das Gesamtartefakt (Dimensionen, Kriterien, Reifegrade und Anwendungsprozess). Das \textit{Reifegradmodell} ist eine Teilkomponente -- die fünfstufige kumulative Skala mit 155~Indikatoren. Der \textit{Prototyp} ist die technische Instanziierung als webbasiertes Assessment-Tool.
+
+Die 1:1-Zuordnung sichert die regulatorische Rückverfolgbarkeit: Jede Bewertung lässt sich auf eine konkrete Compliance-Pflicht beziehen. Die Drei-Ebenen-Architektur wurde gegenüber flachen Checklisten (keine Reifegrad-Differenzierung \autocite{Raji2020}) und gewichteten Entscheidungsbäumen (mangelnde Transparenz für nicht-technische Stakeholder) als Balance zwischen Differenzierungsfähigkeit und Verständlichkeit gewählt \autocite{Becker2009}.
+
+
+\subsection{Designentscheidungen zur Dimensionierung}
+\label{subsec:dimensionierungskritik}
+
+Die 1:1-Zuordnung von sechs Artikeln zu sechs Dimensionen ist eine zentrale Designentscheidung dieser Arbeit. Ihre Implikationen und Kosten werden im Folgenden diskutiert.
+
+\textit{Keine eigenständige Fairness-Dimension.} Fairness gehört zu den meistdiskutierten Governance-Prinzipien; Jobin et al. \autocite{Jobin2019} listen sie in 68 von 84~Leitlinien. Im vorliegenden Framework wird sie unter D2 (Kriterium D2.2: Bias-Erkennung) subsumiert, weil der AI Act Fairness primär über Datenqualität reguliert (Art.~10). Diese Zuordnung ist regulatorisch korrekt, bildet jedoch die organisationalen, gesellschaftlichen und mathematischen Dimensionen von Fairness nicht vollständig ab. Bei einer Erweiterung über Art.~9--15 hinaus wäre eine eigenständige Fairness-Dimension die naheliegendste Ergänzung.
+
+\textit{Zusammenfassung Art.~11 und 12 in D3.} Art.~11 (Dokumentation vor Inverkehrbringen) und Art.~12 (Logging im Betrieb) beschreiben verschiedene Phasen derselben Governance-Funktion: Nachvollziehbarkeit. Die Zusammenfassung ist funktional begründet, erzeugt aber eine Asymmetrie: Die D3-Kriterien sind stärker von Art.~11 geprägt (D3.1, D3.3, D3.4) als von Art.~12 (primär D3.2).
+
+\textit{Sechs statt mehr Dimensionen.} Art.~15 hätte man in drei Dimensionen aufspalten können (Genauigkeit, Robustheit, Cybersicherheit). Das hätte die Differenzierungsfähigkeit erhöht -- aber den Assessment-Aufwand von 155 auf ca.~230~Indikatoren gesteigert. Die sechsdimensionale Struktur ist ein bewusster Kompromiss zugunsten der Handhabbarkeit \autocite{Becker2009}.
+
+Die Dimensionen werden in der Aggregation als unabhängig behandelt, obwohl in der Praxis Abhängigkeiten bestehen. Die Implikationen dieser Vereinfachung werden im folgenden Abschnitt differenziert betrachtet.
+
+
+\subsection{Interdimensionale Abhängigkeiten}
+\label{subsec:interdimensionale-abhaengigkeiten}
+
+Tabelle~\ref{tab:interdependenzen} kartiert die logischen Abhängigkeiten zwischen den sechs Dimensionen. Die Analyse basiert auf den in der Inhaltsanalyse identifizierten Querverweisen zwischen den Kategorien K1--K6 sowie auf den regulatorischen Verweisstrukturen innerhalb der Art.~9--15.
+
+\begin{table}[htbp]
+\centering
+\caption{Interdimensionale Abhängigkeitsmatrix}
+\label{tab:interdependenzen}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{|l|l|l|p{5.2cm}|}
+\hline
+\textbf{Abhängigkeit} & \textbf{Richtung} & \textbf{Stärke} & \textbf{Begründung und Beispiel} \\
+\hline
+D1 $\rightarrow$ D6 & Unidirektional & Stark & Risikomanagement definiert Robustheitsziele: Art.~9 Abs.~7 verlangt Testverfahren, deren Metriken D6 operationalisiert. \\
+\hline
+D3 $\rightarrow$ D4 & Unidirektional & Stark & Dokumentation ist Voraussetzung für Transparenz: Ohne technische Dokumentation (D3.1) können Erklärungen (D4.1) nicht fundiert werden. \\
+\hline
+D4 $\rightarrow$ D5 & Unidirektional & Stark & Transparenz ermöglicht qualifizierte Aufsicht: Art.~14 Abs.~4 setzt voraus, dass Aufsichtspersonen das System verstehen -- das erfordert D4. \\
+\hline
+D2 $\leftrightarrow$ D6 & Bidirektional & Mittel & Datenqualität beeinflusst Modellrobustheit und umgekehrt: Drift in D6.4 kann Datenqualitätsprobleme (D2.5) anzeigen. \\
+\hline
+D1 $\rightarrow$ D2 & Unidirektional & Mittel & Risikoidentifikation (D1.2) muss Datenrisiken einschließen, die D2 operationalisiert. \\
+\hline
+D5 $\rightarrow$ D1 & Unidirektional & Schwach & Aufsichtsentscheidungen (D5.5) speisen die Risikoaktualisierung (D1.6); der Rückkanal ist organisatorisch, nicht technisch. \\
+\hline
+\end{tabular}
+\end{table}
+
+Aus der Analyse ergeben sich drei Befunde. D1~(Risikomanagement) fungiert als \textit{Metadimension}: Sie beeinflusst D2, D6 und indirekt D3, wird aber selbst nur schwach rückgekoppelt. Eine Organisation mit einem niedrigen D1-Score wird strukturell Schwierigkeiten haben, in anderen Dimensionen hohe Reifegrade zu erreichen -- ein Effekt, den die Gleichgewichtung nicht abbildet. Darüber hinaus bildet die Kette D3$\rightarrow$D4$\rightarrow$D5 eine \textit{kausale Sequenz}: Dokumentation ermöglicht Transparenz, Transparenz ermöglicht Aufsicht. Ein niedriger D3-Score limitiert damit das erreichbare Niveau in D4 und D5 -- unabhängig von den dort ergriffenen Maßnahmen. Zudem zeigt die bidirektionale Abhängigkeit D2$\leftrightarrow$D6, dass bestimmte Dimensionspaare Rückkopplungsschleifen bilden.
+
+Warum fließen diese Abhängigkeiten \textit{nicht} in die Aggregationsformel (Gleichung~\ref{eq:gesamtscore}) ein? Die Abhängigkeitsstärken sind heuristisch, nicht empirisch kalibriert -- eine gewichtete Aggregation mit unkalibrierten Parametern würde Scheinpräzision erzeugen \autocite{Becker2009}. Zudem ist ein gewichteter arithmetischer Mittelwert für nicht-technische Stakeholder intuitiv verständlich; eine graphbasierte Propagation wäre es nicht. Die KI-gestützte Dimensionsanalyse im Prototyp erfasst implausible Stufensprünge bereits qualitativ -- etwa wenn D5 auf Stufe~4 bewertet wird, während D4 auf Stufe~1 steht. Diese qualitative Konsistenzprüfung ist für den Anwendungsfall angemessener als eine formale Modellierung, deren Kalibrierung noch aussteht. Die empirische Kalibrierung der Abhängigkeitsstärken auf Basis realer Assessment-Daten bildet ein Forschungsdesiderat (Abschnitt~\ref{sec:ausblick}).
+
+
+\subsection{Bewertungsdimensionen und Kriterien}
+\label{subsec:bewertungsdimensionen}
+
+Die vollständigen Reifegrad-Indikatoren sind in Anhang~\ref{app:bewertungsdimensionen} dokumentiert. Die sechs Dimensionen werden nachfolgend mit ihren Kriterien vorgestellt.
+
+Die erste Dimension D1 (Risikomanagement) operationalisiert die in Art.~9 kodifizierte Pflicht zur Einrichtung eines lebenszyklusumfassenden Risikomanagementsystems \autocite{EUAIAct2024}. Sie umfasst sechs Kriterien, die von der Existenz eines KI-spezifischen Risikomanagementsystems (D1.1) über die Risikoidentifikation über den gesamten Lebenszyklus (D1.2), eine systematische Risikobewertungsmethodik (D1.3) und die Risikobehandlung einschließlich der Restrisiko-Akzeptanz (D1.4) bis hin zu Testverfahren zur Risikovalidierung (D1.5) und der kontinuierlichen Aktualisierung des Systems (D1.6) reichen.
+
+Die Dimension D2 (Data Governance) adressiert die verbindlichen Anforderungen des Art.~10 an Trainings-, Validierungs- und Testdaten \autocite{Holtz2025}. Ihre fünf Kriterien erfassen die Definition und Einhaltung von Datenqualitätsstandards (D2.1), die systematische Erkennung und Korrektur von Verzerrungen in den Daten (D2.2), die Nachverfolgbarkeit der Datenherkunft im Sinne einer Data Lineage (D2.3), die Integration der KI-spezifischen Datenanforderungen mit der DSGVO (D2.4) sowie die kontinuierliche Sicherung der Datenqualität im laufenden Betrieb (D2.5).
+
+D3 (Dokumentation) vereint die Anforderungen der Art.~11 und~12 an technische Dokumentation und Aufzeichnungspflichten. Die fünf Kriterien umfassen die Erstellung einer technischen Dokumentation gemäß Anhang~IV (D3.1), die Implementierung automatisierter Logging-Mechanismen (D3.2), eine durchgängige Versionierung der KI-Systeme und ihrer Komponenten (D3.3), die Bereitstellung von Konformitätsnachweisen (D3.4) sowie eine strukturierte Dokumentationsverwaltung (D3.5).
+
+Die Dimension D4 (Transparenz) verbindet die technische Erklärbarkeit mit kommunikativen Informationspflichten nach Art.~13 \autocite{Braun2026}. Die fünf Kriterien adressieren den Einsatz von Erklärungsmethoden (D4.1), die Erfüllung der Informationspflichten gegenüber den Nutzenden (D4.2), die aktive Kommunikation von Fähigkeiten und Grenzen des KI-Systems (D4.3), die Kennzeichnung von KI-generierten Ergebnissen (D4.4) sowie die Transparenz des Governance-Prozesses selbst (D4.5).
+
+D5 (Menschliche Aufsicht) differenziert gemäß Art.~14 zwischen designbezogenen, personellen und organisatorischen Anforderungen an die menschliche Kontrolle \autocite{Laux2024}. Die Kriterien erfassen das Design der Mensch-Maschine-Interaktion im Sinne eines Human-in-the-loop- oder Human-on-the-loop-Ansatzes (D5.1), die Qualifikation der Aufsichtspersonen (D5.2), die Verfügbarkeit wirksamer Interventionsmechanismen (D5.3), die Prävention von Automation Bias (D5.4) sowie das Aufsichts-Review (D5.5).
+
+Die sechste Dimension D6 (Technische Robustheit) operationalisiert die drei in Art.~15 gebündelten technischen Qualitätsanforderungen. Ihre Kriterien betreffen die Definition und Überwachung von Genauigkeitsmetriken (D6.1), die Robustheit des Systems gegenüber Störungen und Eingabefehlern (D6.2), die Gewährleistung der Cybersicherheit einschließlich des Schutzes gegen adversariale Angriffe (D6.3), die Implementierung eines Monitoring-Systems mit Drift-Erkennung (D6.4) sowie die Bereitstellung von Fallback-Mechanismen für den Fall eines Systemversagens (D6.5).
+
+
+\subsection{Reifegradmodell und Aggregationslogik}
+\label{subsec:reifegradmodell}
+
+Das Reifegradmodell ergänzt die statische Bewertung um eine Entwicklungsperspektive. Fünf Stufen (vgl. Abschnitt~\ref{subsec:begruendung-fuenfstufen}) bieten die Balance zwischen Differenzierung und Anwendbarkeit \autocite{Becker2009} und ermöglichen einen Compliance-Schwellenwert bei Stufe~3.
+
+Die fünf Stufen folgen einer kumulativen Progressionslogik auf drei Entwicklungsachsen: (1)~\textit{Formalisierungsgrad} -- von ad~hoc über dokumentiert zu messungsbasiert; (2)~\textit{Organisationale Verankerung} -- von individuell über teambasiert zu organisationsweit; (3)~\textit{Steuerungsmodus} -- von reaktiv über proaktiv zu antizipativ. Die Achsen leiten sich aus den in der Inhaltsanalyse identifizierten Governance-Mechanismen ab (Abschnitt~\ref{subsec:governance-dimensionen-ergebnisse}).
+
+Die 155~Reifegrad-Indikatoren (5~Stufen $\times$ 31~Kriterien) wurden durch ein Ankerpunktverfahren formuliert: Der regulatorische Anforderungsgehalt definiert den Soll-Zustand auf Stufe~3; niedrigere Stufen entstehen durch progressives Entfernen, höhere durch progressives Hinzufügen von Governance-Merkmalen \autocite{Paulk1993}. Anhang~\ref{app:bewertungsdimensionen} dokumentiert die Indikatoren für Stufen~1, 3 und~5 explizit; die Stufen~2 und~4 sind als qualitative Übergangsstufen entlang der drei Entwicklungsachsen definiert, die jeweils den Übergang zwischen den benachbarten Ankerstufen beschreiben \autocite{Becker2009}.
+
+Zur Illustration des Ankerpunktverfahrens wird die Indikatorherleitung an Kriterien mit unterschiedlichen Governance-Logiken exemplarisch dargestellt: einem prozessorientierten (D1.1), einem technisch-kommunikativen (D4.1) und einem verhaltensbezogenen Kriterium (D5.4).
+
+\textbf{D1.1 -- KI-spezifisches Risikomanagementsystem:} Der regulatorische Ankerpunkt ist Art.~9 Abs.~1: \textit{``Ein Risikomanagementsystem wird eingerichtet, angewandt, dokumentiert und aufrechterhalten.''} Diese Formulierung impliziert Stufe~3 (Defined): ein dokumentiertes, organisationsweit standardisiertes System. Stufe~1 entsteht durch Entfernung aller Formalisierungsmerkmale: \textit{``Kein KI-spezifisches Risikomanagementsystem vorhanden; Risiken werden ad~hoc adressiert.''} Stufe~5 entsteht durch Hinzufügen von Optimierungsmerkmalen: \textit{``Kontinuierlich optimiertes System mit Best-Practice-Sharing über Organisationsgrenzen, Integration von Threat Intelligence und automatisierter Risiko-Alerting.''} Die normative Entscheidung liegt in der Interpretation von ``eingerichtet und dokumentiert'' als Stufe~3 statt als Stufe~2: Da Art.~9 Abs.~1 explizit ``dokumentiert und aufrechterhalten'' fordert, impliziert der Normtext einen Standardisierungsgrad, der über grundlegende Maßnahmen (Stufe~2) hinausgeht.
+
+\textbf{D4.1 -- Erklärbarkeit (XAI):} Art.~13 Abs.~1 fordert ``hinreichende Transparenz'', ohne XAI-Methoden zu spezifizieren. Der Ankerpunkt für Stufe~3 wurde als \textit{``Erklärungsmethoden werden systematisch eingesetzt und für verschiedene Stakeholder aufbereitet''} formuliert -- eine Operationalisierung, die über den Normtext hinausgeht und eine normative Entscheidung darstellt: ``Hinreichend'' wird als ``stakeholdergerecht aufbereitet'' interpretiert. Stufe~1 (\textit{``Erklärbarkeit nicht adressiert''}) und Stufe~5 (\textit{``Mehrstufige Erklärungen mit nachweisbarer Verständlichkeit bei Zielgruppen''}) folgen der Progressionsachse des Formalisierungsgrads. Die Herausforderung bei D4.1 liegt darin, dass der ``non-binary'' Transparenzbegriff \autocite{Braun2026} in eine Ordinalskala diskretisiert werden muss -- der Übergang zwischen den Stufen ist qualitativ, nicht quantitativ.
+
+\textbf{D5.4 -- Prävention von Automation Bias:} Art.~14 Abs.~4 lit.~b fordert, dass Aufsichtspersonen ``die Gefahr einer möglichen Übertragung von Voreingenommenheit (Automation Bias)'' verstehen. Diese Anforderung ist verhaltensbezogen, nicht prozessual. Stufe~3 wurde als \textit{``Awareness-Training und dokumentierte Maßnahmen zur Bias-Prävention''} operationalisiert; Stufe~5 als \textit{``Kalibrierte Entscheidungshilfen mit empirisch validierter Wirksamkeit der Bias-Gegenmaßnahmen''}. Die normative Entscheidung liegt in der Erweiterung von ``verstehen'' (Normtext) zu ``dokumentierte Maßnahmen'' (Stufe~3): Das bloße Verstehen eines Risikos wird als notwendige, aber nicht hinreichende Governance-Maßnahme interpretiert -- eine Interpretation, die durch Laux' Analyse der strukturellen Grenzen menschlicher Aufsicht gestützt wird \autocite{Laux2024}.
+
+Die drei Beispiele illustrieren, dass die Indikatorherleitung nicht mechanisch aus dem Normtext ableitbar ist, sondern normative Übersetzungsentscheidungen erfordert. Diese Entscheidungen sind im Kodierleitfaden (Anhang~\ref{app:kodierleitfaden}) dokumentiert und durch die Artefakt-Evaluation (E2: MW~4,0, E5: MW~4,4) extern validiert.
+
+Tabelle~\ref{tab:normative-distanz} macht die Tragweite dieser Übersetzungsentscheidungen sichtbar: Für sechs ausgewählte Kriterien stellt sie den wörtlichen Normtext dem Stufe-3-Indikator gegenüber und bewertet die \textit{normative Distanz} -- den Grad, in dem die Operationalisierung über den Wortlaut hinausgeht.
+
+\begin{table}[htbp]
+\centering
+\caption{Normative Distanz: Vom Normtext zum Stufe-3-Indikator}
+\label{tab:normative-distanz}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{|l|p{3.3cm}|p{3.8cm}|c|}
+\hline
+\textbf{Krit.} & \textbf{Normtext (wörtlich)} & \textbf{Stufe-3-Indikator} & \textbf{Distanz} \\
+\hline
+D1.1 & ``eingerichtet, angewandt, dokumentiert und aufrecht\-erhalten'' (Art.~9 Abs.~1) & Organisationsweit definiertes Risikomanagementsystem mit klaren Verantwortlichkeiten & Gering \\
+\hline
+D2.2 & ``Prüfung im Hinblick auf mögliche Verzerrungen'' (Art.~10 Abs.~2 lit.~f) & Systematische Bias-Erkennungs\-verfahren für geschützte Merkmale mit dokumentierten Korrekturmaßnahmen & Mittel \\
+\hline
+D3.2 & ``automatische Aufzeichnung von Ereignissen (Logs)'' (Art.~12 Abs.~1) & Automatisierte Logging-Mechanismen mit standardisierten Formaten und definierten Aufbewahrungsfristen & Gering \\
+\hline
+D4.1 & ``hinreichend transparent [...] zu betreiben'' (Art.~13 Abs.~1) & Erklärungsmethoden werden systematisch eingesetzt und für verschiedene Stakeholder aufbereitet & Hoch \\
+\hline
+D5.4 & ``Gefahr einer möglichen Über\-tragung von Vorein\-genommenheit'' verstehen (Art.~14 Abs.~4 lit.~b) & Awareness-Training und dokumentierte Maßnahmen zur Automation-Bias-Prävention & Hoch \\
+\hline
+D6.1 & ``angemessenes Maß an Genauigkeit'' (Art.~15 Abs.~1) & Definierte Genauigkeitsmetriken mit regelmäßiger Überprüfung und dokumentierten Schwellenwerten & Mittel \\
+\hline
+\end{tabular}
+\end{table}
+
+Das Muster ist aufschlussreich: Kriterien mit geringer normativer Distanz (D1.1, D3.2) operationalisieren Anforderungen, die der Normtext bereits prozessual formuliert -- hier liegt die Übersetzungsleistung primär in der Stufendifferenzierung. Kriterien mit hoher normativer Distanz (D4.1, D5.4) füllen \textit{unbestimmte Rechtsbegriffe} mit inhaltlichen Anforderungen, die der Normtext bewusst offenlässt. Diese Kriterien sind zugleich diejenigen, bei denen die Stufe-2/3-Abgrenzung am schwierigsten fällt (vgl. die 8~von~31~Kriterien mit Trennschärfeproblemen). Der Zusammenhang ist nicht zufällig: Je weiter die Operationalisierung vom Normtext entfernt ist, desto mehr normative Entscheidungen werden in die Indikatoren verlagert -- und desto stärker hängt die Zuordnung von der Interpretation der bewertenden Person ab. Die ausstehenden CEN/CENELEC-Standards \autocite{Kilian2025} werden voraussichtlich primär die Kriterien mit mittlerer und hoher Distanz konkretisieren und damit die Interpretationsspielräume reduzieren.
+
+Die Trennschärfe zwischen benachbarten Stufen variiert über die 31~Kriterien. Bei prozessorientierten Kriterien (z.\,B. D1.1~Risikomanagementsystem, D3.1~Technische Dokumentation) ist die Abgrenzung über den Formalisierungsgrad klar operationalisierbar: Stufe~2 erfordert ad-hoc-dokumentierte Prozesse, Stufe~3 organisationsweit standardisierte. Bei stärker qualitativen Kriterien (z.\,B. D4.1~Erklärbarkeit, D5.4~Automation-Bias-Prävention) fällt die Grenzziehung schwerer, da der Übergang zwischen Stufen graduell verläuft. Die heuristische Evaluation bestätigt dies: Vier Evaluierende schätzten die Stufe-2/3-Abgrenzung bei 8~von~31~Kriterien als praxisschwierig ein. Diese Limitation ist bei fünfstufigen Modellen bekannt \autocite{Mettler2011} und wird durch die KI-gestützte Konsistenzprüfung im Prototyp teilweise kompensiert.
+
+\begin{table}[htbp]
+\centering
+\caption{Fünfstufiges Reifegradmodell der KI-Governance}
+\label{tab:reifegradmodell}
+\begin{tabular}{|c|l|p{8cm}|}
+\hline
+\textbf{Stufe} & \textbf{Bezeichnung} & \textbf{Charakteristik} \\
+\hline
+1 & Initial & Ad-hoc-Governance. Reaktives Vorgehen ohne systematische Verankerung. \\
+\hline
+2 & Managed & Grundlegende Prozesse etabliert, jedoch nicht dokumentiert oder standardisiert. \\
+\hline
+3 & Defined & Prozesse definiert, dokumentiert und organisationsweit standardisiert. Proaktiv. \\
+\hline
+4 & Measured & Systematisch gemessen und überwacht. Quantitative Metriken und KPIs. \\
+\hline
+5 & Optimizing & Kontinuierliche Verbesserung. Best-Practice-Sharing. Innovationsgetrieben. \\
+\hline
+\end{tabular}
+\end{table}
+
+Die \textbf{qualitative Einordnung} des Gesamtscores in die Reifegradstufen folgt dem natürlichen Intervallraster der fünfstufigen Skala: Initial ($< 1{,}5$), Managed ($1{,}5$--$< 2{,}5$), Defined ($2{,}5$--$< 3{,}5$), Measured ($3{,}5$--$< 4{,}5$) und Optimizing ($\geq 4{,}5$). Bei Werten nahe der Intervallgrenzen (z.\,B. 2,77 als ``Defined, unteres Niveau'') wird die Nähe zur Untergrenze qualitativ kenntlich gemacht.
+
+Die \textbf{Aggregation} erfolgt auf zwei Ebenen:
+
+\begin{equation}
+\text{DimScore}_{d} = \frac{1}{n_d} \sum_{k=1}^{n_d} \text{Score}_{d,k}
+\label{eq:dimscore}
+\end{equation}
+
+\begin{equation}
+\text{GesamtScore} = \sum_{d=1}^{6} w_d \cdot \text{DimScore}_{d} \quad \text{mit} \quad \sum_{d=1}^{6} w_d = 1
+\label{eq:gesamtscore}
+\end{equation}
+
+Die Standardgewichtung ist gleichverteilt ($w_d = \frac{1}{6}$). Die Gleichgewichtung ist eine epistemisch konservative Standardposition. Sie impliziert nicht gleiche Bedeutung der Dimensionen, sondern spiegelt das Fehlen einer empirischen Basis für eine differenzierte Gewichtung wider. Zwei Argumente stützen diese Entscheidung: Der EU AI Act impliziert keine Hierarchie zwischen Art.~9--15 -- alle Anforderungsbereiche sind gleichermaßen sanktionsbewehrt \autocite{EUAIAct2024}. Zudem würde jede A-priori-Gewichtung eine empirisch unbelegte Priorisierung voraussetzen \autocite{Becker2009}.
+
+Art.~9 enthält mit sieben Absätzen deutlich detailliertere Anforderungen als etwa Art.~13, was unterschiedliche Governance-Komplexität nahelegt. Der Prototyp adressiert dies durch konfigurierbare Gewichtungsregler (0,5--2,0 pro Dimension, automatische Normalisierung). Die empirische Kalibrierung steht noch aus (vgl. Abschnitt~\ref{sec:ausblick}). N/A-Kriterien werden aus Zähler und Nenner ausgeschlossen.
+
+Die \textbf{Gap-Analyse} vergleicht den erreichten Score mit einem risikokategorieabhängigen Schwellenwert:
+
+\begin{equation}
+\text{Gap}_{d} = \max(0, \; \theta_{\text{risk}} - \text{DimScore}_{d})
+\label{eq:gap}
+\end{equation}
+
+Die Schwellenwerte ($\theta_{\text{hoch}} = 3{,}0$, $\theta_{\text{begrenzt}} = 2{,}5$, $\theta_{\text{minimal}} = 2{,}0$) folgen dem Proportionalitätsprinzip des risikobasierten Ansatzes \autocite{Ebers2025}. Der Hochrisiko-Schwellenwert bei Stufe~3 basiert auf der Interpretation, dass Art.~17 Abs.~1 dokumentierte und standardisierte Governance-Prozesse voraussetzt. Dieses Anforderungsniveau ist unterhalb von Stufe~3 strukturell nicht erfüllbar. Die Schwellenwerte sind als konfigurierbare Parameter implementiert; die empirische Kalibrierung ist Gegenstand zukünftiger Forschung. Die Klassifikation erfolgt in drei Schweregrade: kritisch (Gap $\geq 2{,}0$), signifikant ($1{,}0 \leq$ Gap $< 2{,}0$), moderat ($0 <$ Gap $< 1{,}0$).
+
+
+\subsection{Anwendungsprozess}
+\label{subsec:anwendungsprozess}
+
+Das Assessment umfasst fünf Schritte: (1)~\textbf{Scoping} (ca.~30~Min) -- Definition des KI-Systems, seiner Risikokategorie, Branche und Organisationsgröße; (2)~\textbf{Assessment} (ca.~2--3~Std) -- dimensionsweise Bewertung aller 31~Kriterien mit KI-gestützter Konsistenzprüfung; (3)~\textbf{Scoring} (automatisiert) -- Berechnung der Dimensions- und Gesamtscores; (4)~\textbf{Analyse} (ca.~30--60~Min) -- Interpretation mittels Radar-Chart, Compliance-Heatmap und Tiefenanalyse; (5)~\textbf{Roadmap} (ca.~60--90~Min) -- priorisierter Maßnahmenplan mit PDF-Export. Der Gesamtaufwand beträgt vier bis sechs Stunden \autocite{Moekander2022}.
+
+
+\section{Prototypisierung}
+\label{sec:prototypisierung}
+
+\subsection{Designoptionen und Auswahlentscheidung}
+\label{subsec:designoptionen}
+
+Die Prototypisierung erforderte eine grundlegende Designentscheidung hinsichtlich der Rolle von KI-Komponenten im Bewertungsinstrument.
+
+Drei Optionen wurden evaluiert. \textbf{Option~A} (Strukturierter Fragebogen) bietet maximale Transparenz und Reproduzierbarkeit, aber keine kontextuelle Hilfestellung -- bewertende Personen wären mit den Reifegrad-Indikatoren allein gelassen. \textbf{Option~B} (RAG-basierte Wissensunterstützung \autocite{Lewis2020}) macht regulatorisches Wissen im Moment der Bewertung verfügbar, beantwortet aber keine analytischen Fragen. \textbf{Option~C} (KI-gestützte Analyse) automatisiert Konsistenzprüfung und Handlungsempfehlungen, ist jedoch anfällig für LLM-Halluzinationen \autocite{Dahl2024}. In einem Governance-Kontext wäre dies besonders gravierend: Eine falsche Empfehlung könnte Organisationen in unbegründete Compliance-Sicherheit wiegen.
+
+Gewählt wurde ein \textbf{integrierter Ansatz (A+B+C)} mit einer architektonischen Trennlinie: Die Bewertungslogik (Scoring, Aggregation, Gap-Analyse) ist vollständig deterministisch. KI-Funktionen (RAG-Chat, Dimensionsanalyse, Maßnahmenpläne) ergänzen die Bewertung, können das Ergebnis jedoch nicht verändern. Jede KI-generierte Empfehlung ist als solche gekennzeichnet. Diese Trennung adressiert das in Abschnitt~\ref{subsec:beitrag} eingeführte \textit{Meta-Vertrauensproblem}.
+
+\begin{table}[htbp]
+\centering
+\caption{Bewertung der Designoptionen gegenüber den nicht-funktionalen Requirements}
+\label{tab:designoptionen-bewertung}
+\small
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Option} & \textbf{NFR1} & \textbf{NFR2} & \textbf{NFR3} & \textbf{NFR4} & \textbf{NFR5} \\
+\hline
+A: Fragebogen & $\circ$ & $\bullet$ & $\bullet$ & $\circ$ & $\circ$ \\
+B: RAG-Wissen & $\bullet$ & $\circ$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+C: KI-Analyse & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$ & $\circ$ \\
+\hline
+A+B+C: Integriert & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+\hline
+\multicolumn{6}{l}{\scriptsize $\bullet$ = adressiert, $\circ$ = nicht oder eingeschränkt adressiert} \\
+\end{tabular}
+\end{table}
+
+
+\subsection{Iterationsübersicht}
+\label{subsec:iterationsuebersicht}
+
+Die Entwicklung umfasste drei Prototypversionen (V1--V3), jeweils durch Gap-Analysen der FR/NFR-Erfüllung getriggert (Tabelle~\ref{tab:iterationen-uebersicht}).
+
+\begin{table}[htbp]
+\centering
+\caption{Übersicht der Prototypversionen im Design Cycle}
+\label{tab:iterationen-uebersicht}
+\small
+\begin{tabular}{|c|p{2.5cm}|p{3.5cm}|p{2cm}|p{3cm}|}
+\hline
+\textbf{Ver.} & \textbf{Schwerpunkt} & \textbf{Technologie} & \textbf{Kompon.} & \textbf{Adressierter Gap} \\
+\hline
+V1 & Web-Assessment, Scoring, Radar-Chart & Next.js~14, FastAPI, Recharts & 7~FE / 5~BE & FR1--FR3, FR5--FR6 \\
+\hline
+V2 & RAG-Chat, Mehrsprachigkeit & +~RAG (Keyword), OpenAI/ Anthropic, i18n & 12~FE / 7~BE & NFR1, NFR4, NFR5 \\
+\hline
+V3 & Compliance-Reporting, Semantisches RAG, KI-Analyse & +~Mistral Embed (1024-dim), Heatmaps, RACI, Roadmap, SSE-Multi-Event, Benchmarks & 20~FE / 12~BE & FR4, FR6, NFR1, NFR2, NFR4 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Version~1: Webbasiertes Assessment-Tool}
+\label{subsec:iteration-v1}
+
+V1 demonstrierte die konzeptionelle Tragfähigkeit des Frameworks als Zwei-Schichten-Architektur: ein React-Frontend (Next.js~14, TypeScript, Tailwind~CSS) und eine FastAPI-REST-API (Python~3.11+). Die Wissensbasis -- alle sechs Dimensionen, 31~Kriterien und 155~Reifegrad-Indikatoren -- wurde als statische JSON-Datei abgelegt. Das Frontend implementierte einen siebenstufigen Assessment-Wizard (Scoping + sechs Dimensionen) mit Score-Buttons (1--5, N/A) pro Kriterium. Das Ergebnis-Dashboard zeigte Gesamtscore, Radar-Chart, Dimensionsscore-Tabelle und priorisierte Gap-Analyse. \textbf{Iterations-Trigger V1$\rightarrow$V2:} Die systematische Gap-Analyse nach Abschluss von V1 identifizierte drei Defizite, die den Übergang zu V2 auslösten: (1)~Verständlichkeit (NFR1) -- bewertende Personen erhielten keine Kontexthilfe bei der Interpretation der Reifegrad-Indikatoren; (2)~Flexibilität (NFR4) -- Empfehlungen waren statisch und berücksichtigten weder Branche noch Organisationsgröße; (3)~Handlungsorientierung (FR4) -- vordefinierte Textbausteine boten keine ausreichende Tiefe für operative Maßnahmenplanung.
+
+
+\subsection{Version~2: RAG-Integration und Mehrsprachigkeit}
+\label{subsec:iteration-v2}
+
+V2 schloss die Gaps bei NFR1, NFR4 und NFR5 durch Integration von Retrieval-Augmented Generation (RAG). Die Entscheidung für RAG folgt aus der Abwägung dreier Alternativen:
+
+\textit{Fine-Tuning} würde potenziell höhere Antwortqualität erzielen, scheidet aber aus drei Gründen aus. Die dynamische Wissensbasis (ausstehende CEN/CENELEC-Standards \autocite{Kilian2025}, Delegierte Rechtsakte) erfordert regelmäßige Aktualisierungen, die jeweils ein Re-Training auslösen würden. Zudem geht die \textit{Quellennachvollziehbarkeit} verloren -- ein erhebliches Defizit für ein Instrument, das Nachvollziehbarkeit als Kernwert beansprucht (NFR3). Schließlich fehlten die benötigten Compute-Ressourcen und kuratierten Trainingsdaten.
+
+\textit{Reines Prompt Engineering} stößt an Token-Limitierungen: Der vollständige Fachkorpus übersteigt die Kontextfenstergröße gängiger LLMs, und ohne selektive Relevanzfilterung sinkt die Antwortqualität.
+
+\textit{RAG} \autocite{Lewis2020} kombiniert die Vorteile beider Ansätze: Die Wissensbasis bleibt externalisiert und aktualisierbar, die Retrieval-Stufe ermöglicht relevanzbasierte Selektion. Der ausschlaggebende Vorteil liegt in der \textit{inhärenten Quellennachvollziehbarkeit}: Jede Antwort lässt sich auf konkrete Normpassagen zurückführen \autocite{Barnett2024}. Das adressiert das in Abschnitt~\ref{subsec:beitrag} eingeführte Meta-Vertrauensproblem unmittelbar. Die RAG-Engine verwendete regelbasiertes Keyword-Retrieval mit Top-$k$~Chunks (max.~2.500~Token) im LLM-Prompt. Ein SSE-Streaming-Chat-Endpunkt ermöglichte kontextsensitive Governance-Beratung über zwei LLM-Provider (OpenAI, Anthropic). Parallel wurde Mehrsprachigkeit (DE/EN/FR) implementiert.
+
+\textbf{Iterations-Trigger V2$\rightarrow$V3:} Die Gap-Analyse identifizierte vier verbleibende Defizite: (1)~fehlende strukturierte Compliance-Berichte (FR4); (2)~Gap-Analyse nur auf Dimensionsebene (FR6); (3)~kein PDF-Export (NFR2); (4)~keine risikokategorieabhängigen Schwellenwerte.
+
+
+\subsection{Version~3: Compliance-Reporting, Semantisches RAG und KI-Analyse}
+\label{subsec:iteration-v3}
+
+V3 erweiterte den Prototyp um Compliance-Reporting und KI-gestützte Analyse. Die Version wurde durch drei Designentscheidungen geprägt: (1)~die Migration von regelbasiertem zu semantischem RAG, (2)~eine kontextsensitive Dimensionsanalyse und (3)~eine operative Tiefenanalyse pro Governance-Lücke.
+
+Das Compliance-Reporting umfasst eine Heatmap aller 31~Kriterien, einen Artikel-Compliance-Status nach Ampellogik ($\geq 3{,}5$: konform; $2{,}0$--$3{,}5$: teilweise konform; $< 2{,}0$: nicht konform), eine RACI-Matrix für Zuständigkeiten und eine Gantt-artige Roadmap mit drei Priorisierungsphasen. Ergänzend implementiert V3 risikokategorieabhängige Gap-Schwellenwerte ($\theta_{\text{hoch}} = 3{,}0$, $\theta_{\text{begrenzt}} = 2{,}5$, $\theta_{\text{minimal}} = 2{,}0$), Praxisbeispiele für alle 31~Kriterien auf Stufe~2 und~3, konfigurierbare Gewichtungsregler und einen clientseitigen PDF-Export.
+
+Als LLM- und Embedding-Provider dient Mistral~AI. Die Wahl begründet sich durch drei Faktoren: einheitliche Nutzung eines Providers (semantische Kohärenz zwischen Retrieval und Generierung), europäische Datensouveränität (Mistral~AI unterliegt als französisches Unternehmen direkt dem EU~AI~Act) und hinreichende Modellqualität für den Anwendungszweck.
+
+Die hybride Retrieval-Strategie kombiniert zwei Stufen. \textit{Deterministisches Retrieval} stellt sicher, dass dimensionsbezogene Kriterien-Chunks stets im Prompt-Kontext verfügbar sind. \textit{Semantisches Retrieval} ergänzt die ähnlichsten Thesis-Passagen als Erklärungskontext. Damit sind regulatorisch verbindliche Inhalte unabhängig von der Retrieval-Qualität verfügbar \autocite{Barnett2024}. Die technischen Parameter und Retrieval-Details sind in Anhang~\ref{app:rag-injektionspunkte} dokumentiert.
+
+Nach Abschluss jeder Dimension generiert das System eine Streaming-Analyse mit Konsistenzprüfung, regulatorischer Kontextualisierung und Stärken-/Schwächen-Identifikation. Für Dimensionen unterhalb des Schwellenwerts werden strukturierte Maßnahmenpläne mit kurzfristigen (0--3~Monate), mittelfristigen (3--6~Monate) und langfristigen (6--12~Monate) Handlungsempfehlungen erstellt, branchenspezifisch kontextualisiert.
+
+Eine Abstraktionsschicht entkoppelt die Analysefunktionen vom LLM-Provider: Mistral, OpenAI und Anthropic sind zur Laufzeit austauschbar. Dies sichert die Funktionsfähigkeit bei Providerausfällen (NFR2) und ermöglicht die Migration zu lokalen Modellen für datensensible Szenarien (vgl. Abschnitt~\ref{subsec:kritische-analyse}, T3).
+
+Ein kontextbewusster KI-Assistent begleitet den gesamten Assessment-Prozess. Er erkennt die aktuelle Phase (Scoping, Bewertung, Ergebnisinterpretation) und injiziert die jeweils relevanten Kontextdaten in den RAG-Prompt. V3 implementiert zudem eine vierstufige Defense-in-Depth-Strategie (Details in Anhang~\ref{app:sicherheit}) und synthetische Benchmarkdaten für sechs Branchenkontexte, die eine vergleichende Einordnung der Assessment-Ergebnisse ermöglichen.
+
+Eine vierte Version mit konversationsbasierter Assessment-Führung befindet sich in Entwicklung und liegt außerhalb des Scope dieser Arbeit; sie wird in Abschnitt~\ref{sec:ausblick} als Weiterentwicklungsrichtung eingeordnet. Die Benutzeroberfläche des finalen Prototyps ist in Anhang~\ref{app:prototyp} mit 14~Screenshots dokumentiert, die den vollständigen Assessment-Workflow abbilden (Abb.~\ref{fig:screenshot-dashboard}--\ref{fig:screenshot-i18n}).
+
+
+\section{Technische Architektur des finalen Prototyps}
+\label{sec:technische-architektur}
+
+\subsection{Systemarchitektur}
+\label{subsec:systemarchitektur}
+
+Der finale Prototyp (V3) folgt einer entkoppelten Client-Server-Architektur (Abbildung~\ref{fig:systemarchitektur}): Frontend (Next.js~14, 20~Komponenten) kommuniziert über REST und SSE mit dem Backend (FastAPI, 12~Endpunkte), das Embedding-Engine, RAG-Pipeline und LLM-Abstraktion orchestriert.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=1cm and 2cm,
+    box/.style={rectangle, draw=black!70, fill=blue!8, rounded corners=3pt, minimum height=1cm, minimum width=3cm, text width=2.8cm, align=center, font=\sffamily\scriptsize},
+    api/.style={rectangle, draw=black!50, fill=green!10, rounded corners=3pt, minimum height=0.7cm, minimum width=2.5cm, align=center, font=\sffamily\tiny},
+    arrow/.style={-{Stealth[length=2mm]}, thick, black!60}
+]
+\node[box, fill=blue!15] (fe) {Frontend\\Next.js 14 + TS\\20 Komponenten};
+\node[box, fill=green!15, right=3cm of fe] (be) {Backend\\FastAPI + Python\\12 Endpunkte};
+\node[box, fill=orange!15, right=3cm of be] (llm) {Mistral AI\\LLM + Embeddings};
+\node[api, below=0.6cm of be] (rag) {RAG-Engine\\(Hybrid-Retrieval)};
+\node[api, below=0.3cm of rag] (emb) {Embedding-Engine\\(1024-dim Vektoren)};
+\node[api, below=0.3cm of emb] (kb) {Wissensbasis\\(31 Kriterien, JSON)};
+\draw[arrow] (fe) -- node[above, font=\sffamily\tiny] {REST + SSE} (be);
+\draw[arrow] (be) -- node[above, font=\sffamily\tiny] {API} (llm);
+\draw[arrow, dashed] (be) -- (rag);
+\draw[arrow, dashed] (rag) -- (emb);
+\draw[arrow, dashed] (emb) -- (kb);
+\end{tikzpicture}
+\caption{Systemarchitektur des finalen Prototyps (V3)}
+\label{fig:systemarchitektur}
+\end{figure}
+
+Die zwölf Endpunkte unterteilen sich in sieben synchrone REST-Endpunkte für deterministische Operationen (Wissensbasis, Scoring, Benchmarks, Status, Kontexthilfe) und fünf asynchrone SSE-Streaming-Endpunkte für KI-Analysen (vollständige Dokumentation in Anhang~\ref{app:endpunkte}). Die RAG-Engine wird an vier Stellen mit kontextadaptierter Retrieval-Tiefe injiziert (Anhang~\ref{app:rag-injektionspunkte}).
+
+
+\subsection{Fallback-Strategie und Sicherheitsarchitektur}
+\label{subsec:fallback}
+
+Eine dreistufige Fallback-Strategie gewährleistet kontrollierte Degradation: (1)~\textit{Vollbetrieb} -- alle APIs verfügbar, semantisches RAG und KI-Analyse aktiv; (2)~\textit{Strukturierter Fallback} -- bei Embedding-API-Ausfall: deterministische Kriterien-Chunks und Dimensionsbeschreibungen; (3)~\textit{Deterministischer Betrieb} -- bei LLM-API-Ausfall: Scoring, Gap-Analyse, Visualisierungen und PDF-Export funktionieren vollständig, KI-Funktionen deaktiviert. Die Sicherheitsarchitektur implementiert eine Defense-in-Depth-Strategie mit Prompt-Injection-Erkennung (16~vorkompilierte Regex-Muster), Eingabevalidierung, Token-Management und CORS-Beschränkung \autocite{Perez2022} (Details in Anhang~\ref{app:sicherheit}).
+
+
+\subsection{Technologie-Stack}
+\label{subsec:tech-stack}
+
+\begin{table}[htbp]
+\centering
+\caption{Technologie-Stack des finalen Prototyps}
+\label{tab:tech-stack}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Komponente} & \textbf{Technologie} & \textbf{Version} \\
+\hline
+Frontend-Framework & Next.js (React) & 14 \\
+Styling & Tailwind CSS & 3.4+ \\
+Sprache (Frontend) & TypeScript & 5.x \\
+Backend-Framework & FastAPI & 0.100+ \\
+Sprache (Backend) & Python & 3.11+ \\
+LLM-Provider & Mistral AI & mistral-small-latest \\
+Embedding-Modell & mistral-embed & 1024-dim \\
+Visualisierung & Recharts / SVG & -- \\
+PDF-Export & html2pdf.js & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+Tabelle~\ref{tab:versionen-vergleich} zeigt die quantitative Entwicklung: Frontend wuchs von 7 auf 20~Komponenten, das Backend von 320 auf 2.294~Codezeilen.
+
+\begin{table}[htbp]
+\centering
+\caption{Quantitative Entwicklung des Prototyps über drei Versionen}
+\label{tab:versionen-vergleich}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Metrik} & \textbf{V1} & \textbf{V2} & \textbf{V3} \\
+\hline
+Frontend-Komponenten & 7 & 12 & 20 \\
+Backend-Endpunkte & 5 & 7 & 12 \\
+davon SSE-Streaming & 0 & 1 & 5 \\
+Backend-Codezeilen (ca.) & 320 & 820 & 2.294 \\
+Frontend-Codezeilen (ca.) & 650 & 2.800 & 8.838 \\
+RAG-Strategie & -- & Keyword & Semantisch (1024-dim) \\
+LLM-Provider & -- & 2 & 3 \\
+Sprachen & 1 (DE) & 3 (DE/EN/FR) & 3 (DE/EN/FR) \\
+Visualisierungstypen & 1 & 1 & 9 \\
+PDF-Export & Nein & Nein & Ja \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Kritische Analyse}
+\label{subsec:kritische-analyse}
+
+Die kritische Analyse unterscheidet Limitationen der wissenschaftlichen Validität (M) von solchen der praktischen Einsatzfähigkeit (T). Details dokumentiert Anhang~\ref{app:prototyp} (Tabelle~\ref{tab:mankos-uebersicht}).
+
+\textbf{Wissenschaftliche Limitationen (M1--M5):} Die RAG-Implementierung (M1) verzichtet auf Cross-Encoder-Reranking und nutzt heuristische Schwellenwerte \autocite{Barnett2024}. Die entwicklergesteuerte Gap-Analyse (M2) birgt Confirmation-Bias-Risiko, da Entwickler und Evaluator identisch sind. Gewichtungen, Schwellenwerte und RAG-Parameter (M3) sind heuristisch statt empirisch kalibriert. Die Branchenbenchmarks (M4) sind rein illustrativ, nicht empirisch validiert. Die normative Operationalisierung (M5) hängt von ausstehenden CEN/CENELEC-Standards ab \autocite{Kilian2025}.
+
+\textbf{Tool-Limitationen (T1--T7):} Keine persistente Datenhaltung (T1), daher kein longitudinales Tracking. Keine Authentifizierung oder Mandantenfähigkeit (T2). Externe LLM-API-Abhängigkeit (T3) schränkt den Einsatz in datensensiblen Umgebungen ein. Kein Rate-Limiting (T4). Eingeschränkte Retrieval-Qualität bei ambigen Anfragen (T5). Keine parallele Bewertung mehrerer KI-Systeme (T6). KI-Funktionen erfordern Internetverbindung (T7).
+
+Die DSR-Limitationen (M) werden in Kapitel~\ref{chap:diskussion} kritisch reflektiert; die Tool-Limitationen (T) bilden den Ausgangspunkt der Weiterentwicklungs-Roadmap in Kapitel~\ref{chap:fazit}.

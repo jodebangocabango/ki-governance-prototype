@@ -1,0 +1,215 @@
+% Anhang G: Evaluationsleitfaden für die strukturierte Artefakt-Evaluation (20 Min)
+
+\addchap{Anhang G: Evaluationsleitfaden}
+\label{app:interviewleitfaden}
+
+Der folgende Evaluationsleitfaden dient der strukturierten Artefakt-Evaluation des KI-Governance-Bewertungsframeworks und des zugehörigen Prototyps. Die Evaluation erfolgt im Rahmen einer \textbf{begleiteten Prototyp-Demonstration} mit einer geplanten Dauer von \textbf{20~Minuten}. Der Evaluationsleiter demonstriert den Prototyp live und begleitet den Experten/die Expertin durch das Assessment. Im Unterschied zu einem formalen Experteninterview steht nicht die Erhebung von Expertenwissen im Vordergrund, sondern die systematische Bewertung des Artefakts aus der jeweiligen Fachperspektive der evaluierenden Person.
+
+\vspace{0.5cm}
+\noindent\textbf{Evaluationsdesign:} Die Evaluation kombiniert eine Live-Demonstration des Prototyps (Stufe~1) mit einer standardisierten Bewertung anhand von sechs DSR-Evaluationskriterien (Stufe~2) und einer rollenspezifischen Vertiefung (Stufe~3). Die Kriterien basieren auf Hevner et al. \autocite{Hevner2004} und dem FEDS-Framework \autocite{Venable2016}.
+
+% ============================================================
+\section*{Teil A: Einstieg und Kontext (1--2~Min)}
+% ============================================================
+
+\textbf{Einleitung:} \textit{``Vielen Dank für Ihre Zeit. Im Rahmen meiner Masterarbeit habe ich ein KI-Governance-Bewertungsframework entwickelt, das Organisationen bei der Einschätzung ihrer Governance-Reife im Hinblick auf den EU AI Act unterstützt. Das Framework umfasst sechs Bewertungsdimensionen, abgeleitet aus den Art.~9--15, ein fünfstufiges Reifegradmodell und einen webbasierten Prototyp mit KI-Unterstützung. Ich zeige Ihnen gleich den Prototyp und bitte Sie anschließend um Ihre Einschätzung.''}
+
+\textbf{Demografische Einordnung:}
+\begin{enumerate}
+    \item Welche Rolle bekleiden Sie in Ihrer Organisation? \\
+    \textit{(z.\,B. Governance-Lead, Compliance-Manager, Data Scientist, KI-Berater)}
+    \item Wie vertraut sind Sie mit den Anforderungen des EU AI Acts? \\
+    \textit{Skala: 1 = gar nicht vertraut \hspace{1cm} 5 = sehr vertraut} \hfill $\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5
+\end{enumerate}
+
+% ============================================================
+\section*{Teil B: Prototyp-Demonstration (6--7~Min)}
+% ============================================================
+
+\textbf{Ablauf:} Der Evaluationsleiter führt den Prototyp live vor und erklärt parallel die zugrunde liegenden Framework-Konzepte. Der/die Expert:in beobachtet und kann jederzeit Zwischenfragen stellen.
+
+\textbf{Vorbereitung:} Der Prototyp ist vorab mit einem vorbereiteten Assessment-Szenario (Kreditscoring, Hochrisiko) befüllt, sodass die Ergebnisseite direkt demonstriert werden kann. Für die Assessment-Phase wird eine Dimension (D1) live bewertet.
+
+\begin{enumerate}
+    \item \textbf{Scoping-Phase (1~Min):} Kurze Demonstration der Systemerfassung (Systemname, Risikokategorie, Branche, Organisationsgröße). Erläuterung des risikobasierten Ansatzes.
+
+    \item \textbf{Assessment einer Dimension -- D1 Risikomanagement (2--3~Min):}
+    \begin{itemize}
+        \item Vorstellung der Kriterien D1.1--D1.6 mit Reifegrad-Indikatoren
+        \item Live-Bewertung von 2--3 Kriterien auf der 5-Stufen-Skala
+        \item Abruf der KI-gestützten Dimensionsanalyse mit Konsistenzprüfung
+        \item Kurze Demonstration des kontextuellen KI-Assistenten (Floating Panel)
+    \end{itemize}
+
+    \item \textbf{Ergebnisseite (2--3~Min):}
+    \begin{itemize}
+        \item Executive Dashboard: Gesamtscore, Reifegrad-Label, Ampelfarben
+        \item Detailansicht: Radar-Chart, dimensionsspezifische Scores
+        \item Gap-Analyse mit Schweregrad-Einstufung (kritisch/moderat/gering)
+        \item Executive Summary (KI-generiert, strukturiert)
+        \item KI-Maßnahmenplan für eine Gap-Dimension (kurz zeigen)
+        \item PDF-Export (kurz demonstrieren)
+    \end{itemize}
+\end{enumerate}
+
+% ============================================================
+\section*{Teil C: Standardisierte Bewertung (5~Min)}
+% ============================================================
+
+\textbf{Instruktion:} \textit{``Bitte bewerten Sie die folgenden sechs Aussagen zum Framework und Prototyp auf einer Skala von 1 (stimme gar nicht zu) bis 5 (stimme voll zu). Begründen Sie Ihre Bewertung bitte kurz, insbesondere bei Werten $\leq$ 3.''}
+
+\vspace{0.3cm}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.5cm}|p{2.8cm}|p{7cm}|p{2.2cm}|}
+\hline
+\textbf{Nr.} & \textbf{Kriterium} & \textbf{Aussage} & \textbf{Bewertung} \\
+\hline
+E1 & Nützlichkeit \newline (Utility) &
+Das Framework und der Prototyp bieten einen praxisrelevanten Mehrwert für die Bewertung und Verbesserung der KI-Governance in Organisationen. &
+$\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5 \\
+\hline
+E2 & Vollständigkeit \newline (Completeness) &
+Die sechs Dimensionen (D1--D6) decken die wesentlichen Governance-Bereiche der Art.~9--15 des EU AI Acts vollständig ab. &
+$\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5 \\
+\hline
+E3 & Konsistenz \newline (Consistency) &
+Die Dimensionen, Reifegrade und Bewertungskriterien sind logisch aufgebaut und widerspruchsfrei. &
+$\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5 \\
+\hline
+E4 & Verständlichkeit \newline (Clarity) &
+Die Bewertungskriterien und Reifegradstufen sind klar formuliert und auch ohne tiefes KI-Governance-Spezialwissen verständlich. &
+$\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5 \\
+\hline
+E5 & Regulatorische \newline Konformität &
+Das Framework bildet die Anforderungen des EU AI Acts (Art.~9--15) korrekt und angemessen ab. &
+$\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5 \\
+\hline
+E6 & Praxistauglichkeit \newline (Feasibility) &
+Das Framework ist in einem organisationalen Kontext mit vertretbarem Aufwand anwendbar und in bestehende Prozesse integrierbar. &
+$\square$~1 $\square$~2 $\square$~3 $\square$~4 $\square$~5 \\
+\hline
+\end{tabular}
+\caption{Evaluationskriterien mit Likert-Skala (1--5)}
+\label{tab:evaluation-likert}
+\end{table}
+
+\textbf{Vertiefungsfrage:} \textit{``Gibt es Dimensionen oder Kriterien, die Sie vermissen oder als überflüssig erachten?''}
+
+% ============================================================
+\section*{Teil D: Offene Rückmeldung, rollenspezifische Vertiefung und Abschluss (5~Min)}
+% ============================================================
+
+\textbf{D.1 -- Allgemeine Rückmeldung (alle Evaluierenden):}
+\begin{enumerate}
+    \item \textit{``Was sind die größten Stärken des Frameworks und Prototyps aus Ihrer Sicht?''}
+    \item \textit{``Welche einzelne Verbesserung hätte den größten Impact für den praktischen Einsatz?''}
+    \item \textit{``Würden Sie das Framework in Ihrer Organisation oder bei Kunden empfehlen? Warum / warum nicht?''}
+\end{enumerate}
+
+\vspace{0.3cm}
+\textbf{D.2 -- Rollenspezifische Vertiefungsfrage} (je eine Frage, abgestimmt auf das Fachprofil):
+
+\begin{description}
+    \item[E-A: KI-Governance / Regulatory Affairs:] \textit{``Inwieweit bildet das Framework die regulatorische Realität ab, die Sie bei der Begleitung von Organisationen erleben -- und wo sehen Sie die größte Diskrepanz zwischen Framework-Anforderung und organisationaler Umsetzbarkeit?''}
+
+    \item[E-B: Compliance-Management / GRC:] \textit{``Wie würden Sie die Ergebnisse des Frameworks in einen bestehenden Compliance-Nachweis integrieren -- z.\,B. für eine Konformitätsbewertung nach Art.~43 oder ein internes Audit?''}
+
+    \item[E-C: KI-Forschung / Responsible AI:] \textit{``Sehen Sie konzeptionelle Lücken in der Operationalisierung -- insbesondere bei Dimensionen, in denen die Übersetzung ethischer Prinzipien in messbare Reifegrad-Indikatoren besonders herausfordernd ist?''}
+
+    \item[E-D: Data Science / ML-Engineering:] \textit{``Sind die technischen Governance-Anforderungen (insbesondere D6 Technische Robustheit und D2 Data Governance) aus der Perspektive eines KI-Entwicklerteams realistisch bewertbar -- und wo fehlen Ihnen technische Metriken oder Nachweisformen?''}
+
+    \item[E-E: Management / Strategie:] \textit{``Liefert das Assessment-Ergebnis (Gesamtscore, Gap-Analyse, Maßnahmenplan) die Informationen, die Sie als Entscheider/in für eine Priorisierung von Governance-Investitionen benötigen -- und was fehlt Ihnen für eine strategische Entscheidungsgrundlage?''}
+
+    \item[E-F: Datenschutz / DPO:] \textit{``Wie bewerten Sie die Abgrenzung und Komplementarität zwischen den Framework-Dimensionen und bestehenden DSGVO-Compliance-Anforderungen -- insbesondere bei D2 (Data Governance) und D4 (Transparenz)?''}
+
+    \item[E-G: KI-Governance / Beratung (KMU-Fokus):] \textit{``Ist das Framework mit seinen 31~Kriterien und 5~Reifegradstufen für eine KMU-Organisation mit begrenzten Governance-Ressourcen handhabbar -- und welche Vereinfachungen wären für Ihren Beratungskontext nötig?''}
+
+    \item[E-H: Compliance / Audit:] \textit{``Inwieweit eignen sich die Reifegrad-Indikatoren als objektiv prüfbare Audit-Kriterien -- und welche Evidenztypen (Dokumente, Prozessnachweise, technische Logs) würden Sie für eine externe Prüfung erwarten?''}
+\end{description}
+
+\vspace{0.3cm}
+\textbf{Abschluss:} Dank an den/die Expert:in. Hinweis auf die Möglichkeit zur Ergebniseinsicht nach Abschluss der Arbeit.
+
+% ============================================================
+\section*{Zeitplan-Übersicht}
+% ============================================================
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Teil} & \textbf{Dauer} & \textbf{Inhalt} \\
+\hline
+A: Einstieg & 1--2~Min & Kontext, Rolle, AI-Act-Vertrautheit \\
+B: Demonstration & 6--7~Min & Scoping, Assessment (D1), Ergebnisse (live) \\
+C: Bewertung & 5~Min & E1--E6 Likert + Vertiefungsfrage \\
+D: Offene Fragen + Vertiefung & 5~Min & Stärken, Verbesserung, Empfehlung, rollenspez. Frage \\
+\hline
+\textbf{Gesamt} & \textbf{17--19~Min} & \textit{Zielwert: 20~Min} \\
+\hline
+\end{tabular}
+\caption{Zeitplan der strukturierten Artefakt-Evaluation}
+\label{tab:evaluation-zeitplan}
+\end{table}
+
+
+% ============================================================
+\section*{Demonstrationsplan: Prototyp-Funktionen für die Artefakt-Evaluation}
+% ============================================================
+
+Die folgende Tabelle listet die in der Evaluationssitzung zu demonstrierenden Prototyp-Funktionen, geordnet nach Priorität. \textbf{Must-Show}-Funktionen werden in jeder Sitzung gezeigt; \textbf{If-Time}-Funktionen werden bei verbleibender Zeit oder auf Nachfrage demonstriert.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|p{4cm}|p{5.5cm}|c|}
+\hline
+\textbf{Nr.} & \textbf{Funktion} & \textbf{Was wird gezeigt} & \textbf{Priorität} \\
+\hline
+F1 & Scoping-Phase & Systemname, Risikokategorie (Hochrisiko), Branche, Größe & Must-Show \\
+\hline
+F2 & Kriterien-Bewertung (D1) & 2--3 Kriterien mit Level-Indikatoren, Score-Auswahl (1--5) & Must-Show \\
+\hline
+F3 & KI-Dimensionsanalyse & Konsistenzprüfung der D1-Scores, Rückfragen, SSE-Streaming & Must-Show \\
+\hline
+F4 & KI-Assistent (Floating Panel) & Eine kontextuelle Frage stellen, RAG-fundierte Antwort & Must-Show \\
+\hline
+F5 & Executive Dashboard & Gesamtscore, Reifegrad, Ampel-Visualisierung & Must-Show \\
+\hline
+F6 & Radar-Chart & Sechs Dimensionen auf einen Blick, Stärken/Schwächen & Must-Show \\
+\hline
+F7 & Gap-Analyse & Schweregrad-Badges (kritisch/moderat), Priorisierung & Must-Show \\
+\hline
+F8 & Executive Summary & KI-generierte Zusammenfassung mit Stärken + Handlungsbedarf & Must-Show \\
+\hline
+F9 & KI-Maßnahmenplan & Deep Analysis für eine Gap-Dimension (z.\,B. D4 Transparenz) & Must-Show \\
+\hline
+F10 & PDF-Export & Generierung und kurzer Blick auf das PDF & Must-Show \\
+\hline
+F11 & Dimension-Navigation & Vor-/Zurück zwischen Dimensionen, Score-Korrektur & If-Time \\
+\hline
+F12 & Benchmark-Vergleich & Branchenvergleich (z.\,B. Finanzsektor) & If-Time \\
+\hline
+F13 & Mehrsprachigkeit & Umschaltung DE $\leftrightarrow$ EN & If-Time \\
+\hline
+F14 & Session-Persistenz & Browser-Reload zeigt wiederhergestellten Zustand & If-Time \\
+\hline
+\end{tabular}
+\caption{Demonstrationsplan: Prototyp-Funktionen für die Artefakt-Evaluation}
+\label{tab:demo-funktionen}
+\end{table}
+
+\textbf{Vorbereitung vor jeder Evaluationssitzung:}
+\begin{itemize}
+    \item Prototyp starten (Backend + Frontend) und verifizieren, dass KI-Funktionen verfügbar sind (\texttt{/api/agent/status})
+    \item Ein vorbereitetes Assessment-Szenario (Kreditscoring, Hochrisiko, Finanzsektor) bis zur Ergebnisseite durchspielen und den Zustand im Browser persistieren
+    \item Für die Live-Demo: Eine neue Session starten, um Scoping und D1-Bewertung frisch zu zeigen
+    \item Zwischen den Sessions: Browser-Cache leeren, um sauberen Zustand sicherzustellen
+    \item Backup-Plan bei API-Ausfall: Screenshots der Ergebnisseite und KI-Analysen vorbereiten
+\end{itemize}

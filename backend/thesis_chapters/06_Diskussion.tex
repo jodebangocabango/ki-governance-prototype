@@ -1,0 +1,225 @@
+% Kapitel 6: Diskussion
+
+\chapter{Diskussion}
+\label{chap:diskussion}
+
+Dieses Kapitel ordnet die Ergebnisse in den Forschungskontext ein. Abschnitt~\ref{sec:beantwortung-forschungsfrage} beantwortet die Forschungsfrage, Abschnitt~\ref{sec:wissenschaftlicher-beitrag-diskussion} diskutiert den wissenschaftlichen Beitrag, Abschnitt~\ref{sec:praktischer-nutzen} bewertet den praktischen Nutzen und Abschnitt~\ref{sec:limitationen} reflektiert die Limitationen.
+
+
+\section{Beantwortung der Forschungsfrage}
+\label{sec:beantwortung-forschungsfrage}
+
+Die zentrale Forschungsfrage lautete: \textit{Wie kann ein praxisorientiertes Bewertungsframework gestaltet werden, das die regulatorischen Anforderungen des EU AI Acts (insbesondere Art.~9--15) in operationalisierbare Governance-Dimensionen überführt und Organisationen eine systematische Bewertung und Verbesserung ihrer KI-Governance ermöglicht?}
+
+\textbf{Teilfrage~1} (Governance-Dimensionen und Bewertungskriterien): Die qualitative Inhaltsanalyse identifizierte aus 187~kodierten Textstellen sechs Governance-Dimensionen (D1--D6) und 31~Bewertungskriterien, die die Art.~9--15 vollständig abbilden. Zwei induktiv gewonnene Querschnittskategorien (Q1~Organisationale Verankerung, Q2~Kompetenzentwicklung) erfassen Governance-Aspekte, die der Normtext nicht explizit nennt, die aber operativ unverzichtbar sind. Dieser Befund stimmt mit Ryan und Stahl überein: Rein regulatorische Betrachtungen bilden die organisationale Realität unzureichend ab \autocite{Ryan2020}. Die ungleiche Codierungsverteilung (K1: 42 vs. K6: 19) spiegelt die unterschiedliche Detailtiefe der Artikel wider, keine Methodenschwäche -- Art.~9 ist mit sieben Absätzen der umfangreichste. Die höhere Codierungsdichte führt zu mehr Subkategorien und damit mehr Kriterien pro Dimension (D1: 6 vs. D2--D6: je 5).
+
+\textbf{Teilfrage~2} (Methodisch fundierte Gestaltung): Die Dreiebenen-Architektur (Dimensionen, Kriterien, Reifegrade) balanciert regulatorische Präzision und Handhabbarkeit \autocite{Becker2009}. Der iterative DSR-Prozess \autocite{Peffers2007} mit drei Prototypversionen zeigt die Leistungsfähigkeit des Design-Cycle-Ansatzes: V1 validierte die konzeptionelle Tragfähigkeit (FR1--FR3, FR5--FR6), V2 integrierte RAG-Wissensunterstützung (NFR1, NFR5), V3 erweiterte Compliance-Reporting, semantisches Retrieval und kontextsensitive KI-Analyse (FR4, FR6, NFR1, NFR2, NFR4). Nach der Beitragstypologie von Gregor und Hevner \autocite{Gregor2013} handelt es sich um einen \textit{Exaptation}-Beitrag -- die Übertragung etablierter Lösungen auf neue Problemdomänen (vgl. Abschnitt~\ref{sec:forschungsdesiderat}).
+
+\textbf{Teilfrage~3} (Expertenbewertung): Die vierstufige Evaluation bestätigt die technische Funktionalität (FR1--FR5 erfüllt, FR6 teilweise; NFR5 teilweise), die regulatorische Vollständigkeit (Coverage-Matrix: 100\,\%) und die Differenzierungsfähigkeit (zwei Szenarien mit unterschiedlichen Profilen). Die Artefakt-Evaluation ($n = 8$, vgl. Abschnitt~\ref{sec:evaluationsergebnisse}) zeigt positive Werte bei Nützlichkeit und Konsistenz, aber den in Abschnitt~\ref{sec:evaluationsergebnisse} beschriebenen Zielgruppeneffekt bei Verständlichkeit und Praxistauglichkeit. Die Coverage-Analyse validiert auf Subkategorienebene -- die Vollständigkeit der Kriterienabdeckung \textit{innerhalb} der Dimensionen folgt nicht trivial aus der deduktiven Dimensionsableitung.
+
+\textbf{Zusammenfassende Einschätzung:} Die Evidenzlage ist über die drei Teilfragen ungleichmäßig verteilt.
+
+Die regulatorische Vollständigkeit (Teilfrage~1) ist am stärksten belegt: Die Inhaltsanalyse ist dokumentiert, der Kodierleitfaden publiziert, die Pilotkodierung transparent. Die Einschränkung durch die Einzelforscherkodierung (87\,\% Intrakodierer-Übereinstimmung) betrifft Grenzfälle zwischen Kategorien, nicht die Kernstruktur. Ebenfalls solide belegt ist die konstruktive Dimension (Teilfrage~2): Drei Prototypiterationen mit expliziten Gap-Analysen dokumentieren einen nachvollziehbaren DSR-Prozess.
+
+Die externe Validierung (Teilfrage~3) ruht auf der schwächsten Basis. Die analytischen Methoden (Coverage-Matrix, Feature Comparison) sind robust. Die empirische Evaluation ($n = 8$) liefert qualitative Hinweise, jedoch keine generalisierbaren Befunde. Die Stichprobe reicht aus, um systematische Schwachstellen zu identifizieren (wie den Zielgruppeneffekt bei E4), nicht aber, um Praxistauglichkeit statistisch zu belegen. Praxistauglichkeit bleibt daher eine plausible, aber empirisch noch nicht gesicherte Annahme.
+
+
+\section{Wissenschaftlicher Beitrag und Einordnung}
+\label{sec:wissenschaftlicher-beitrag-diskussion}
+
+\textbf{Artefakt-Beitrag:} Das Framework ist ein \textit{Modell} mit prototypischer \textit{Instanziierung} nach der DSR-Artefakttaxonomie von March und Smith \autocite{MarchSmith1995}. Es verbindet etablierte Konzepte -- Reifegradmodellierung \autocite{Becker2009} und RAG-Unterstützung \autocite{Lewis2020} -- zu einem Instrument, das die Lücke zwischen regulatorischen Anforderungen und operativer Governance-Praxis adressiert. Die in Abschnitt~\ref{sec:reflexion} diskutierte Trennung zwischen deterministischem Scoring und nondeterministischer KI-Unterstützung bildet ein übertragbares Entwurfsmuster für regulatorisch sensible Kontexte.
+
+\textbf{Methodischer Beitrag:} Die Integration der qualitativen Inhaltsanalyse in den DSR-Prozess bietet ein übertragbares Template für regulierungsbezogene Bewertungsinstrumente. Der Mehrwert zeigt sich auf mehreren Ebenen: Die dokumentierte Kodierung macht die Anforderungsherleitung nachvollziehbar -- bei rein literaturbasierten Analysen bleibt die Selektion oft implizit. Der deduktiv-induktive Hybridansatz identifiziert auch nicht explizit normierte Governance-Aspekte (Q1, Q2). Die Verteilungsanalyse der Codierungen schafft zudem Transparenz über die Dichte der regulatorischen Anforderungen \autocite{Kuechler2008}. Die Übersetzungslogik (Kategorien $\rightarrow$ Kriterien $\rightarrow$ Indikatoren) kann als Blaupause für ähnliche Vorhaben dienen, etwa die Operationalisierung des Data Governance Act oder sektorspezifischer KI-Regulierung.
+
+\textbf{Wissensbeitrag:} Die 31~Kriterien gehen über eine Paraphrasierung des Normtextes hinaus: Sie übersetzen abstrakte Anforderungen (z.\,B. ``angemessene Genauigkeit'' in Art.~15) in beobachtbare Praktiken (z.\,B. D6.1: ``Definierte Genauigkeitsmetriken mit regelmäßiger Überprüfung''). Diese Übersetzung erfordert normative Entscheidungen -- Was zählt als ``definiert''? Ab wann ist ein Prozess ``organisationsweit standardisiert''? -- die über den Kodierleitfaden (Anhang~\ref{app:kodierleitfaden}) transparent und revidierbar sind. Die Querschnittskategorien Q1/Q2 stützen die These, dass rein technisch-regulatorische Betrachtungen zu kurz greifen \autocite{Ryan2020}: Ohne organisationale Verankerung und Kompetenzentwicklung bleiben technische Maßnahmen wirkungslos. Organisationen, die sich nur an den expliziten Anforderungen der Art.~9--15 orientieren, riskieren daher eine Implementierungslücke.
+
+\textbf{Einordnung in den Forschungsdiskurs:} Das Framework positioniert sich in der dritten Generation der KI-Governance-Forschung (Abschnitt~\ref{subsec:governance-logiken}) und greift die von Batool et al. identifizierte Lücke zwischen Governance-Beschreibung und operativer Bewertung auf \autocite{Batool2025}.
+
+Die Abgrenzung zu bestehenden Ansätzen verdeutlicht die unterschiedlichen Bewertungslogiken: Das \textit{NIST AI RMF} \autocite{NISTAIRMF2023} folgt einer generischen Prozesslogik (Govern, Map, Measure, Manage) -- jurisdiktionsübergreifend anwendbar, aber ohne Verankerung in konkreten Rechtspflichten. Die \textit{ISO/IEC~42001} \autocite{ISO42001} folgt einer binären Konformitätslogik (konform/nicht konform), die für Zertifizierungen geeignet ist, aber keine graduellen Entwicklungspfade bietet. Das vorliegende Framework verfolgt eine \textit{graduelle, regulatorisch verankerte Bewertungslogik}: Jedes Kriterium ist auf einen AI-Act-Artikel rückverfolgbar, und die Reifegradstufen ermöglichen handlungsorientierte Verbesserungspfade. Gegenüber KI-spezifischen Reifegradmodellen \autocite{Cho2023, Dotan2024} bietet es eine höhere regulatorische Granularität bei EU-AI-Act-Spezifität.
+
+\textbf{Theoretische Rückbindung:} Die Ergebnisse lassen sich an zwei theoretische Diskurse rückbinden.
+
+\textit{Entwicklungsdynamik der KI-Governance.} Die in Abschnitt~\ref{subsec:governance-logiken} eingeführte Drei-Generationen-Taxonomie vereinfacht die tatsächliche Entwicklung, da sich die Generationen zeitlich und konzeptionell überlappen. Sie macht gleichwohl eine reale Verschiebung sichtbar: von der Prinzipienebene über die Prozessebene zur Operationalisierungsebene. Die Reifegradstufen definieren dabei nicht nur Compliance-Schwellen, sondern Entwicklungspfade. Sie verschieben die zentrale Frage von der Defizitanalyse zur Standortbestimmung mit konkreten nächsten Schritten.
+
+\textit{Rückbindung an die Principle-Practice-Gap.} Das Framework greift die Gap auf drei Ebenen auf: konzeptionell (die Übersetzungslogik überbrückt die Operationalisierungslücke), organisational (Reifegrade bieten schrittweise Entwicklungspfade \autocite{Moekander2022}) und situativ (die RAG-Unterstützung macht regulatorisches Wissen im Moment der Bewertung verfügbar). Dabei ist zu beachten, dass das Framework nur die \textit{regulatorische} Principle-Practice-Gap der Art.~9--15 adressiert. Die breitere ethische Gap, die Hagendorff \autocite{Hagendorff2020} beschreibt (Nachhaltigkeit, Machtasymmetrien, ökologische Kosten von KI), liegt außerhalb des Scope. Zudem zeigt die Streuung bei der Verständlichkeit (E4), dass auch eine konzeptionell fundierte Operationalisierung nicht automatisch alle Stakeholder-Gruppen gleichermaßen erreicht.
+
+Das Framework operationalisiert die KI-Governance-Definition von Mäntymäki et al. \autocite{Mantymaki2022} (Steuerung unter Berücksichtigung von Strategie, Recht und Ethik): In vereinfachter Zuordnung decken D1/D6 vorrangig strategische, D2--D4 rechtliche und D5 ethische Aspekte ab -- wobei die Dimensionen in der Praxis Überschneidungen aufweisen.
+
+
+\section{Praktischer Nutzen}
+\label{sec:praktischer-nutzen}
+
+Der praktische Nutzen lässt sich anhand von vier Anwendungsszenarien bewerten.
+
+\textit{Compliance-Vorbereitung:} Die direkte Zuordnung der Kriterien zu den Art.~9--15 beantwortet die drängendste Frage regulierter Organisationen: ``Wo stehen wir?'' Die Konformitätsbewertung für Anhang-III-Systeme erfolgt in der Regel durch interne Selbstbewertung (Art.~43 Abs.~1, Anhang~VI). Das Framework kann diese Selbstbewertung strukturieren, ohne sie zu ersetzen \autocite{EUAIAct2024}.
+
+\textit{Governance-Entwicklung:} Die Reifegradlogik ermöglicht inkrementelle Verbesserung auf Basis der Gap-Analyse statt gleichzeitiger Adressierung aller Anforderungen. Die Priorisierung nach Gap-Schweregrad (kritisch, signifikant, moderat) unterstützt ressourceneffiziente Maßnahmenplanung im Sinne des Proportionalitätsprinzips des AI Acts \autocite{Ebers2025}.
+
+\textit{Stakeholder-Kommunikation:} Die Ergebnisvisualisierungen bedienen unterschiedliche Zielgruppen: Das Radar-Chart bietet der Geschäftsführung einen Gesamtüberblick, die Heatmap ermöglicht technischen Teams eine kriterienspezifische Analyse, die Roadmap unterstützt das Projektmanagement bei der Maßnahmenplanung, und der PDF-Bericht dient der Dokumentation gegenüber Aufsichtsbehörden.
+
+\textit{Benchmarking:} Bei empirischer Validierung der derzeit synthetischen Branchenbenchmarks könnte das Framework als Grundlage für branchenweites Governance-Benchmarking dienen \autocite{CMMI2018}. Aktuell beschränkt sich der Nutzen auf den organisationsinternen Vergleich; ein branchenübergreifender Vergleich setzt die in Kapitel~\ref{chap:fazit} beschriebene empirische Kalibrierung voraus.
+
+Das Framework ersetzt weder juristische Beratung noch formale Konformitätsbewertung. Es liefert eine strukturierte Selbsteinschätzung, deren Aussagekraft von der Expertise der bewertenden Personen abhängt. Der Aufwand (31~Kriterien, ca. 4--6~Stunden) stellt für KMU eine Einstiegshürde dar, die durch modulare Assessment-Profile gemindert werden könnte.
+
+Eine grundsätzliche Einschränkung betrifft alle Self-Assessment-Frameworks: Sie setzen voraus, dass Organisationen ein genuines Interesse an einer ehrlichen Standortbestimmung haben. In der Praxis könnte das Framework ebenso zur retrospektiven Legitimation bestehender Praktiken dienen wie zur tatsächlichen Governance-Verbesserung. Ohne eine externe Validierungsschicht bleibt diese Ambivalenz bestehen \autocite{Becker2009}.
+
+
+\section{Illustrativer Anwendungsfall: Amazon Recruiting als Extremfall}
+\label{sec:micro-case-amazon}
+
+Ein ergänzender Test besteht in der Anwendung des Frameworks auf einen dokumentierten Versagensfall: Amazons KI-gestütztes Recruiting-System, das 2018 nach internen Untersuchungen eingestellt wurde, weil es Bewerberinnen systematisch benachteiligte \autocite{Holtz2025}. Dieser Fall dient in der KI-Governance-Literatur als Referenzbeispiel für algorithmische Diskriminierung und fällt in die Hochrisiko-Kategorie Anhang~III Nr.~4(a) (Beschäftigungsverhältnisse), die Szenario~2 abbildet.
+
+\textit{Rekonstruktion des Falls.} Amazon trainierte ab 2014 ein ML-System zur automatisierten Lebenslauf-Vorauswahl. Das Modell lernte aus historischen Einstellungsdaten und entwickelte eine systematische Präferenz für männlich konnotierte Textmerkmale (z.\,B. Wörter wie ``executed'' oder ``captured''), während es weiblich assoziierte Signale (z.\,B. ``women's chess club captain'') abwertete. Das System wurde nie produktiv eingesetzt; die Diskriminierung wurde intern identifiziert, woraufhin Amazon das Projekt einstellte.
+
+\textit{Gedankenexperiment: Framework-Bewertung \textit{vor} Deployment.} Tabelle~\ref{tab:amazon-micro} zeigt eine hypothetische Framework-Bewertung des Amazon-Systems unmittelbar vor dem geplanten Produktivgang, basierend auf den öffentlich bekannten Informationen.
+
+\begin{table}[htbp]
+\centering
+\caption{Hypothetische Framework-Bewertung: Amazon Recruiting (Stand vor Einstellung)}
+\label{tab:amazon-micro}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|p{7.5cm}|}
+\hline
+\textbf{Dimension} & \textbf{Score} & \textbf{Begründung} \\
+\hline
+D1 Risikomanagement & 2 & Interne Risikoanalyse existierte (das Problem wurde erkannt), aber erst \textit{nach} Modelltraining, nicht als ex-ante-Prozess. Stufe~2: reaktiv, nicht systematisch. \\
+\hline
+D2 Data Governance & 1 & Historische Einstellungsdaten als Trainingsbasis ohne Protected-Attribute-Analyse. Kein Bias-Monitoring, keine Repräsentativitätsprüfung. Stufe~1: Bias wird nicht adressiert. \\
+\hline
+D3 Dokumentation & 2 & Modelldokumentation vorhanden (intern bei Amazon üblich), aber keine Dokumentation der Fairness-Eigenschaften oder Trainingsdaten\-beschränkungen. Stufe~2: technisch, nicht governance-bezogen. \\
+\hline
+D4 Transparenz & 1 & Keine Erklärbarkeitsanalyse für die Scoring-Entscheidungen. Das Modell operierte als Black Box; die diskriminierende Logik wurde erst durch manuelle Inspektion identifiziert. Stufe~1. \\
+\hline
+D5 Menschl. Aufsicht & 2 & Manuelle Prüfung war vorgesehen (die Ergebnisse sollten als Empfehlung dienen), aber ohne formale Eskalationsprozesse für algorithmische Diskriminierung. Stufe~2. \\
+\hline
+D6 Techn. Robustheit & 2 & Funktionale Genauigkeit war gegeben (das Modell identifizierte ``erfolgreiche'' Kandidaten), aber ohne Fairness-Metriken. Robustheit ohne Fairness ist ein eingeschränkt aussagekräftiger Score. Stufe~2. \\
+\hline
+\textbf{Gesamtscore} & \textbf{1,7} & \textbf{Initial/Managed} -- deutlich unterhalb der Compliance-Baseline \\
+\hline
+\end{tabular}
+\end{table}
+
+\textit{Ergebnisinterpretation.} Der Gesamtscore von 1,7 liegt 1,3~Punkte unter der Compliance-Baseline und signalisiert kritischen Handlungsbedarf. Das Framework hätte das System als hochdefizitär eingestuft, hätte jedoch nicht die spezifische Art der Diskriminierung identifiziert. Diese Unterscheidung ist grundlegend: Das Framework misst den Reifegrad der Governance-\textit{Prozesse}, nicht die Qualität der Modell-\textit{Outputs}. Es hätte das Fehlen eines Bias-Monitorings (D2.2:~1) und die fehlende Erklärbarkeit (D4.1:~1) als kritische Gaps ausgewiesen -- aber ob die Diskriminierung geschlechtsspezifisch, altersbezogen oder ethnisch ist, liegt außerhalb der Framework-Reichweite.
+
+Der Fall liefert Erkenntnisse auf mehreren Ebenen. Er bestätigt die \textit{Gap-Analyse-Logik}: D2 und D4 wären mit Gaps von 2,0 bzw. 2,0 als kritisch priorisiert worden. Eine Organisation, die diese Empfehlung befolgt hätte -- Protected-Attribute-Analyse einführen, Erklärbarkeitsanalyse implementieren --, hätte die geschlechtsspezifische Verzerrung möglicherweise \textit{vor} dem Deployment identifiziert.
+
+Zugleich illustriert der Fall die \textit{Grenzen des Self-Assessment-Ansatzes}: Amazons interne Teams erkannten das Problem -- aber erst nach dem Training. Ein Self-Assessment-Framework setzt voraus, dass die Organisation die richtigen Fragen zum richtigen Zeitpunkt stellt. Die Indikatorstruktur von D2.2 (``Systematische Analyse geschützter Merkmale in Trainings- und Testdaten'') hätte diese Frage frühzeitig erzwungen -- aber nur, wenn die bewertende Person sie ehrlich beantwortet (vgl. den Adversarial Stress-Test in Tabelle~\ref{tab:adversarial}).
+
+Schließlich zeigt der Fall eine \textit{Stärke der Reifegradlogik} gegenüber binärer Compliance: Eine Ja/Nein-Prüfung (``Bias-Monitoring vorhanden?'') hätte möglicherweise ``Ja'' ergeben, weil Amazon durchaus Qualitätsprüfungen durchführte -- nur nicht die \textit{richtigen}. Die fünfstufige Differenzierung unterscheidet zwischen ``Maßnahmen existieren'' (Stufe~2) und ``Maßnahmen sind systematisch und decken geschützte Merkmale ab'' (Stufe~3).
+
+Das Gedankenexperiment hat eine offensichtliche Einschränkung: Die Bewertung basiert auf öffentlich verfügbaren Informationen; die interne Governance-Realität bei Amazon war vermutlich differenzierter. Der Fall dient daher nicht als empirische Validierung, sondern als illustrativer Stress-Test an der Grenze der Framework-Leistungsfähigkeit.
+
+
+\section{Limitationen}
+\label{sec:limitationen}
+
+\subsection{Methodische Limitationen}
+\label{subsec:methodische-limitationen}
+
+\textit{Kodierung und Inhaltsanalyse.} Wie in Abschnitt~\ref{sec:guetekriterien} dargelegt, ist die Einzelforscher-Kodierung die gewichtigste methodische Einschränkung. Andere Forschende könnten Textstellen anders zuordnen -- insbesondere bei Grenzfällen zwischen K1/K6 (Risikomanagement vs. Technische Robustheit) und K4/K5 (Transparenz vs. Menschliche Aufsicht) \autocite{Mayring2014}. Die zeitversetzte Zweitkodierung (87\,\% Übereinstimmung) prüft nur die Intrakodierer-, nicht die Interkodierer-Reliabilität. Die zwei Abweichungen betrafen die erwarteten Grenzbereiche. Das deutet darauf hin, dass die Kernstruktur stabil ist, die Ränder jedoch interpretationsabhängig bleiben. Die sechs Dimensionen als Grundgerüst sind belastbar; die exakte Zuordnung einzelner Anforderungen zu D1 vs. D6 oder D4 vs. D5 ist es weniger.
+
+\textit{Literaturrecherche:} Die SLR-Suchstrings könnten relevante Arbeiten übersehen haben, insbesondere deutschsprachige Rechtswissenschaft \autocite{Spindler2021, Martini2024} und graue Literatur (Positionspapiere, Normungsarbeiten). Die Beschränkung auf Scopus, Web of Science und Google Scholar könnte spezialisierte Working-Paper-Repositories nicht erfasst haben. Die Schneeball-Suche (12~Quellen) mildert dieses Risiko, eliminiert es aber nicht.
+
+\textit{Evaluation:} Die Stichprobe ($n = 8$) erlaubt keine statistische Generalisierung; eine Replizierung mit $n \geq 15$ wäre erforderlich \autocite{Venable2016}. Die Doppelrolle des Autors als Entwickler und Evaluator birgt ein Confirmation-Bias-Risiko (M2). Die externe Artefakt-Evaluation mildert dieses Risiko, beseitigt es aber nicht.
+
+\textit{Self-Assessment-Bias.} Ein Self-Assessment misst nicht den tatsächlichen Governance-Reifegrad, sondern die organisationale Selbsteinschätzung. Drei systematische Verzerrungen sind relevant: \textit{Social-Desirability-Bias} (systematisch positive Einschätzungen), der \textit{Dunning-Kruger-Effekt} (Organisationen mit dem größten Handlungsbedarf überschätzen ihre Fähigkeiten am stärksten) und die \textit{Expertise-Abhängigkeit} (ein Compliance-Officer und ein Junior-Entwickler bewerten dasselbe System unterschiedlich). Das Framework begegnet dem Risiko durch beobachtbare Indikatoren statt subjektiver Globaleinschätzungen. Eine systematische Validierungsschicht (Vier-Augen-Prinzip, Nachweis-Pflicht, externe Audits) fehlt jedoch und stellt ein Forschungsdesiderat dar.
+
+\textit{Adversarial Stress-Test: Wie manipulierbar ist das Framework?} Die vorangegangene Diskussion des Self-Assessment-Bias lässt sich über die diskursive Ebene hinaus am eigenen Artefakt testen. Dazu wird Szenario~2 (Recruiting) in zwei Varianten bewertet: einmal entsprechend der in Abschnitt~\ref{sec:demonstration-szenarien} dokumentierten Bewertung (\textit{ehrlich}, Gesamtscore~2,38) und einmal unter der Annahme, dass die bewertende Person systematisch die obere Grenze des jeweils vertretbaren Indikators wählt (\textit{optimistisch}) -- also nicht lügt, aber den Interpretationsspielraum konsequent zugunsten der Organisation nutzt.
+
+\begin{table}[htbp]
+\centering
+\caption{Adversarial Stress-Test: Ehrliche vs. optimistische Bewertung (Szenario~2)}
+\label{tab:adversarial}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|c|c|p{4.5cm}|}
+\hline
+\textbf{Dimension} & \textbf{Ehrlich} & \textbf{Optim.} & \textbf{$\Delta$} & \textbf{Manipulationsvektor} \\
+\hline
+D1 Risikomanagement & 2,5 & 3,0 & +0,5 & Prozessorientiert; Indikatoren prüfbar \\
+D2 Data Governance & 1,8 & 2,4 & +0,6 & D2.2 (Bias): von 1 auf 2 vertretbar \\
+D3 Dokumentation & 2,6 & 3,0 & +0,4 & Dokumentation existiert oder nicht \\
+D4 Transparenz & 2,2 & 3,0 & +0,8 & ``Hinreichend'' ist interpretierbar \\
+D5 Menschl. Aufsicht & 3,2 & 3,8 & +0,6 & D5.4 (Bias-Awareness): schwer prüfbar \\
+D6 Techn. Robustheit & 2,0 & 2,6 & +0,6 & D6.1 (Genauigkeit): ohne Schwellenwert \\
+\hline
+\textbf{Gesamtscore} & \textbf{2,38} & \textbf{2,97} & \textbf{+0,59} & \\
+\textbf{Qualitative Einordnung} & \textit{Managed} & \textit{Defined} & & Compliance-Baseline erreicht \\
+\hline
+\end{tabular}
+\end{table}
+
+Durch konsequent optimistische Interpretation -- ohne nachweislich falsche Angaben -- lässt sich der Gesamtscore um ca.~0,6~Punkte anheben. Dies entspricht annähernd der Differenz zwischen ``unterhalb der Compliance-Baseline'' und ``Baseline erreicht''. Die Organisation würde sich als \textit{Defined} einstufen, obwohl sie in der sachgerechten Bewertung nur \textit{Managed} erreicht.
+
+Für die Weiterentwicklung ergeben sich mehrere Erkenntnisse. Die Spalte \textit{Manipulationsvektor} zeigt ein klares Muster: Kriterien mit hoher normativer Distanz zum Normtext (vgl. Tabelle~\ref{tab:normative-distanz}) -- insbesondere D4 (Transparenz, $\Delta = 0{,}8$) und D5 (Menschliche Aufsicht, $\Delta = 0{,}6$) -- sind deutlich anfälliger als prozessorientierte Kriterien wie D3 (Dokumentation, $\Delta = 0{,}4$), bei denen Nachweise entweder existieren oder nicht. Zweitens würde die in Abschnitt~\ref{subsec:interdimensionale-abhaengigkeiten} beschriebene kausale Sequenz D3$\rightarrow$D4$\rightarrow$D5 als \textit{implizite Plausibilitätsprüfung} wirken: Ein D4-Score von~3,0 bei einem D3-Score von~3,0 ist plausibel; bei einem D3-Score von~1,5 wäre er es nicht. Die KI-gestützte Konsistenzprüfung des Prototyps identifiziert solche implausiblen Muster bereits qualitativ -- eine formale Modellierung stünde aber noch aus. Drittens bestätigt der Test, dass das Framework eine \textit{Nachweisschicht} benötigt: Stufe-3-Bewertungen sollten durch Dokumentationsartefakte belegt werden (z.\,B. ``Risikoregister vorhanden: ja/nein'', ``Bias-Analyse-Report datiert vom...''), um den Interpretationsspielraum zu reduzieren, ohne die Handhabbarkeit zu gefährden \autocite{Becker2009}.
+
+Das Experiment ist mit einer Einschränkung zu lesen: Es wurde vom Autor durchgeführt, der die Indikatoren entworfen hat. Eine externe Replikation -- idealerweise durch zwei Personen mit unterschiedlichem fachlichen Hintergrund an einem realen System -- würde die Manipulierbarkeitsanalyse auf eine robustere Basis stellen.
+
+
+\subsection{Inhaltliche Limitationen}
+\label{subsec:inhaltliche-limitationen}
+
+\textit{Scope-Limitationen:} Das Framework fokussiert auf Hochrisiko-Anforderungen (Art.~9--15) und deckt GPAI-Modelle (Art.~51--56) nicht ab, die andere Governance-Mechanismen erfordern \autocite{Moekander2024}. Die Branchenneutralität ist zugleich Stärke und Limitation: Sie ermöglicht sektorübergreifende Anwendbarkeit, integriert aber keine sektorspezifischen Anforderungen (MaRisk, MDR, IATF). Für regulierte Sektoren dient das Framework daher als Basis-Assessment, das durch sektorspezifische Module ergänzt werden muss.
+
+Der Verzicht auf eine eigenständige Ethik-Dimension ist regulatorisch begründet: Die Art.~9--15 überführen zentrale ethische Prinzipien in Rechtspflichten (Art.~10 $\rightarrow$ Fairness, Art.~13 $\rightarrow$ Transparenz, Art.~14 $\rightarrow$ Autonomie). Diese regulatorische Transformation ist jedoch nicht verlustfrei. Der AI Act erfasst ethische Aspekte nur, soweit sie sich in technische oder prozedurale Anforderungen überführen lassen. Nachhaltigkeit, Machtasymmetrien zwischen Anbietern und Betroffenen, ökologische Kosten des KI-Trainings und die Frage nach der gesellschaftlichen Wünschbarkeit bestimmter KI-Anwendungen \autocite{Hagendorff2020, Hacker2024} liegen außerhalb des regulatorischen Rahmens und damit außerhalb dieses Frameworks. Dies stellt eine bewusste Scope-Entscheidung dar.
+
+\textit{Dimensionsspezifische Vereinfachungen:} Einzelne Dimensionen vereinfachen komplexe Governance-Bereiche zugunsten der Handhabbarkeit. D5~(Menschliche Aufsicht) kann die Komplexität von Human-AI-Interaktion und Automation Bias nicht mit fünf Kriterien erschöpfend abbilden: Die sechs normativen Prinzipien nach Laux \autocite{Laux2024} werden in D5.1--D5.5 verdichtet. D2~(Data Governance) vereinfacht die DSGVO-AI-Act-Wechselwirkungen \autocite{Holtz2025}: Das Spannungsfeld zwischen Bias-Erkennung und DSGVO-Verarbeitungsverbot wird in D2.4 erfasst, aber nicht in seiner vollen juristischen Komplexität. D4~(Transparenz) diskretisiert den ``non-binary'' Transparenzbegriff \autocite{Braun2026}: Die Reifegradstufen bilden eine ordinale Skala, während Transparenz in der Praxis ein multidimensionales Konstrukt ist. Diese Vereinfachungen sind Reifegradmodellen inhärent, die mehrdimensionale Phänomene auf eine lineare Skala projizieren. Entscheidend ist, ob der resultierende Informationsverlust für den Anwendungszweck akzeptabel ist. Die Evaluationsergebnisse (E2: MW~4,0) legen nahe, dass er es ist; eine naturalistische Evaluation könnte dies widerlegen.
+
+\textit{Trennschärfe der Reifegradstufen:} Bei 8~von~31~Kriterien (26\,\%) identifizierte die heuristische Evaluation ein Abgrenzungsproblem zwischen Stufe~2 (Managed) und Stufe~3 (Defined). Das ist besonders relevant, weil Stufe~3 als regulatorische Compliance-Baseline dient: Eine Fehlzuordnung kann die Gap-Analyse und Maßnahmenpriorisierung verfälschen. Betroffen sind vor allem D2 (Data Governance) und D4 (Transparenz), bei denen die Grenze zwischen ``grundlegenden Maßnahmen'' und ``standardisierten Prozessen'' in der Praxis fließend ist.
+
+Mehrere Faktoren tragen dazu bei: Der Übergang von reaktiven zu proaktiven Maßnahmen ist graduell \autocite{Roeglinger2012}, die Interpretation hängt vom Organisationskontext ab (ein ``standardisierter Prozess'' im Scale-up kann im Konzern ein ``grundlegender Ansatz'' sein), und den Indikatoren fehlen teilweise quantifizierbare Schwellenwerte. Gegenmaßnahmen wären Ankerbeispiele pro Branche, Halbstufen für Grenzfälle oder ein entscheidungsbaumbasiertes Zuordnungsverfahren. Eine empirische Kalibrierung anhand realer Assessment-Daten ($n \geq 30$) war im Rahmen dieser Arbeit nicht realisierbar.
+
+\textit{Regulatorische Dynamik:} Die ausstehenden harmonisierten CEN/CENELEC-Standards \autocite{Kilian2025} sind die zeitkritischste Limitation. Ihre Verabschiedung könnte die Anforderungsinterpretation wesentlich verändern -- besonders bei ``angemessener Genauigkeit'' (D6.1), ``hinreichender Transparenz'' (D4.1) und ``wirksamer menschlicher Aufsicht'' (D5.1). Die Architektur ist auf Aktualisierungen vorbereitet (JSON-basierte Wissensbasis, modulare Indikatorstruktur), die inhaltliche Anpassung der 155~Indikatoren steht aber aus. Nach vorläufiger Abschätzung werden die harmonisierten Standards primär die technisch-metrischen Kriterien (D6.1--D6.3) und Dokumentationsanforderungen (D3.1, D3.4) konkretisieren. Schätzungsweise 8--12 der 31~Kriterien (26--39\,\%) wären von einer Indikatoranpassung betroffen; Dimensionsstruktur und Aggregationslogik blieben voraussichtlich unverändert.
+
+
+\subsection{Technische Limitationen}
+\label{subsec:technische-limitationen}
+
+Die technischen Limitationen aus Kapitel~\ref{chap:artefakt} werden nach ihrer Auswirkung auf Wissenschaft und Praxis unterschieden:
+
+\textit{Wissenschaftlich relevante Limitationen:} Die RAG-Implementierung ist funktional, aber nicht optimiert (M1): Fehlendes Cross-Encoder-Reranking und heuristische Schwellenwerte ($\theta > 0{,}3$, Top-$k = 3$--$4$) könnten die Empfehlungsqualität beeinflussen \autocite{Barnett2024}. Da die KI-Funktionen die deterministische Bewertungslogik nicht beeinflussen, betrifft dies die Beratungsqualität, nicht die Bewertungsqualität. Die synthetischen Benchmarks (M4) sind illustrativ und keine empirisch validierten Branchendurchschnitte.
+
+\textit{Praxisrelevante Limitationen:} Die API-Abhängigkeit (T3) verhindert den Einsatz in datensensiblen Umgebungen (Gesundheitswesen, Behörden). Die fehlende Persistenz (T1) verhindert longitudinales Tracking der Governance-Entwicklung. Die Prompt-Injection-Schutzmaßnahmen (16~Regex-Muster) sind für einen Forschungsprototyp angemessen, aber nicht produktionsreif \autocite{Perez2022}. Tabelle~\ref{tab:limitationen-bewertung} fasst die Bewertung zusammen.
+
+
+\subsection{Zusammenfassende Limitationsbewertung}
+\label{subsec:limitationsbewertung}
+
+\begin{table}[htbp]
+\centering
+\caption{Zusammenfassende Limitationsbewertung}
+\label{tab:limitationen-bewertung}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{3.5cm}|l|l|p{4.5cm}|}
+\hline
+\textbf{Limitation} & \textbf{Typ} & \textbf{Schwere} & \textbf{Adressierbarkeit} \\
+\hline
+Evaluationsstichprobe ($n = 8$) & Methodisch & Hoch & Replizierung mit $n \geq 15$ \\
+Einzelcodierung & Methodisch & Mittel & Zweitcodierung in Folgearbeit \\
+Confirmation Bias (M2) & Methodisch & Mittel & Externe Evaluation pro Iteration \\
+Self-Assessment-Bias & Methodisch & Hoch & Artefakt-basierte Validierung, Vier-Augen-Prinzip \\
+\hline
+Trennschärfe Stufe 2/3 (26\,\%) & Inhaltlich & Hoch & Ankerbeispiele, empir. Kalibrierung \\
+GPAI nicht adressiert & Inhaltlich & Mittel & Eigenständiges GPAI-Modul \\
+Branchenneutralität & Inhaltlich & Mittel & Sektorspezifische Module \\
+Regulatorische Dynamik & Inhaltlich & Hoch & Wissensbasis-Aktualisierung \\
+\hline
+RAG-Optimierung (M1) & Technisch & Mittel & Cross-Encoder, empir. Kalibrierung \\
+API-Abhängigkeit (T3) & Technisch & Hoch & Lokale LLMs \\
+Fehlende Persistenz (T1) & Technisch & Hoch & Datenbankanbindung \\
+Synth. Benchmarks (M4) & Technisch & Mittel & Empir. Validierung \\
+\hline
+\end{tabular}
+\end{table}
+
+Die Limitationen wirken sich unterschiedlich auf die Kernaussagen aus:
+
+\textbf{Konzeptionelle Validität} (Architektur, Dimensionenstruktur, Reifegradlogik): Die analytischen Evaluationsmethoden (Coverage-Matrix, Feature Comparison, Functional Testing) stützen die konzeptionelle Validität unabhängig von der Stichprobengröße. Keine der Limitationen stellt sie grundsätzlich infrage.
+
+\textbf{Generalisierbarkeit} (Nützlichkeit, Praxistauglichkeit): Die begrenzte Stichprobe schränkt die Generalisierbarkeit ein (vgl. Abschnitt~\ref{sec:evaluationsergebnisse}). Die Befunde sind qualitative Hinweise, gestützt durch Triangulation mit der heuristischen Evaluation, aber nicht repräsentativ.
+
+\textbf{Regulatorische Aktualität}: Die ausstehenden harmonisierten Standards sind die zeitkritischste Limitation. Sie betreffen nicht die Architektur, sondern die Kalibrierung der Reifegrad-Indikatoren, die nach Verabschiedung der CEN/CENELEC-Standards angepasst werden müssen.
+
+\textbf{Technische Reife}: Die Prototyp-Limitationen (Persistenz, API-Abhängigkeit, fehlende Authentifizierung) betreffen die produktive Einsatzfähigkeit, nicht die wissenschaftliche Aussagekraft. Sie definieren die Weiterentwicklungs-Roadmap in Kapitel~\ref{chap:fazit}.

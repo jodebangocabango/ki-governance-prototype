@@ -1,0 +1,83 @@
+{
+  "dimensions": [
+    {
+      "id": "D1",
+      "name": "Risikomanagement",
+      "article": "Art. 9",
+      "description": "Einrichtung und Pflege eines KI-spezifischen Risikomanagementsystems über den gesamten Lebenszyklus — von systematischer Identifikation über Bewertung bis zur kontinuierlichen Validierung gemäß Art. 9.",
+      "criteria": [
+        {"id": "D1.1", "name": "KI-spezifisches Risikomanagementsystem", "question": "Existiert ein dokumentiertes, KI-spezifisches Risikomanagementsystem in Ihrer Organisation?", "indicators": {"1": "Kein formales Risikomanagementsystem vorhanden", "2": "Grundlegende Risikobetrachtung, aber nicht KI-spezifisch", "3": "Dokumentiertes KI-Risikomanagementsystem mit definierten Prozessen", "4": "Systematisch gemessenes und überwachtes Risikomanagementsystem mit KPIs", "5": "Kontinuierlich optimiertes System mit Best-Practice-Sharing"}},
+        {"id": "D1.2", "name": "Systematische Risikoidentifikation", "question": "Erfolgt eine systematische Risikoidentifikation über den gesamten KI-Lebenszyklus?", "indicators": {"1": "Ad-hoc Risikoidentifikation", "2": "Risikoidentifikation in einzelnen Phasen", "3": "Systematische Risikoidentifikation über alle Lebenszyklusphasen", "4": "Quantitative Risikoanalysen mit definierten Metriken", "5": "Prädiktive Risikoidentifikation mit kontinuierlicher Anpassung"}},
+        {"id": "D1.3", "name": "Risikobewertungsmethodik", "question": "Welche Methodik wird für die Risikobewertung eingesetzt?", "indicators": {"1": "Keine formale Methodik", "2": "Einfache qualitative Bewertung", "3": "Dokumentierte Methodik (Wahrscheinlichkeit × Schwere)", "4": "Quantitative Bewertung mit statistischen Methoden", "5": "Fortgeschrittene Methoden mit szenariobasierter Analyse"}},
+        {"id": "D1.4", "name": "Risikobehandlung und Restrisiko", "question": "Sind Risikobehandlungsmaßnahmen und Restrisiko-Akzeptanzkriterien definiert?", "indicators": {"1": "Keine definierten Maßnahmen", "2": "Einzelne Maßnahmen ohne systematische Zuordnung", "3": "Definierte Maßnahmen mit dokumentierter Restrisiko-Akzeptanz", "4": "Systematisches Maßnahmentracking mit Wirksamkeitsmessung", "5": "Optimierte Risikobehandlung mit automatisierter Überwachung"}},
+        {"id": "D1.5", "name": "Testverfahren zur Risikovalidierung", "question": "Werden regelmäßige Testverfahren zur Validierung der Risikobewertungen durchgeführt?", "indicators": {"1": "Keine Testverfahren", "2": "Gelegentliche manuelle Tests", "3": "Regelmäßige, dokumentierte Testverfahren", "4": "Automatisierte Testsuiten mit definierten Schwellwerten", "5": "Kontinuierliche Testpipeline mit Regressionstests"}},
+        {"id": "D1.6", "name": "Kontinuierliche Aktualisierung", "question": "Wird das Risikomanagementsystem kontinuierlich aktualisiert?", "indicators": {"1": "Keine Aktualisierung", "2": "Anlassbezogene Aktualisierung", "3": "Regelmäßige Review-Zyklen (z.B. quartalsweise)", "4": "Ereignisgesteuerte plus regelmäßige Aktualisierung mit Metriken", "5": "Echtzeit-Monitoring mit automatisierter Anpassung"}}
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "Data Governance",
+      "article": "Art. 10",
+      "description": "Qualitätssicherung von Trainings-, Validierungs- und Testdaten einschließlich Bias-Erkennung, Datenherkunftsnachverfolgung und DSGVO-konformer Daten-Governance gemäß Art. 10.",
+      "criteria": [
+        {"id": "D2.1", "name": "Datenqualitätsstandards", "question": "Existieren definierte Datenqualitätskriterien für KI-Trainings-, Validierungs- und Testdaten?", "indicators": {"1": "Keine Datenqualitätsstandards", "2": "Grundlegende Qualitätsprüfungen", "3": "Dokumentierte Standards mit definierten Metriken", "4": "Automatisierte Qualitätsüberwachung mit Dashboards", "5": "Prädiktive Qualitätssicherung mit kontinuierlicher Optimierung"}},
+        {"id": "D2.2", "name": "Bias-Erkennung und -Korrektur", "question": "Existieren systematische Verfahren zur Erkennung und Minimierung von Verzerrungen?", "indicators": {"1": "Keine Bias-Prüfung", "2": "Manuelle Prüfung einzelner Datensätze", "3": "Systematische Bias-Analyse mit definierten Methoden", "4": "Automatisierte Bias-Erkennung mit Fairness-Metriken", "5": "Kontinuierliches Bias-Monitoring mit automatischer Korrektur"}},
+        {"id": "D2.3", "name": "Data Lineage", "question": "Ist die Datenherkunft, -aufbereitung und -nutzung dokumentiert?", "indicators": {"1": "Keine Dokumentation", "2": "Teilweise Dokumentation der Datenquellen", "3": "Vollständige Data-Lineage-Dokumentation", "4": "Automatisierte Lineage-Erfassung mit Visualisierung", "5": "Durchgängige Lineage mit Impact-Analyse"}},
+        {"id": "D2.4", "name": "Datenschutz-Integration", "question": "Sind Datenschutzanforderungen (DSGVO) in die Data Governance integriert?", "indicators": {"1": "Keine Integration", "2": "Grundlegende DSGVO-Maßnahmen", "3": "Systematische Integration mit Privacy-by-Design", "4": "Automatisierte Compliance-Prüfung mit Auditing", "5": "Proaktive Datenschutz-Governance mit Impact Assessments"}},
+        {"id": "D2.5", "name": "Kontinuierliche Datenqualitätssicherung", "question": "Existieren Zyklen zur kontinuierlichen Datenqualitätssicherung?", "indicators": {"1": "Keine kontinuierliche Sicherung", "2": "Reaktive Qualitätskorrekturen", "3": "Regelmäßige Qualitätsreviews", "4": "Proaktive Qualitätssicherung mit Monitoring", "5": "Automatisierte Qualitätsoptimierung mit ML-gestützter Erkennung"}}
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "Dokumentation",
+      "article": "Art. 11-12",
+      "description": "Vollständige technische Dokumentation gemäß Anhang IV sowie automatisierte Ereignisprotokollierung, Versionierung und Nachweisführung gemäß Art. 11–12.",
+      "criteria": [
+        {"id": "D3.1", "name": "Technische Dokumentation", "question": "Ist die technische Dokumentation vollständig und aktuell?", "indicators": {"1": "Keine oder minimale Dokumentation", "2": "Grundlegende Dokumentation, nicht aktuell", "3": "Vollständige, aktuelle Dokumentation gemäß Anhang IV", "4": "Automatisiert generierte und aktualisierte Dokumentation", "5": "Living Documentation mit automatischer Validierung"}},
+        {"id": "D3.2", "name": "Automatisiertes Logging", "question": "Sind Systeme zur automatisierten Aufzeichnung von Systemereignissen implementiert?", "indicators": {"1": "Kein Logging", "2": "Grundlegendes Logging ohne Struktur", "3": "Strukturiertes Logging aller relevanten Ereignisse", "4": "Zentralisiertes Logging mit Analyse-Tools", "5": "Intelligentes Logging mit automatisierter Anomalie-Erkennung"}},
+        {"id": "D3.3", "name": "Versionierung", "question": "Ist eine durchgängige Versionierung und Änderungsnachverfolgung implementiert?", "indicators": {"1": "Keine Versionierung", "2": "Manuelle Versionierung einzelner Komponenten", "3": "Systematische Versionierung aller Artefakte", "4": "Automatisierte Versionierung mit Abhängigkeitsmanagement", "5": "Vollständige Reproduzierbarkeit aller Modellversionen"}},
+        {"id": "D3.4", "name": "Konformitätsnachweise", "question": "Werden Konformitätsnachweise und regulatorische Berichte systematisch erstellt?", "indicators": {"1": "Keine Konformitätsnachweise", "2": "Ad-hoc erstellte Nachweise", "3": "Systematische Erstellung gemäß regulatorischer Anforderungen", "4": "Automatisierte Nachweiserstellung mit Audit-Trail", "5": "Proaktive Compliance-Berichterstattung mit Frühwarnung"}},
+        {"id": "D3.5", "name": "Dokumentationsverwaltung", "question": "Wie wird die Zugänglichkeit und Verwaltung der Dokumentation sichergestellt?", "indicators": {"1": "Unstrukturierte Ablage", "2": "Zentrale Ablage ohne Zugriffsmanagement", "3": "Strukturiertes DMS mit Zugriffsrechten", "4": "Integriertes DMS mit Workflow-Unterstützung", "5": "KI-gestütztes Wissensmanagement mit automatischer Klassifikation"}}
+      ]
+    },
+    {
+      "id": "D4",
+      "name": "Transparenz",
+      "article": "Art. 13",
+      "description": "Erklärbarkeit von KI-Entscheidungen, Informationspflichten gegenüber Nutzern, Kennzeichnung KI-generierter Inhalte und Prozesstransparenz gemäß Art. 13.",
+      "criteria": [
+        {"id": "D4.1", "name": "Erklärbarkeit", "question": "Wie wird die Erklärbarkeit der Systemfunktionalität und Entscheidungslogik sichergestellt?", "indicators": {"1": "Keine Erklärbarkeitsmaßnahmen", "2": "Grundlegende Modellbeschreibung", "3": "Systematische Erklärbarkeit mit definierten Methoden", "4": "Zielgruppenspezifische Erklärungen mit Validierung", "5": "Adaptive Erklärbarkeit mit Nutzer-Feedback-Integration"}},
+        {"id": "D4.2", "name": "Informationspflichten", "question": "Werden die Informationspflichten gegenüber Betreibern und Nutzern erfüllt?", "indicators": {"1": "Keine Informationsbereitstellung", "2": "Grundlegende Produktinformation", "3": "Vollständige Information gemäß Art. 13 Abs. 3", "4": "Proaktive, zielgruppengerechte Information", "5": "Interaktive Informationssysteme mit Feedback"}},
+        {"id": "D4.3", "name": "Kommunikation von Grenzen", "question": "Werden Fähigkeiten, Grenzen und Risiken des KI-Systems transparent kommuniziert?", "indicators": {"1": "Keine Kommunikation", "2": "Allgemeine Hinweise", "3": "Dokumentierte Fähigkeiten und Grenzen", "4": "Kontextspezifische Kommunikation mit Szenarien", "5": "Dynamische Kommunikation mit Echtzeit-Updates"}},
+        {"id": "D4.4", "name": "KI-Kennzeichnung", "question": "Werden KI-generierte Inhalte und KI-Interaktionen gekennzeichnet?", "indicators": {"1": "Keine Kennzeichnung", "2": "Teilweise Kennzeichnung", "3": "Systematische Kennzeichnung aller KI-Interaktionen", "4": "Automatisierte Kennzeichnung mit Metadaten", "5": "Umfassende Kennzeichnung mit Provenienz-Tracking"}},
+        {"id": "D4.5", "name": "Prozesstransparenz", "question": "Ist der Governance-Prozess selbst transparent dokumentiert?", "indicators": {"1": "Keine Prozesstransparenz", "2": "Grundlegende Prozessbeschreibung", "3": "Dokumentierte Governance-Prozesse mit Rollen", "4": "Transparente Prozesse mit Audit-Möglichkeit", "5": "Vollständige Prozesstransparenz mit öffentlichem Reporting"}}
+      ]
+    },
+    {
+      "id": "D5",
+      "name": "Menschliche Aufsicht",
+      "article": "Art. 14",
+      "description": "Konzeption für wirksame menschliche Aufsicht (HITL/HOTL), qualifiziertes Aufsichtspersonal, Interventionsmechanismen und Prävention von Automation Bias gemäß Art. 14.",
+      "criteria": [
+        {"id": "D5.1", "name": "Design für menschliche Aufsicht", "question": "Ist das KI-System für effektive menschliche Aufsicht konzipiert?", "indicators": {"1": "Keine Berücksichtigung menschlicher Aufsicht", "2": "Grundlegende Überwachungsmöglichkeit", "3": "Systematisches Human-in/on-the-loop Design", "4": "Kontextadaptive Aufsichtsmechanismen", "5": "Optimierte Mensch-Maschine-Interaktion mit Feedback-Loops"}},
+        {"id": "D5.2", "name": "Qualifikation der Aufsichtspersonen", "question": "Sind die Aufsichtspersonen ausreichend qualifiziert?", "indicators": {"1": "Keine definierten Qualifikationen", "2": "Grundlegende Einweisung", "3": "Definierte Kompetenzprofile und Schulungsprogramme", "4": "Zertifizierte Qualifikation mit regelmäßiger Auffrischung", "5": "Kontinuierliche Kompetenzentwicklung mit Leistungsmonitoring"}},
+        {"id": "D5.3", "name": "Interventionsmechanismen", "question": "Existieren klare Mechanismen für Eingriff, Korrektur und Abschaltung?", "indicators": {"1": "Keine Interventionsmöglichkeit", "2": "Grundlegende Abschaltmöglichkeit", "3": "Definierte Eskalations- und Interventionsprozesse", "4": "Automatisierte Interventionsmechanismen mit Schwellwerten", "5": "Adaptive Interventionssysteme mit prädiktiver Eskalation"}},
+        {"id": "D5.4", "name": "Prävention von Automation Bias", "question": "Werden Maßnahmen gegen Automation Bias und Algorithm Aversion ergriffen?", "indicators": {"1": "Keine Maßnahmen", "2": "Awareness-Schulungen", "3": "Systematische Maßnahmen (z.B. Decision-Support statt Decision-Making)", "4": "Gemessene Effektivität der Bias-Prävention", "5": "Evidenzbasierte, kontinuierlich optimierte Präventionsmaßnahmen"}},
+        {"id": "D5.5", "name": "Dokumentation von Aufsichtsentscheidungen", "question": "Werden Aufsichtsentscheidungen dokumentiert und reviewt?", "indicators": {"1": "Keine Dokumentation", "2": "Ad-hoc Dokumentation", "3": "Systematische Dokumentation aller Aufsichtsentscheidungen", "4": "Automatisierte Erfassung mit Analyse-Dashboard", "5": "Lernende Dokumentation mit Pattern-Erkennung"}}
+      ]
+    },
+    {
+      "id": "D6",
+      "name": "Technische Robustheit",
+      "article": "Art. 15",
+      "description": "Definierte Genauigkeitsmetriken, Robustheit gegenüber Störungen und adversarialen Angriffen, Cybersicherheit sowie kontinuierliches Monitoring mit Drift-Erkennung gemäß Art. 15.",
+      "criteria": [
+        {"id": "D6.1", "name": "Genauigkeitsmetriken", "question": "Sind Genauigkeitsmetriken und Leistungsschwellen definiert?", "indicators": {"1": "Keine definierten Metriken", "2": "Grundlegende Genauigkeitsmessung", "3": "Definierte Metriken mit Schwellwerten für alle relevanten Dimensionen", "4": "Automatisiertes Performance-Monitoring mit Alerting", "5": "Adaptive Schwellwerte mit automatischer Rekalibrierung"}},
+        {"id": "D6.2", "name": "Robustheit", "question": "Ist das System robust gegen Störungen, Fehler und adversariale Angriffe?", "indicators": {"1": "Keine Robustheitsmaßnahmen", "2": "Grundlegende Fehlerbehandlung", "3": "Systematische Robustheitstests und -maßnahmen", "4": "Automatisierte adversariale Tests mit Metriken", "5": "Kontinuierliche Robustheitsoptimierung mit Red-Teaming"}},
+        {"id": "D6.3", "name": "Cybersicherheit", "question": "Sind Cybersicherheitsmaßnahmen zum Schutz vor Manipulation implementiert?", "indicators": {"1": "Keine KI-spezifischen Sicherheitsmaßnahmen", "2": "Standard-IT-Sicherheitsmaßnahmen", "3": "KI-spezifische Sicherheitsmaßnahmen implementiert", "4": "Umfassendes Security-Framework mit Penetrationstests", "5": "Zero-Trust-Architektur mit kontinuierlichem Threat-Monitoring"}},
+        {"id": "D6.4", "name": "Monitoring und Drift-Erkennung", "question": "Ist ein kontinuierliches Monitoring mit Drift-Erkennung implementiert?", "indicators": {"1": "Kein Monitoring", "2": "Manuelles periodisches Monitoring", "3": "Automatisiertes Monitoring mit Drift-Erkennung", "4": "Echtzeit-Monitoring mit automatisierten Alerts", "5": "Prädiktives Monitoring mit automatischer Modell-Aktualisierung"}},
+        {"id": "D6.5", "name": "Fallback-Mechanismen", "question": "Existieren Fallback-Mechanismen und Graceful Degradation?", "indicators": {"1": "Keine Fallback-Mechanismen", "2": "Einfache Fehlermeldung bei Systemausfall", "3": "Definierte Fallback-Prozesse mit Graceful Degradation", "4": "Automatisierte Fallback-Systeme mit Monitoring", "5": "Resiliente Architektur mit selbstheilenden Mechanismen"}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #B3D4FC30 0%, #ffffff 40%, #C5CAE920 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(92, 107, 192, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-card,
+  .bento-card:hover {
+    transition: none;
+    transform: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Bento Card glow effect */
+.bento-card {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+}
+
+.bento-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 4px;
+  background: radial-gradient(
+    300px circle at var(--glow-x) var(--glow-y),
+    rgba(92, 107, 192, calc(var(--glow-intensity) * 0.5)) 0%,
+    rgba(92, 107, 192, calc(var(--glow-intensity) * 0.2)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bento-card:hover {
+  box-shadow: 0 4px 20px rgba(92, 107, 192, 0.15), 0 0 30px rgba(92, 107, 192, 0.1);
+}
+
+/* Dashboard bento grid */
+.dashboard-bento-grid {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dashboard-bento-grid > *:nth-child(7) {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashboard-bento-grid > *:nth-child(7) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-bento-grid > * {
+    grid-column: auto !important;
+  }
+}
+
+/* Results bento grid — B2: spans now via inline Tailwind classes (col-span-2, row-span-2) */
+.results-grid {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* On tablet: row-span-2 becomes auto to prevent layout holes */
+  .results-grid > .row-span-2 {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  .results-grid > .bento-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+/* Mobile: Chat-Button über Dock */
+@media (max-width: 640px) {
+  .fixed.bottom-20.right-6 {
+    bottom: 5.5rem !important;
+  }
+}
+
+/* D2: Print-optimized Results view */
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide non-print elements */
+  nav,
+  [data-dock="true"],
+  [data-chat-panel="true"] {
+    display: none !important;
+  }
+
+  /* Reset glassmorphism for print */
+  .glass-strong,
+  .bento-card {
+    background: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  .bento-card::after {
+    display: none !important;
+  }
+
+  /* Ensure readable title colors */
+  .bg-clip-text {
+    -webkit-text-fill-color: #1f2937 !important;
+    color: #1f2937 !important;
+    background: none !important;
+  }
+
+  /* Prevent page breaks inside cards */
+  .bento-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Remove hover effects */
+  .bento-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Force results grid to 2 columns for print */
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .results-grid > .bento-card {
+    grid-row: auto !important;
+  }
+
+  /* Hide actions card in print */
+  .results-grid > .bento-card:last-child {
+    display: none !important;
+  }
+
+  /* Dashboard grid for print */
+  .dashboard-bento-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+}

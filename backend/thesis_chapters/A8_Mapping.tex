@@ -1,0 +1,257 @@
+% Anhang F: Mapping EU AI Act-Artikel zu Framework-Dimensionen
+
+\addchap{Anhang F: Mapping EU AI Act zu Framework-Dimensionen}
+\label{app:mapping}
+
+Dieser Anhang dokumentiert die vollständige Zuordnung der regulatorischen Anforderungen aus den Artikeln 9--15 des EU AI Acts (Verordnung (EU) 2024/1689) zu den sechs Governance-Dimensionen des Bewertungsframeworks. Das Mapping bildet die Grundlage für die regulatorische Nachvollziehbarkeit des Frameworks (NFR3).
+
+\section*{F.1 Mapping-Übersicht}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{2.5cm}|p{4cm}|}
+\hline
+\textbf{EU AI Act Artikel} & \textbf{Regelungsgegenstand} & \textbf{Framework-Dimension} & \textbf{Bewertungskriterien} \\
+\hline
+Art.~9 & Risikomanagementsystem & D1 & D1.1--D1.6 \\
+\hline
+Art.~10 & Daten und Data Governance & D2 & D2.1--D2.5 \\
+\hline
+Art.~11 & Technische Dokumentation & D3 & D3.1, D3.3--D3.5 \\
+\hline
+Art.~12 & Aufzeichnungspflichten (Logging) & D3 & D3.2 \\
+\hline
+Art.~13 & Transparenz und Informationspflichten & D4 & D4.1--D4.5 \\
+\hline
+Art.~14 & Menschliche Aufsicht & D5 & D5.1--D5.5 \\
+\hline
+Art.~15 & Genauigkeit, Robustheit, Cybersicherheit & D6 & D6.1--D6.5 \\
+\hline
+\end{tabular}
+\caption{Mapping-Übersicht: EU AI Act-Artikel zu Framework-Dimensionen}
+\label{tab:mapping-uebersicht}
+\end{table}
+
+\section*{F.2 Detailliertes Mapping nach Artikeln}
+
+\subsection*{F.2.1 Art.~9 -- Risikomanagementsystem $\rightarrow$ D1}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Absatz} & \textbf{Regulatorische Anforderung} & \textbf{Kriterium} & \textbf{Operationalisierung} \\
+\hline
+Abs.~1 & Einrichtung, Umsetzung, Dokumentation und Aufrechterhaltung eines Risikomgmt.-Systems & D1.1 & KI-spezifisches Risikomgmt.-System \\
+\hline
+Abs.~2 lit.~a & Identifizierung und Analyse bekannter und vernünftigerweise vorhersehbarer Risiken & D1.2 & Systematische Risikoidentifikation \\
+\hline
+Abs.~2 lit.~b & Abschätzung und Bewertung der Risiken & D1.3 & Risikobewertungsmethodik \\
+\hline
+Abs.~2 lit.~c & Bewertung möglicher Risiken bei bestimmungsgemäßer und vernünftigerweise vorhersehbarer Fehlanwendung & D1.3, D1.4 & Risikobewertung und -behandlung \\
+\hline
+Abs.~2 lit.~d & Annahme geeigneter und gezielter Risikomanagement\-maßnahmen & D1.4 & Risikobehandlung \\
+\hline
+Abs.~5--7 & Tests vor Inverkehrbringen und während des gesamten Lebenszyklus & D1.5 & Testverfahren \\
+\hline
+Abs.~3 & Iterativer Prozess über den gesamten Lebenszyklus & D1.6 & Kontinuierliche Aktualisierung \\
+\hline
+\end{tabular}
+\caption{Detailmapping Art.~9 $\rightarrow$ Dimension D1}
+\label{tab:mapping-art9}
+\end{table}
+
+\subsection*{F.2.2 Art.~10 -- Daten und Data Governance $\rightarrow$ D2}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Absatz} & \textbf{Regulatorische Anforderung} & \textbf{Kriterium} & \textbf{Operationalisierung} \\
+\hline
+Abs.~2 & Data-Governance- und Datenverwaltungspraktiken & D2.1 & Datenqualitätskriterien \\
+\hline
+Abs.~2 lit.~f & Erkennung und Behebung möglicher Verzerrungen (Bias) & D2.2 & Bias-Erkennung \\
+\hline
+Abs.~2 lit.~b--c & Relevante Gestaltungsentsch., Datenerhebung, Herkunft & D2.3 & Data Lineage \\
+\hline
+Abs.~5 & Verarbeitung besonderer Kategorien personenbez. Daten & D2.4 & DSGVO-Integration \\
+\hline
+Abs.~2 lit.~e & Bewertung der Verfügbarkeit, Menge und Eignung & D2.5 & Kontinuierliche Datenqualität \\
+\hline
+\end{tabular}
+\caption{Detailmapping Art.~10 $\rightarrow$ Dimension D2}
+\label{tab:mapping-art10}
+\end{table}
+
+\subsection*{F.2.3 Art.~11 und Art.~12 -- Dokumentation und Logging $\rightarrow$ D3}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Absatz} & \textbf{Regulatorische Anforderung} & \textbf{Kriterium} & \textbf{Operationalisierung} \\
+\hline
+Art.~11 Abs.~1 & Erstellung techn. Dokumentation vor Inverkehrbringen & D3.1 & Technische Dokumentation \\
+\hline
+Art.~12 Abs.~1--2 & Automatische Aufzeichnung von Ereignissen (Logs) & D3.2 & Logging \\
+\hline
+Art.~11 Abs.~1 & Aktualität der Dokumentation über den Lebenszyklus & D3.3 & Versionierung \\
+\hline
+Art.~11 Abs.~1 i.\,V.\,m. Anh.~IV & Konformitätsbewertung nach Art.~43 & D3.4 & Konformitätsnachweise \\
+\hline
+Art.~11, 12 & Gesamthafte Dokumentationsverwaltung & D3.5 & Dokumentationsmanagement \\
+\hline
+\end{tabular}
+\caption{Detailmapping Art.~11--12 $\rightarrow$ Dimension D3}
+\label{tab:mapping-art11-12}
+\end{table}
+
+\subsection*{F.2.4 Art.~13 -- Transparenz und Informationspflichten $\rightarrow$ D4}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Absatz} & \textbf{Regulatorische Anforderung} & \textbf{Kriterium} & \textbf{Operationalisierung} \\
+\hline
+Abs.~1 & Hinreichend transparente Konzeption und Entwicklung & D4.1 & Erklärbarkeit \\
+\hline
+Abs.~3 lit.~b & Gebrauchsanweisung mit relevanten Informationen & D4.2 & Informationspflichten \\
+\hline
+Abs.~3 lit.~b Nr.~iii & Leistungsfähigkeit und Grenzen des Systems & D4.3 & Fähigkeiten und Grenzen \\
+\hline
+Abs.~1 & Kennzeichnung als KI-System & D4.4 & KI-Kennzeichnung \\
+\hline
+Abs.~3 lit.~b Nr.~i--ii & Merkmale, Fähigkeiten und Funktionsweise & D4.5 & Prozess-Transparenz \\
+\hline
+\end{tabular}
+\caption{Detailmapping Art.~13 $\rightarrow$ Dimension D4}
+\label{tab:mapping-art13}
+\end{table}
+
+\subsection*{F.2.5 Art.~14 -- Menschliche Aufsicht $\rightarrow$ D5}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Absatz} & \textbf{Regulatorische Anforderung} & \textbf{Kriterium} & \textbf{Operationalisierung} \\
+\hline
+Abs.~1--2 & Konzeption für wirksame menschliche Aufsicht & D5.1 & Aufsichtsdesign \\
+\hline
+Abs.~4 lit.~a--b & Fähigkeiten, Ausbildung und Befugnisse der Aufsichtspersonen & D5.2 & Qualifikation \\
+\hline
+Abs.~4 lit.~d--e & Eingriffsmöglichkeiten (Abschalten, Korrigieren) & D5.3 & Intervention \\
+\hline
+Abs.~4 lit.~b & Verständnis für Automation Bias & D5.4 & Automation-Bias-Prävention \\
+\hline
+Abs.~4 lit.~c & Korrekte Interpretation der Systemausgaben & D5.5 & Aufsichts-Review \\
+\hline
+\end{tabular}
+\caption{Detailmapping Art.~14 $\rightarrow$ Dimension D5}
+\label{tab:mapping-art14}
+\end{table}
+
+\subsection*{F.2.6 Art.~15 -- Genauigkeit, Robustheit und Cybersicherheit $\rightarrow$ D6}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Absatz} & \textbf{Regulatorische Anforderung} & \textbf{Kriterium} & \textbf{Operationalisierung} \\
+\hline
+Abs.~1--2 & Angemessenes Genauigkeitsniveau & D6.1 & Genauigkeitsmetriken \\
+\hline
+Abs.~4 & Widerstandsfähigkeit gegen Fehler, Störungen oder Inkonsistenzen & D6.2 & Robustheit \\
+\hline
+Abs.~5 & Resilienz gegen unbefugte Eingriffe Dritter & D6.3 & Cybersicherheit \\
+\hline
+Abs.~3 & Leistungsüberwachung über den gesamten Lebenszyklus & D6.4 & Drift-Erkennung \\
+\hline
+Abs.~4 & Maßnahmen bei technischem Versagen & D6.5 & Fallback-Mechanismen \\
+\hline
+\end{tabular}
+\caption{Detailmapping Art.~15 $\rightarrow$ Dimension D6}
+\label{tab:mapping-art15}
+\end{table}
+
+\section*{F.3 Querschnittsanforderungen}
+
+Neben den direkt zuordenbaren Artikeln enthält der EU AI Act weitere Anforderungen, die dimensionsübergreifend in das Framework integriert wurden:
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3cm}|p{4.5cm}|p{2.5cm}|p{3cm}|}
+\hline
+\textbf{EU AI Act Referenz} & \textbf{Anforderung} & \textbf{Querschnitts\-kategorie} & \textbf{Integration} \\
+\hline
+Art.~4 (AI Literacy) & KI-Kompetenz der Mitarbeiter & Q2 & In alle Dimensionen integriert \\
+\hline
+Art.~9 Abs.~4 & Organisatorische Verankerung des Risikomgmt. & Q1 & In alle Dimensionen integriert \\
+\hline
+Art.~17 & Qualitätsmanagementsystem & Q1 & Übergreifende Governance-Struktur \\
+\hline
+Art.~26 & Pflichten der Betreiber & Q1, Q2 & Rollen und Verantwortlichkeiten \\
+\hline
+ErwG 27 & Verhältnismäßigkeit der Maßnahmen & -- & Modularer Aufbau, Gewichtung \\
+\hline
+\end{tabular}
+\caption{Querschnittsanforderungen und deren Integration}
+\label{tab:querschnitt-mapping}
+\end{table}
+
+\section*{F.4 Vollständigkeitsanalyse}
+
+Die folgende Übersicht zeigt die Abdeckung der Kernartikel des EU AI Acts durch das Bewertungsframework:
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2.5cm}|p{5cm}|c|p{4cm}|}
+\hline
+\textbf{Artikel} & \textbf{Gegenstand} & \textbf{Abgedeckt} & \textbf{Anmerkung} \\
+\hline
+Art.~6 & Klassifizierungsregeln & Teilweise & Scoping-Phase des Assessments \\
+\hline
+Art.~9 & Risikomanagementsystem & Vollständig & Dimension D1 \\
+\hline
+Art.~10 & Daten und Data Governance & Vollständig & Dimension D2 \\
+\hline
+Art.~11 & Technische Dokumentation & Vollständig & Dimension D3 \\
+\hline
+Art.~12 & Aufzeichnungspflichten & Vollständig & Dimension D3 (D3.2) \\
+\hline
+Art.~13 & Transparenz & Vollständig & Dimension D4 \\
+\hline
+Art.~14 & Menschliche Aufsicht & Vollständig & Dimension D5 \\
+\hline
+Art.~15 & Genauigkeit, Robustheit & Vollständig & Dimension D6 \\
+\hline
+Art.~16--17 & Anbieterpflichten, QMS & Teilweise & Querschnittskategorie Q1 \\
+\hline
+Art.~26 & Betreiberpflichten & Teilweise & Querschnittskategorie Q1, Q2 \\
+\hline
+\end{tabular}
+\caption{Vollständigkeitsanalyse: Abdeckung der EU AI Act-Artikel}
+\label{tab:vollstaendigkeit}
+\end{table}
+
+Die Kernartikel 9--15 des EU AI Acts werden durch die sechs Dimensionen des Frameworks vollständig abgedeckt. Die Anbieterpflichten (Art.~16--17) und Betreiberpflichten (Art.~26) sind als Querschnittsanforderungen teilweise integriert und könnten in einer Erweiterung des Frameworks als eigenständige Dimensionen ausgestaltet werden.

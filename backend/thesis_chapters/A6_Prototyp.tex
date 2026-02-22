@@ -1,0 +1,365 @@
+% Anhang D: Prototyp-Dokumentation
+
+\addchap{Anhang D: Prototyp-Dokumentation}
+\label{app:prototyp}
+
+Dieser Anhang ergänzt die Ausführungen in Kapitel~\ref{chap:artefakt} um Code-Listings, Daten-Schemata und die vollständige Limitationsanalyse des Prototyps.
+
+
+\section*{D.0 Prototyp-Screenshots}
+\label{app:screenshots}
+
+Die folgenden Abbildungen dokumentieren den finalen Prototyp (V3) entlang des Assessment-Workflows. Der Workflow umfasst vier Phasen: Dashboard und Einstieg (Abb.~\ref{fig:screenshot-dashboard}--\ref{fig:screenshot-scoping}), Assessment-Durchführung (Abb.~\ref{fig:screenshot-assessment}--\ref{fig:screenshot-na}), Ergebnisse und Reporting (Abb.~\ref{fig:screenshot-radar}--\ref{fig:screenshot-aktionsplan}) sowie Querschnittsfunktionen (Abb.~\ref{fig:screenshot-assistent}--\ref{fig:screenshot-i18n}).
+
+% --- Phase 1: Dashboard & Einstieg ---
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_dashboard.png}
+\caption{Dashboard-Übersicht: Sechs Governance-Dimensionen als interaktive Bento-Karten mit EU-AI-Act-Artikelzuordnung, Methodologie-Erläuterung und Navigationsstruktur (AppDock)}
+\label{fig:screenshot-dashboard}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_dimension_modal.png}
+\caption{Dimensions-Detail-Modal: Vollständige Beschreibung der Dimension D1 (Risikomanagement) mit EU-AI-Act-Artikelreferenz (Art.~9), sechs Bewertungskriterien und CMMI-Reifegradstufen pro Kriterium}
+\label{fig:screenshot-modal}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_scoping.png}
+\caption{Scoping-Formular: Kontextuelle Einordnung des zu bewertenden KI-Systems mit Risikokategorie (Hochrisiko), Branche, Organisationsgröße, Deployment-Status und optionaler Dimensionsgewichtung}
+\label{fig:screenshot-scoping}
+\end{figure}
+
+% --- Phase 2: Assessment-Durchführung ---
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_assessment.png}
+\caption{Assessment-Oberfläche: Dimension D1 (Risikomanagement) mit sechs Bewertungskriterien, fünfstufiger Score-Auswahl, aufklappbaren Reifegrad-Indikatoren und segmentierter Fortschrittsleiste}
+\label{fig:screenshot-assessment}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_assessment_indikatoren.png}
+\caption{CMMI-Reifegrad-Indikatoren: Aufgeklappte Stufenbeschreibungen (Initial bis Optimierend) mit kontextuellen Praxisbeispielen für Stufe~2 und Stufe~3 zur Unterstützung der Stufenzuordnung}
+\label{fig:screenshot-indikatoren}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_assessment_na.png}
+\caption{N/A-Funktion: Markierung eines Kriteriums als nicht anwendbar mit optionalem Begründungsfeld, das bei der Scoring-Aggregation berücksichtigt wird}
+\label{fig:screenshot-na}
+\end{figure}
+
+% --- Phase 3: Ergebnisse & Reporting ---
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_radarchart.png}
+\caption{Executive Summary und Radar-Chart: Gesamtscore (2,8 -- Stufe Definiert), Governance-Profil der sechs Dimensionen im Radar-Diagramm mit Compliance-Schwellenwert, sowie Konformitätsstatus-Übersicht}
+\label{fig:screenshot-radar}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_gapanalyse.png}
+\caption{Gap-Analyse: Priorisierte Handlungsfelder mit Schweregrad-Badges (Nicht konform, Signifikant, Moderat), Handlungsempfehlungen und Regulierungsrisikohinweisen pro Dimension}
+\label{fig:screenshot-gap}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_heatmap.png}
+\caption{Dimensions-Scorecard und Compliance-Heatmap: Tabellarische Übersicht aller Dimensionsbewertungen mit Konformitätsstatus sowie farbkodierte Kriterien-Matrix (31~Kriterien $\times$ 6~Dimensionen)}
+\label{fig:screenshot-heatmap}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_roadmap.png}
+\caption{Compliance-Roadmap und EU-AI-Act-Zeitstrahl: Phasenbasierter Implementierungsplan (Phase~1: Monat~3--8, Phase~2: Monat~6--12) mit regulatorischen Fristen und durchsuchbarem Glossar}
+\label{fig:screenshot-roadmap}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_raci.png}
+\caption{RACI-Verantwortlichkeitsmatrix: Zuordnung der sechs Dimensionen zu fünf Governance-Rollen (CISO, DPO, Risk~Mgr, Dev~Lead, Compliance) sowie Reifegrad-Detail mit aktiver Stufe}
+\label{fig:screenshot-raci}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_aktionsplan.png}
+\caption{Maßnahmenplan-Modal: Dimensionsspezifischer Aktionsplan für D2 (Data Governance) mit Umsetzungsschritten, Quick Wins, Aufwandsschätzung und kriterienbezogenen Empfehlungen}
+\label{fig:screenshot-aktionsplan}
+\end{figure}
+
+% --- Phase 4: Querschnittsfunktionen ---
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_assistent.png}
+\caption{Kontextueller KI-Governance-Assistent: RAG-gestütztes Chat-Panel mit kontextbezogenen Vorschlägen (Ergebnisanalyse, Quick Wins, nächste Schritte) und Freitexteingabe}
+\label{fig:screenshot-assistent}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Bilder/Prototyp/prototyp_mehrsprachigkeit.png}
+\caption{Mehrsprachigkeitsunterstützung: Dashboard-Ansicht in englischer Sprache -- der Prototyp unterstützt drei Sprachen (Deutsch, Englisch, Französisch) über eine integrierte i18n-Architektur}
+\label{fig:screenshot-i18n}
+\end{figure}
+
+
+\section*{D.1 Scoring Engine}
+
+\begin{lstlisting}[style=myStyle, language=Python, caption={Scoring Engine -- Dimensions- und Gesamtscore-Berechnung}, label={lst:scoring-engine}]
+def calculate_dimension_score(criteria_scores: dict) -> float:
+    if not criteria_scores:
+        return 0.0
+    return sum(criteria_scores.values()) / len(criteria_scores)
+
+def calculate_overall_score(
+    dimension_scores: dict,
+    weights: dict = None
+) -> float:
+    if weights is None:
+        weights = {d: 1.0 / len(dimension_scores)
+                   for d in dimension_scores}
+    return sum(
+        dimension_scores[d] * weights[d]
+        for d in dimension_scores
+    )
+
+def identify_gaps(
+    dimension_scores: dict,
+    threshold: float = 3.0
+) -> list:
+    gaps = []
+    for dim_id, score in dimension_scores.items():
+        if score < threshold:
+            gaps.append((dim_id, score, threshold - score))
+    gaps.sort(key=lambda x: x[2], reverse=True)
+    return gaps
+\end{lstlisting}
+
+
+\section*{D.2 Knowledge-Base-Schema}
+
+\begin{lstlisting}[language=json, style=myStyle, caption={Knowledge-Base-Schema (Auszug -- Dimension D1)}, label={lst:knowledge-schema}]
+{
+  "dimensions": {
+    "D1": {
+      "name": "Risikomanagement",
+      "article_ref": "Art. 9 EU AI Act",
+      "description": "Anforderungen an das
+        Risikomanagementsystem fuer Hochrisiko-KI",
+      "maturity_guidance": {
+        "1_to_2": "Initiale KI-Risikoliste erstellen.",
+        "2_to_3": "Risikomanagementprozess formalisieren.",
+        "3_to_4": "Quantitative Risikometriken einfuehren.",
+        "4_to_5": "Automatisiertes Monitoring implementieren."
+      },
+      "best_practices": [
+        "Lebenszyklusorientierung",
+        "Integration bestehender ERM-Prozesse",
+        "Klare Eskalationspfade"
+      ]
+    }
+  }
+}
+\end{lstlisting}
+
+
+\section*{D.3 LLM-System-Prompt-Template}
+
+\begin{lstlisting}[style=myStyle, basicstyle=\ttfamily\scriptsize, caption={LLM System Prompt Template (Governance Agent)}, label={lst:system-prompt}]
+SYSTEM_PROMPT = """
+You are an AI Governance Assessment Advisor specializing
+in the EU AI Act (Regulation 2024/1689).
+
+FRAMEWORK: Assess six governance dimensions:
+- D1: Risk Management (Art. 9)
+- D2: Data Governance (Art. 10)
+- D3: Documentation (Art. 11-12)
+- D4: Transparency (Art. 13)
+- D5: Human Oversight (Art. 14)
+- D6: Technical Robustness (Art. 15)
+
+MATURITY LEVELS: 1=Initial, 2=Managed, 3=Defined,
+  4=Measured, 5=Optimizing
+
+RULES:
+1. Cite specific article references for regulatory claims
+2. Maturity ratings must be integers 1-5
+3. Provide actionable improvement recommendations
+4. Stay within the 6 dimensions and 31 criteria
+5. Ask clarifying questions when responses are ambiguous
+6. Flag potential gaps (score < 3.0) explicitly
+"""
+\end{lstlisting}
+
+
+\section*{D.4 Vollständige Limitationsanalyse des Prototyps}
+
+Tabelle~\ref{tab:mankos-uebersicht} dokumentiert die identifizierten Limitationen des finalen Prototyps (V3), gegliedert in DSR-Limitationen (M1--M5) und Tool-Limitationen (T1--T7), mit Zuordnung zu den betroffenen Requirements und Kritikalitätsbewertung.
+
+\begin{table}[htbp]
+\centering
+\caption{Übersicht identifizierter Limitationen mit Requirement-Zuordnung und Kritikalität}
+\label{tab:mankos-uebersicht}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|p{4.5cm}|l|l|}
+\hline
+\textbf{ID} & \textbf{Limitation} & \textbf{Req.} & \textbf{Kritikalität} \\
+\hline
+M1 & RAG-Grounding-Qualität (fehlendes Cross-Encoder-Reranking) & NFR3, NFR4 & Hoch \\
+M2 & Evaluationsvalidität (Selbst-Evaluation als Iterationstrigger) & -- & Mittel \\
+M3 & Fehlende empirische Kalibrierung (Gap-Schwellenwerte, RAG-$\theta$) & NFR3 & Mittel \\
+M4 & Synthetische Benchmarks & NFR3, NFR4 & Niedrig \\
+M5 & Normative Operationalisierung abhängig von harmonisierten Standards & FR2, NFR5 & Hoch \\
+\hline
+T1 & Keine persistente Datenhaltung (nur \texttt{localStorage}) & NFR2 & Hoch \\
+T2 & Fehlende Authentifizierung und Mandantenfähigkeit & -- & Hoch \\
+T3 & Externe API-Abhängigkeit (Mistral AI) & NFR2 & Mittel \\
+T4 & Kein Rate-Limiting / begrenzte Skalierbarkeit & NFR2 & Mittel \\
+T5 & RAG-Retrievalqualität ohne Reranking-Stufe & NFR4 & Mittel \\
+T6 & Keine Multi-System-Unterstützung & NFR4 & Niedrig \\
+T7 & Limitierte Offline-Fähigkeit & NFR2 & Niedrig \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Erläuterungen:}
+
+\begin{description}
+    \item[M1 -- RAG-Grounding-Qualität:] Die Kosinusähnlichkeitssuche mit Schwellenwert $\theta > 0{,}3$ liefert in der Regel relevante Chunks, kann jedoch bei mehrdeutigen Abfragen irrelevante Passagen einschließen. Ein Cross-Encoder-Reranking-Schritt \autocite{Fan2024} würde die Precision verbessern.
+    \item[M2 -- Evaluationsvalidität:] Die Gap-Analyse zwischen Prototypversionen wurde vom Entwickler selbst durchgeführt. Eine unabhängige Evaluation hätte das Confirmation-Bias-Risiko gemindert.
+    \item[M3 -- Fehlende Kalibrierung:] Die Schwellenwerte für Gap-Erkennung ($3{,}0$ / $2{,}5$ / $2{,}0$ nach Risikokategorie), der RAG-Ähnlichkeitsschwellenwert ($\theta = 0{,}3$) und die Top-$k$-Parameter (3--4) sind heuristisch gesetzt. Eine empirische Kalibrierung mit realen Assessment-Daten steht aus.
+    \item[M4 -- Synthetische Benchmarks:] Die Branchenbenchmarks basieren auf aggregierten synthetischen Daten und dienen ausschließlich der Demonstration. Eine Validierung mit realen Organisationsdaten ist erforderlich.
+    \item[M5 -- Normative Operationalisierung:] Die Übersetzung abstrakter Normbegriffe (``angemessene Genauigkeit'', ``hinreichende Transparenz'') in Reifegrad-Indikatoren erfordert normative Entscheidungen, die von ausstehenden harmonisierten Standards abhängen \autocite{Kilian2025}.
+\end{description}
+
+
+\section*{D.5 REST-Endpunkte der Prototypversionen}
+\label{app:endpunkte}
+
+Tabelle~\ref{tab:v1-endpoints-app} dokumentiert die REST-Endpunkte der Version~1. Die Endpunkte des finalen Prototyps (V3) sind in Tabelle~\ref{tab:v3-endpoints-app} mit ihren SSE-Event-Typen aufgeführt.
+
+\begin{table}[htbp]
+\centering
+\caption{REST-Endpunkte der Version~1}
+\label{tab:v1-endpoints-app}
+\small
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Methode} & \textbf{Pfad} & \textbf{Funktion} \\
+\hline
+GET & \texttt{/} & Health-Check \\
+GET & \texttt{/api/dimensions} & Gesamte Wissensbasis als JSON-Array \\
+GET & \texttt{/api/dimensions/\{id\}} & Einzelne Dimension nach ID \\
+POST & \texttt{/api/assess} & Assessment-Berechnung: Scoring, Gap-Analyse \\
+GET & \texttt{/api/knowledge/\{dim\}/\{crit\}} & Kontexthilfe für einzelnes Kriterium \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Backend-Endpunkte des finalen Prototyps (V3)}
+\label{tab:v3-endpoints-app}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|p{4.5cm}|p{4cm}|}
+\hline
+\textbf{Endpunkt} & \textbf{Funktion} & \textbf{SSE-Events} \\
+\hline
+\texttt{GET /} & Health-Check & -- \\
+\texttt{GET /api/dimensions} & Wissensbasis abrufen & -- \\
+\texttt{GET /api/dimensions/\{id\}} & Einzelne Dimension & -- \\
+\texttt{POST /api/assess} & Scoring, Gap-Analyse & -- \\
+\texttt{GET /api/knowledge/\{d\}/\{c\}} & Kontexthilfe pro Kriterium & -- \\
+\texttt{GET /api/chat/status} & LLM-/RAG-Status & -- \\
+\texttt{GET /api/benchmarks} & Branchenbenchmarks & -- \\
+\hline
+\texttt{POST /api/chat} & RAG-Chat-Assistent & \texttt{text} (SSE) \\
+\texttt{POST /api/assessment/ analyze-dimension} & Dimensionsanalyse & \texttt{text}, \texttt{followup}, \texttt{clean\_text} \\
+\texttt{POST /api/results/ stream-summary} & Executive Summary & \texttt{text} \\
+\texttt{POST /api/results/ deep-analysis} & Operative Tiefenanalyse & \texttt{text}, \texttt{clean\_text} \\
+\texttt{POST /api/assistant} & Kontextueller Assistent & \texttt{text} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section*{D.6 SSE-Event-Typen und Multi-Event-Protokoll}
+\label{app:sse-events}
+
+V3 differenziert fünf SSE-Event-Typen, die eine strukturierte Frontend-Verarbeitung ermöglichen:
+
+\begin{description}
+    \item[\texttt{text}:] Fortlaufender Freitext-Stream für Analyse und Empfehlungen.
+    \item[\texttt{followup}:] Strukturiertes JSON-Objekt mit Follow-up-Frage und Antwortoptionen, das im Frontend als interaktive Auswahl gerendert wird.
+    \item[\texttt{clean\_text}:] Bereinigte Textversion ohne Markdown-Formatierung für die PDF-Generierung.
+    \item[\texttt{score\_extraction}:] Strukturierte Datenextraktion (z.\,B. extrahierte Einzelscores aus der konversationellen Bewertung).
+    \item[\texttt{phase\_transition}:] Signalisiert den Übergang zwischen Assessment-Phasen (z.\,B. Dimension abgeschlossen, zur nächsten Dimension).
+\end{description}
+
+
+\section*{D.7 RAG-Injektionspunkte}
+\label{app:rag-injektionspunkte}
+
+Die RAG-Engine wird an vier Stellen in den Analyse-Workflow injiziert (Tabelle~\ref{tab:rag-injektionspunkte-app}). Jeder Injektionspunkt definiert einen spezifischen Top-$k$-Wert und eine Retrieval-Strategie.
+
+\begin{table}[htbp]
+\centering
+\caption{RAG-Injektionspunkte und Retrieval-Strategien}
+\label{tab:rag-injektionspunkte-app}
+\small
+\begin{tabular}{|p{3cm}|p{2.5cm}|c|p{4.5cm}|}
+\hline
+\textbf{Endpunkt} & \textbf{Kontext} & \textbf{Top-$k$} & \textbf{Retrieval-Strategie} \\
+\hline
+\texttt{analyze-dimension} & Dimension + Scores & 3 & Dimensionsfokus + Follow-up \\
+\hline
+\texttt{stream-summary} & Top-3-Gap-Dim. & 2--4 & Pro Gap-Dimension + EU-AI-Act \\
+\hline
+\texttt{deep-analysis} & Dimension + Schwere & 4 & Gap-Schwere + Dimension \\
+\hline
+\texttt{assistant} & Frage + opt. Dim. & 4 & Freitext + Dimensionsfokus \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section*{D.8 Mehrsprachigkeitsarchitektur}
+\label{app:i18n}
+
+Die i18n-Architektur (Internationalization) wurde ohne externe Bibliothek implementiert und umfasst drei Komponenten:
+
+\begin{itemize}
+    \item \texttt{LanguageContext}: Ein React-Context-Provider, der die aktuelle Sprache verwaltet und eine \texttt{t('key.subkey')}-Übersetzungsfunktion bereitstellt. Verschachtelte Schlüssel werden durch Punkt-Notation aufgelöst.
+    \item \texttt{useTranslatedDimensions}: Ein Custom Hook, der übersetzte Inhalte (Dimensionsnamen, Kriterienbezeichnungen, Reifegrad-Indikatoren) auf die deutschsprachigen Backend-Daten überlagert, ohne die Backend-API zu duplizieren.
+    \item Übersetzungsdateien (JSON): Drei Sprachdateien (DE, EN, FR) decken sämtliche UI-Strings, Aktionspläne, Reifegrad-Labels, Gap-Empfehlungen und Praxisbeispiele ab. Der deutsche Sprachbestand umfasst ca.~800~Übersetzungsschlüssel.
+\end{itemize}
+
+
+\section*{D.9 Sicherheitsarchitektur}
+\label{app:sicherheit}
+
+Die Sicherheitsarchitektur adressiert drei Bedrohungsszenarien: (1)~Prompt-Injection-Angriffe, (2)~Score-Manipulation und (3)~Datenexfiltration. V3 implementiert eine vierstufige Sicherheitsarchitektur:
+
+\begin{enumerate}
+    \item \textbf{Prompt-Injection-Erkennung:} 16~vorkompilierte Regex-Muster erkennen Anweisungsübersteuerung, Rollenmanipulation, Score-Manipulation und System-Prompt-Extraktion. Bei Erkennung wird eine sichere Standardantwort zurückgegeben, ohne das LLM aufzurufen.
+    \item \textbf{Eingabevalidierung:} Maximale Nachrichtenlänge 3.000~Zeichen, maximale Konversationsgröße 100.000~Zeichen, Phasen-Whitelist, Steuerzeichenbereinigung (Pydantic~v2).
+    \item \textbf{Token-Management:} Konversations-Kompression für lange Assessment-Sitzungen: Die ersten zwei und letzten acht Nachrichten werden verbatim erhalten; dazwischenliegende Nachrichten werden zu einer Zusammenfassung komprimiert.
+    \item \textbf{CORS-Beschränkung:} Zugriff ausschließlich von \texttt{localhost:3000--3002}.
+\end{enumerate}

@@ -1,0 +1,251 @@
+% Kapitel 3: Methodisches Vorgehen
+
+\chapter{Methodisches Vorgehen}
+\label{chap:methodik}
+
+Dieses Kapitel dokumentiert und begründet das methodische Vorgehen. Abschnitt~\ref{sec:forschungsdesign} legt Design Science Research als Forschungsrahmen dar, Abschnitt~\ref{sec:slr} die systematische Literaturrecherche und Abschnitte~\ref{sec:inhaltsanalyse}--\ref{sec:ergebnisse-inhaltsanalyse} die qualitative Inhaltsanalyse. Abschnitt~\ref{sec:evaluationsmethode} beschreibt die Evaluationsmethode, Abschnitt~\ref{sec:guetekriterien} reflektiert die Gütekriterien.
+
+
+\section{Forschungsdesign: Design Science Research}
+\label{sec:forschungsdesign}
+
+Design Science Research (DSR) zielt auf die Konstruktion und systematische Evaluation von Artefakten, die reale Probleme lösen \autocite{Hevner2004}. Die intellektuellen Wurzeln liegen in Simons Konzept der \textit{Sciences of the Artificial}, das Design als eigenständige Erkenntnisform neben den Naturwissenschaften begründet \autocite{Simon1996}. DSR ist für diese Arbeit der geeignete Forschungsansatz, weil die KI-Governance-Bewertung Merkmale eines \textit{wicked problem} nach Rittel und Webber aufweist \autocite{RittelWebber1973}: Die Problemdefinition ist unvollständig (welche Governance-Aspekte sind relevant?), die Anforderungen sind interdependent (Transparenz setzt Dokumentation voraus, die wiederum Datenqualität erfordert), und eine endgültige Lösung existiert nicht (regulatorische Anforderungen verändern sich). DSR ist zudem das einzige Paradigma, das die Konstruktion eines Artefakts aus heterogenen Wissensbeständen -- Regulierung, Governance-Theorie, Reifegradmethodik -- als eigenständigen Erkenntnisbeitrag anerkennt \autocite{Venable2016}.
+
+Alternative Forschungsansätze wurden geprüft: Action Research setzt partizipative Zusammenarbeit mit einer Praxisorganisation voraus, die hier nicht realisierbar war. Case Study Research untersucht bestehende Phänomene, konstruiert aber keine neuen Artefakte. Grounded Theory generiert Theorie aus Daten, gestaltet aber keine technischen Lösungen \autocite{Hevner2004}.
+
+Das Vorgehen folgt dem DSR-Prozessmodell nach Peffers et al. \autocite{Peffers2007} mit sechs Phasen: (1)~Problem Identification (Kapitel~\ref{chap:einleitung} und \ref{chap:stand}), (2)~Objectives of a Solution (Kapitel~\ref{chap:artefakt}), (3)~Design \& Development (Prototypisierung V1--V3), (4)~Demonstration, (5)~Evaluation (Kapitel~\ref{chap:demonstration}) und (6)~Communication (vorliegende Arbeit). Der \textit{Entry Point} liegt bei Phase~1 (problem-centered initiation), da die Arbeit von einer identifizierten regulatorischen Lücke ausgeht.
+
+Die drei Forschungszyklen nach Hevner \autocite{Hevner2007} strukturieren den Prozess komplementär: Der \textit{Relevance Cycle} verbindet mit der Anwendungsumgebung (Organisationen mit Hochrisiko-KI-Systemen) und definiert die Akzeptanzkriterien. Der \textit{Rigor Cycle} erschließt die Wissensbasis (SLR und Inhaltsanalyse). Der \textit{Design Cycle} iteriert zwischen Konstruktion und Evaluation über drei Prototypversionen (Abschnitt~\ref{sec:prototypisierung}). Die Integration beider Modelle -- Peffers' lineares Phasenmodell und Hevners zyklisches Drei-Zyklen-Modell -- verbindet nachvollziehbare Gesamtstruktur mit iterativer Verfeinerung.
+
+Tabelle~\ref{tab:dsr-guidelines} dokumentiert die Adressierung der DSR-Guidelines nach Hevner et al.
+
+\begin{table}[htbp]
+\centering
+\caption{Adressierung der DSR-Guidelines nach Hevner et al. (2004)}
+\label{tab:dsr-guidelines}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{3.5cm}|p{8cm}|}
+\hline
+\textbf{Guideline} & \textbf{Umsetzung in der vorliegenden Arbeit} \\
+\hline
+G1: Design as Artifact & KI-Governance-Bewertungsframework als Modell mit prototypischer Instanziierung \\
+\hline
+G2: Problem Relevance & Adressierung der Operationalisierungslücke für die ab 08/2026 geltenden Art.~9--15 \\
+\hline
+G3: Design Evaluation & Vierstufige Evaluation: Vollständigkeitsanalyse, Szenario-Demo, Technische Evaluation, Artefakt-Evaluation ($n=8$) \\
+\hline
+G4: Research Contributions & Exaptation-Beitrag: Reifegradmethodik auf KI-Governance-Bewertung angewandt \\
+\hline
+G5: Research Rigor & Qualitative Inhaltsanalyse nach Mayring; systematische Literaturrecherche \\
+\hline
+G6: Design as Search & Prototypiterationen (V1--V3) mit Gap-Analyse pro Version \\
+\hline
+G7: Communication & Vorliegende Masterarbeit; Artefakt als webbasierter Prototyp \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{Systematische Literaturrecherche}
+\label{sec:slr}
+
+Die systematische Literaturrecherche folgt Vom Brocke et al. \autocite{VomBrocke2009} und durchsucht Scopus, Web of Science und Google Scholar (Zeitraum 2019--2026, Schwerpunkt ab 2022). Sie verlief in drei Recherchephasen: initiale Datenbanksuche (September 2025), Aktualisierung nach Inkrafttreten des AI Acts (November 2025) und finale Aktualisierung (Januar 2026). Ergänzend kamen Schneeball-Suchen ausgehend von Schlüsselpublikationen \autocite{Jobin2019} zum Einsatz.
+
+Die Suchstrings kombinierten drei Themenfelder mittels Boolescher Operatoren. Der primäre Suchstring lautete: \texttt{("AI governance" OR "artificial intelligence governance" OR "AI regulation") AND ("assessment" OR "maturity model" OR "framework" OR "evaluation") AND ("EU AI Act" OR "risk-based" OR "high-risk")}. Ein ergänzender Suchstring adressierte verwandte Konzepte: \texttt{("responsible AI" OR "trustworthy AI") AND ("compliance" OR "audit" OR "accountability")}. Für Google Scholar wurden zusätzlich deutschsprachige Suchstrings verwendet: \texttt{"KI-Governance" AND ("Bewertung" OR "Reifegrad" OR "EU AI Act")}.
+
+Die Ein- und Ausschlusskriterien: \textbf{Einschluss:} (E1)~Peer-reviewed Publikation oder regulatorische Primärquelle; (E2)~Erscheinungsjahr 2019--2026; (E3)~Bezug zu KI-Governance, EU-KI-Regulierung, Reifegradmodellierung oder KI-Governance-Bewertung; (E4)~Volltextzugang. \textbf{Ausschluss:} (A1)~Rein technische ML/DL-Publikationen ohne Governance-Bezug; (A2)~Konferenzbeiträge unter vier Seiten; (A3)~Publikationen in anderen Sprachen als Englisch oder Deutsch. Duplikate wurden anhand von DOI und Titel eliminiert.
+
+Die Datenbanksuche identifizierte 312~Treffer. Das dreistufige Screening reduzierte diese auf 43~Volltexte (Titel: 125; Abstract: 67; Volltext: 43). Ergänzt durch Schneeball-Suche (12) und regulatorische Primärquellen (7) umfasst die finale Wissensbasis 62~Referenzen. Abbildung~\ref{fig:prisma} dokumentiert den Selektionsprozess.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.6cm,
+    box/.style={rectangle, draw=black!60, fill=blue!5, rounded corners=2pt, minimum height=0.8cm, minimum width=5.5cm, text width=5.3cm, align=center, font=\sffamily\scriptsize},
+    excl/.style={rectangle, draw=black!40, fill=red!5, rounded corners=2pt, minimum height=0.6cm, minimum width=3.8cm, text width=3.6cm, align=center, font=\sffamily\scriptsize},
+    supp/.style={rectangle, draw=black!40, fill=green!5, rounded corners=2pt, minimum height=0.6cm, minimum width=3.8cm, text width=3.6cm, align=center, font=\sffamily\scriptsize},
+    arrow/.style={-{Stealth[length=2mm]}, thick, black!50}
+]
+
+% Identification
+\node[box] (id) {\textbf{Identifikation}\\Datenbanksuche: $n = 312$\\(Scopus, Web of Science, Google Scholar)};
+
+% Screening 1
+\node[box, below=of id] (s1) {\textbf{Titel-Screening}\\$n = 125$ verbleibend};
+\node[excl, right=1.5cm of s1] (e1) {Ausgeschlossen: $n = 187$\\(kein Governance-Bezug, Duplikate)};
+
+% Screening 2
+\node[box, below=of s1] (s2) {\textbf{Abstract-Screening}\\$n = 67$ verbleibend};
+\node[excl, right=1.5cm of s2] (e2) {Ausgeschlossen: $n = 58$\\(A1--A3 Kriterien)};
+
+% Screening 3
+\node[box, below=of s2] (s3) {\textbf{Volltext-Screening}\\$n = 43$ eingeschlossen};
+\node[excl, right=1.5cm of s3] (e3) {Ausgeschlossen: $n = 24$\\(fehlender Volltextzugang, $<$\,4~S.)};
+
+% Supplementary (links versetzt, klar getrennt)
+\node[supp, below=1.2cm of s3, xshift=-4cm] (sup) {Schneeball-Suche: $n = 12$\\Regulatorische Quellen: $n = 7$};
+
+% Final
+\node[box, below=2.4cm of s3, fill=green!10] (final) {\textbf{Finale Wissensbasis}\\$n = 62$ Referenzen\\(43 SLR + 12 Schneeball + 7 Primärquellen)};
+
+\draw[arrow] (id) -- (s1);
+\draw[arrow] (s1) -- (s2);
+\draw[arrow] (s2) -- (s3);
+\draw[arrow] (s3) -- (final);
+\draw[arrow] (s1) -- (e1);
+\draw[arrow] (s2) -- (e2);
+\draw[arrow] (s3) -- (e3);
+\draw[arrow] (sup.east) -- (final.west);
+
+\end{tikzpicture}
+\caption{PRISMA-Flowdiagramm der systematischen Literaturrecherche (in Anlehnung an Page et al., 2021)}
+\label{fig:prisma}
+\end{figure}
+
+
+\section{Qualitative Inhaltsanalyse}
+\label{sec:inhaltsanalyse}
+
+Die Kategorienerarbeitung stand vor einem methodischen Spannungsfeld: Die Art.~9--15 geben eine klare deduktive Struktur vor, benennen aber nicht alle Governance-Aspekte, die in der Praxis relevant sind. Eine rein juristische Normexegese hätte den Normtext erschlossen, ohne die wissenschaftliche Literatur systematisch einzubeziehen. Eine Grounded-Theory-Kodierung hätte maximale Offenheit geboten, aber den regulatorischen Ankerpunkt aufgegeben. Die strukturierende Inhaltsanalyse nach Mayring \autocite{Mayring2014} verbindet beide Zugänge: Die Art.~9--15 bilden die deduktiven Ausgangskategorien, die Literaturanalyse gewährleistet induktive Offenheit. Die Emergenz zweier Querschnittskategorien (Q1, Q2), die im Normtext nicht explizit vorkommen, bestätigt die Eignung dieses Hybridansatzes.
+
+Der Materialkorpus umfasst den Primärkorpus (Normtext Art.~9--15 einschließlich der 14~Erwägungsgründe Nr.~47--60) und den Sekundärkorpus (wissenschaftliche Publikationen, $n = 43$ plus 12~Schneeball-Quellen). Das Vorgehen folgt Mayrings Ablaufmodell in vier Phasen:
+
+\textbf{Phase~1 -- Vorbereitung und Pilotkodierung:} Die Analyseeinheit ist ein zusammenhängender Sinnabschnitt (mindestens ein Satz, maximal ein Absatz), der eine Governance-Anforderung oder -Praxis beschreibt. Die Pilotkodierung an Art.~9 (umfangreichster Artikel) und Art.~13 (offener Transparenzbegriff) führte zu zwei Anpassungen: ``Erklärbarkeit'' wurde in ``Technische Erklärbarkeit'' (XAI-Methoden) und ``Kommunikative Transparenz'' (Informationspflichten) differenziert, und das Kodierprotokoll wurde um den ``Regulatorischen Anker'' (Zuordnung zum Artikelabsatz) ergänzt.
+
+\textbf{Phase~2 -- Hauptkodierung:} Der Materialkorpus wurde in zwei Durchgängen kodiert. Im ersten Durchgang wurde der Normtext deduktiv kodiert: Jede Textstelle der Art.~9--15 wurde einer Hauptkategorie K1--K6 zugeordnet und in Subkategorien differenziert. Im zweiten Durchgang wurde der Sekundärkorpus kodiert, wobei bestehende Kategorien angewandt und induktive Ergänzungen zugelassen wurden. Nicht zuordenbare Textstellen wurden als potenzielle neue Kategorien markiert. Aus dieser induktiven Ergänzung gingen die Querschnittskategorien Q1 und Q2 hervor (Abschnitt~\ref{sec:ergebnisse-inhaltsanalyse}).
+
+\textbf{Phase~3 -- Reliabilitätsprüfung:} Eine zeitversetzte Zweitkodierung (Abstand vier Wochen) an einer 20\,\%-Stichprobe (je zwei Textstellen pro Hauptkategorie, 12~insgesamt) ergab 87\,\% Übereinstimmung. Die zwei Abweichungen betrafen Grenzfälle zwischen K1/K6 und K4/K5. Die prozentuale Übereinstimmung kann die tatsächliche Reliabilität überschätzen, da zufällige Übereinstimmungen nicht korrigiert werden. Cohens Kappa war bei Einzelforscherkodierung nicht anwendbar \autocite{Mayring2014}.
+
+\textbf{Phase~4 -- Auswertung:} Die Ergebnisse wurden quantitativ (Häufigkeitsverteilungen) und qualitativ (Kategorieninterpretation, Ableitung der Bewertungsbedarfe) ausgewertet. Der vollständige Kodierleitfaden findet sich in Anhang~\ref{app:kodierleitfaden}.
+
+Die Kodierungslogik wird an zwei Beispielen konkretisiert, die den deduktiven und den induktiven Pfad illustrieren:
+
+\textit{Deduktive Kodierung -- Art.~9 Abs.~3:} Die Textstelle ``Das Risikomanagementsystem umfasst [\ldots] die Ermittlung und Analyse der bekannten und vernünftigerweise vorhersehbaren Risiken, die das Hochrisiko-KI-System für die Gesundheit, die Sicherheit oder die Grundrechte darstellen kann'' \autocite{EUAIAct2024} wurde K1~(Risikomanagement), Subkategorie K1.2~(Systematische Risikoidentifikation) zugeordnet. Regulatorischer Anker: Art.~9 Abs.~3 lit.~a. Die Zuordnung war eindeutig, da die Textstelle den Risikoidentifikationsprozess beschreibt. Aus dieser und fünf weiteren Textstellen zu K1.2 wurde das Bewertungskriterium D1.2~(Risikoidentifikation über den Lebenszyklus) abgeleitet. Die Normtext-Anforderung ``vernünftigerweise vorhersehbar'' wurde in den Stufe-3-Indikator ``standardisierter Prozess zur Identifikation vorhersehbarer Risiken über den gesamten Lebenszyklus'' transformiert.
+
+\textit{Induktive Identifikation von Q1:} Q1~(Organisationale Verankerung) emergierte aus dem Sekundärkorpus: Mökander et al. betonen, dass KI-Governance ``auf bestehenden Governance-Strukturen aufbauen'' und ``klare Verantwortlichkeiten definieren'' muss \autocite{Moekander2022}. Kost et al. identifizieren ``Governance-Ownership'' als kritischen Erfolgsfaktor, der in Art.~9--15 nicht eigenständig kodifiziert ist \autocite{Kost2026}. Diese Textstellen beschreiben keine inhaltliche Governance-Dimension, sondern die \textit{organisationale Voraussetzung} für deren Umsetzung -- sie passten daher in keine Kategorie K1--K6. Im ersten Durchgang wurden sechs solcher Textstellen markiert; im Konsolidierungsschritt zu Q1 verdichtet. Die geringe Normtext-Kodierung (3~von~14~Textstellen) bestätigt den induktiven Charakter und begründet die Integration als Querschnittskategorie statt als eigenständige Dimension.
+
+\textit{Grenzfall -- K1/K6:} Die Textstelle ``Testverfahren [\ldots] müssen geeignet sein, sicherzustellen, dass Hochrisiko-KI-Systeme durchgängig ihrem Zweck entsprechend funktionieren'' (Art.~9 Abs.~7) wurde zunächst K6~(Technische Robustheit) zugeordnet, da ``durchgängig funktionieren'' technische Leistungsfähigkeit impliziert. Die Zweitkodierung ordnete die Stelle K1~(Risikomanagement) zu. Die Abgrenzungsregel -- ``technische Aspekte $\rightarrow$ K6; übergeordnete Prozesse $\rightarrow$ K1'' -- führte zur Entscheidung für K1, da Art.~9 Abs.~7 die Testverfahren als Teil des Risikomanagementsystems positioniert. Dieser Grenzfall illustriert die Interpretationsabhängigkeit an den Dimensionsgrenzen (Abschnitt~\ref{subsec:methodische-limitationen}).
+
+Das Kategoriensystem umfasst sechs deduktive Hauptkategorien (K1--K6, korrespondierend mit Art.~9--15) sowie zwei induktive Querschnittskategorien: Q1~(Organisationale Verankerung) \autocite{Moekander2022, Kost2026} und Q2~(Kompetenzentwicklung) \autocite{Ryan2020, Batool2025}. Jede Hauptkategorie wurde in vier bis sechs Subkategorien differenziert, die die Grundlage für die 31~Bewertungskriterien bilden.
+
+
+\section{Ergebnisse der qualitativen Inhaltsanalyse}
+\label{sec:ergebnisse-inhaltsanalyse}
+
+\label{subsec:governance-dimensionen-ergebnisse}%
+Die Analyse erbrachte 187 kodierte Textstellen. Tabelle~\ref{tab:kodierung-verteilung} zeigt die Häufigkeitsverteilung.
+
+\begin{table}[htbp]
+\centering
+\caption{Häufigkeitsverteilung der Kodierungen nach Kategorie und Quellentyp}
+\label{tab:kodierung-verteilung}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Kategorie} & \textbf{Normtext} & \textbf{Literatur} & \textbf{Gesamt} \\
+\hline
+K1 -- Risikomanagement & 24 & 18 & 42 \\
+K2 -- Data Governance & 16 & 12 & 28 \\
+K3 -- Dokumentation & 18 & 8 & 26 \\
+K4 -- Transparenz & 14 & 14 & 28 \\
+K5 -- Menschliche Aufsicht & 12 & 10 & 22 \\
+K6 -- Technische Robustheit & 10 & 9 & 19 \\
+Q1 -- Organisationale Verankerung & 3 & 11 & 14 \\
+Q2 -- Kompetenzentwicklung & 1 & 7 & 8 \\
+\hline
+\textbf{Gesamt} & \textbf{98} & \textbf{89} & \textbf{187} \\
+\hline
+\end{tabular}
+\end{table}
+
+K1~(Risikomanagement) dominiert mit 42~Kodierungen (22,5\,\%). Art.~9 ist mit sieben Absätzen der umfangreichste analysierte Artikel, und die Literatur behandelt Risikomanagement als übergeordneten Governance-Rahmen \autocite{Ebers2025}. K2 (28) und K4 (28) zeigen vergleichbare Dichten, aber unterschiedliche Quellenverteilungen: K2 ist normtextdominiert (16:12), K4 symmetrisch verteilt (14:14) -- ein Hinweis auf die breite wissenschaftliche Transparenzdiskussion \autocite{Braun2026}. K6~(Technische Robustheit) hat die niedrigste Dichte (19, 10,2\,\%), da Genauigkeitsmetriken und Cybersicherheit weniger organisationale Governance-Aspekte berühren.
+
+Q1 und Q2 stammen überwiegend aus der Sekundärliteratur (18 von 22~Kodierungen). Der Normtext enthält keine expliziten Anforderungen an organisationale Verankerung oder Kompetenzentwicklung. Die wenigen Normtext-Kodierungen (Q1: 3, Q2: 1) beziehen sich auf implizite Anforderungen, etwa die Qualifikation der Aufsichtspersonen nach Art.~14 Abs.~4 (Q2) und die organisationale Einbettung des Risikomanagementsystems nach Art.~9 Abs.~1 (Q1). Methodisch ist anzumerken, dass Q1 und Q2 maßgeblich durch vier Publikationen gestützt werden \autocite{Moekander2022, Kost2026, Ryan2020, Batool2025}; eine breitere Literaturbasis könnte weitere Querschnittskategorien offenlegen.
+
+\label{subsec:bewertungsbedarfe}%
+Aus der Analyse ergeben sich vier Bewertungsbedarfe: (1)~Reifegrad-Differenzierung statt binärer Compliance-Bewertung, (2)~Kontextabhängigkeit bezüglich Branche und KI-Systemtyp, (3)~Handlungsorientierung durch konkrete Verbesserungshinweise und (4)~Nachweisbarkeit für regulatorische Konformitätsnachweise. Die Überführung in Designanforderungen erfolgt in Kapitel~\ref{chap:artefakt}.
+
+Die Reifegradmodellentwicklung folgt Becker et al. \autocite{Becker2009} mit einem Hybridansatz: Top-down leitet die Dimensionen deduktiv aus Art.~9--15 ab; Bottom-up identifiziert induktiv Governance-Mechanismen aus der Literatur. Die resultierende Dreiebenen-Architektur umfasst sechs Dimensionen (D1--D6) plus zwei Querschnittskategorien (Q1--Q2), 31~Bewertungskriterien und eine fünfstufige kumulative Reifegradskala (Initial -- Managed -- Defined -- Measured -- Optimizing).
+
+
+\subsection{Methodenkritik: Mayring auf Normtexte}
+\label{subsec:methodenkritik-mayring}
+
+Die qualitative Inhaltsanalyse nach Mayring wurde für natürlichsprachige Kommunikate entwickelt -- Interviewtranskripte, Zeitungsartikel, offene Fragebogenantworten \autocite{Mayring2014}. Ihre Anwendung auf einen juristischen Normtext erfordert methodische Reflexion.
+
+\textit{Exhaustive vs. interpretative Texte.} Natürlichsprachige Kommunikate sind interpretativ reich und kontextabhängig: Dieselbe Aussage kann je nach Sprecherkontext unterschiedliche Bedeutungen tragen. Normtexte dagegen beanspruchen Erschöpfung -- jedes Wort ist bewusst gesetzt, Redundanzen sind gewollt (der Verweis von Art.~10 Abs.~5 auf die DSGVO ist keine nachlässige Wiederholung, sondern eine präzise Verarbeitungserlaubnis). Die Mayring-Methodik behandelt Redundanzen standardmäßig durch Zusammenfassung und Reduktion -- bei Normtexten würde das normative Information eliminieren. Die vorliegende Arbeit begegnet dem, indem jede Textstelle mit ihrem regulatorischen Anker (Artikel, Absatz, Littera) versehen wird und Mehrfachkodierungen bei absatzübergreifenden Anforderungen explizit zugelassen werden. Dennoch bleibt die Spannung: Die Paraphrasierung, die bei Interviews notwendig ist, kann bei Normtexten eine Bedeutungsverschiebung erzeugen, wo der Originaltext präziser wäre.
+
+\textit{Hierarchische Normstruktur.} Normtexte besitzen eine juridische Architektur: Erwägungsgründe definieren den Regelungszweck, Artikel kodifizieren die Pflicht, Anhänge konkretisieren technische Details. Mayrings Ablaufmodell unterscheidet nicht zwischen diesen Textsorten -- es behandelt Erwägungsgrund~47 und Art.~9 Abs.~1 als gleichwertige Analyseeinheiten. In der juristischen Auslegung haben sie jedoch unterschiedlichen normativen Status: Erwägungsgründe sind Interpretationshilfen, nicht eigenständige Rechtsgrundlagen \autocite{Martini2024}. Die vorliegende Arbeit adressiert dieses Problem durch die \textit{de facto}-Priorisierung des Artikeltextes bei der deduktiven Hauptkodierung (Phase~2): Die deduktiven Kategorien K1--K6 wurden aus den Artikeln abgeleitet, nicht aus den Erwägungsgründen. Die Erwägungsgründe dienten der kontextuellen Interpretation, nicht der Kategorienbildung.
+
+\textit{Unbestimmte Rechtsbegriffe.} Eine spezifische Herausforderung sind unbestimmte Rechtsbegriffe wie ``angemessene Genauigkeit'' (Art.~15 Abs.~1), ``hinreichend transparent'' (Art.~13 Abs.~1) oder ``geeignete Maßnahmen'' (Art.~10 Abs.~2). In der juristischen Hermeneutik sind dies bewusst offene Formulierungen, deren Konkretisierung dem Stand der Technik und der Einzelfallbetrachtung überlassen wird \autocite{Spindler2021}. Die Inhaltsanalyse muss diese Begriffe kodieren, obwohl ihre Bedeutung erst durch harmonisierte Standards (Art.~40--41) oder Rechtsprechung präzisiert wird. Die Kodierung friert eine Momentaufnahme ein -- ein Problem, das bei Interviewanalysen nicht auftritt, weil dort der Bedeutungsgehalt mit dem Transkript fixiert ist.
+
+\textit{Methodische Konsequenzen.} Aus diesen drei Eigenheiten folgt, dass die Ergebnisse der Inhaltsanalyse nicht als klassische qualitative Befunde, sondern als \textit{systematisch dokumentierte Norminterpretation} zu lesen sind. Der Kodierleitfaden (Anhang~\ref{app:kodierleitfaden}) sichert die Nachvollziehbarkeit dieser Interpretation, nicht ihre Unfehlbarkeit. Zwei spezifische Risiken sind zu benennen: Erstens könnte eine juristische Normexegese Anforderungen identifizieren, die die sozialwissenschaftliche Kodierung übersieht -- insbesondere implizite Pflichten, die aus der Systematik der Verordnung folgen, nicht aus einzelnen Textstellen. Zweitens könnte die Mayring-typische Abstraktionsstufe bei der Kategorienbildung normative Differenzierungen nivellieren, die juristisch relevant sind (etwa die Unterscheidung zwischen Anbieter- und Betreiberpflichten innerhalb desselben Artikels).
+
+Trotz dieser Einschränkungen ist die Methodenwahl gerechtfertigt: Keine alternative Methode ermöglicht die Integration von Normtext und wissenschaftlicher Literatur in einem einheitlichen Kategoriensystem in vergleichbarer Weise. Die juristische Normexegese hätte den wissenschaftlichen Sekundärkorpus nicht systematisch einbeziehen können; die Grounded Theory hätte den deduktiven Ankerpunkt der Art.~9--15 aufgegeben. Die voranstehende Methodenkritik zeigt, dass die Anwendung auf Normtexte spezifische Interpretationsrisiken erzeugt, die bei der Ergebnisinterpretation zu berücksichtigen sind.
+
+
+\section{Evaluationsmethode}
+\label{sec:evaluationsmethode}
+
+Die Evaluation folgt dem FEDS-Framework von Venable et al. \autocite{Venable2016} in vier Stufen.
+
+\textbf{Stufe~1 -- Regulatorische Vollständigkeitsanalyse} (analytisch, summativ): Eine Coverage-Analyse prüft, ob jede Anforderung der Art.~9--15 durch mindestens ein Bewertungskriterium abgedeckt wird. Die Anforderungen wurden auf Absatzebene extrahiert und den 31~Kriterien zugeordnet (Anhang~\ref{app:mapping}). Ergänzend erfolgte ein Feature Comparison gegen sechs Referenzrahmenwerke (NIST AI RMF, ISO/IEC~42001, ALTAI, Z-Inspection, Cho/Park, Dotan et al.), ausgewählt nach drei Kriterien: Abdeckung der KI-Governance-Generationen, Mischung aus wissenschaftlichen und industriellen Ansätzen sowie Verfügbarkeit dokumentierter Kriterienstrukturen.
+
+\textbf{Stufe~2 -- Szenariobasierte Demonstration} (analytisch-empirisch, summativ): Zwei fiktive Hochrisiko-KI-Szenarien prüfen die Differenzierungsfähigkeit. Die Szenarien variieren in Hochrisiko-Kategorie (Anhang~III Nr.~5(b) Kreditscoring vs. Nr.~4(a) Recruiting), Organisationsgröße (Mittelstand vs. Scale-up) und Governance-Ausgangsniveau (teilstrukturiert vs. ad~hoc). Fiktive Szenarien ermöglichen kontrollierte Bedingungen ohne Vertraulichkeitsbeschränkungen.
+
+\textbf{Stufe~3 -- Technische und funktionale Evaluation} (analytisch, formativ): Ein Functional Testing prüft die sieben Kernfunktionalitäten: Scoring-Berechnung, N/A-Handling, Gap-Analyse-Logik, Visualisierungen, KI-Analyse, Session-Persistenz und Fallback-Verhalten. Ergänzend erfolgt eine heuristische Evaluation gegen die zehn Nielsen-Heuristiken \autocite{Nielsen1994}. Die Einzelevaluator-Limitation ist bekannt: Ein Evaluator identifiziert ca.~35\,\% der Usability-Probleme.
+
+\textbf{Stufe~4 -- Strukturierte Artefakt-Evaluation} (empirisch, summativ): Acht Fachpersonen aus den Bereichen KI-Governance, Compliance, Datenschutz, KI-Entwicklung, Management und KI-Forschung bewerten das Artefakt. Die Auswahl folgte einer Purposive-Sampling-Strategie \autocite{Venable2016} mit drei Kriterien: Abdeckung der Stakeholder-Rollen (Anbieter, Betreiber, Prüfende, Forschende), Verdopplung der Kernperspektiven KI-Governance und Compliance sowie Variation der Organisationskontexte.
+
+Der Evaluationsleitfaden umfasst sechs Bewertungsdimensionen (E1--E6) auf einer fünfstufigen Likert-Skala sowie offene und rollenspezifische Fragen. Die Dimensionen operationalisieren verschiedene DSR-Gütekriterien: E1 und E6 messen die \textit{Utility} \autocite{Peffers2007}, E2 und E5 die \textit{Efficacy} \autocite{Venable2016}, E3 die interne Qualität und E4 die \textit{Usability}. Die quantitative Auswertung erfolgt deskriptiv (Median, Mittelwert, Standardabweichung, Spannweite). Bei $n = 8$ sind inferenzstatistische Verfahren nicht anwendbar. Die offenen Antworten werden zusammenfassend inhaltsanalytisch ausgewertet \autocite{Mayring2014}. Tabelle~\ref{tab:expertenprofile} dokumentiert die anonymisierten Profile.
+
+\begin{table}[htbp]
+\centering
+\caption{Profile der Evaluierenden (anonymisiert, $n = 8$)}
+\label{tab:expertenprofile}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|p{3.5cm}|p{3cm}|p{3.5cm}|}
+\hline
+\textbf{ID} & \textbf{Fachgebiet} & \textbf{Erfahrung} & \textbf{Organisationskontext} \\
+\hline
+E-A & KI-Governance, Regulatory Affairs & $>$5~Jahre Compliance & Großunternehmen, Industrie \\
+\hline
+E-B & Compliance-Management, GRC & $>$7~Jahre GRC & Beratung, Multi-Branche \\
+\hline
+E-C & KI-Forschung, Responsible AI & $>$3~Jahre Forschung & Hochschule / Forschungsinst. \\
+\hline
+E-D & Data Science, ML-Engineering & $>$3~Jahre KI-Entwicklung & Technologieunternehmen \\
+\hline
+E-E & Management, Strategie & $>$5~Jahre Führung & Mittelstand, KI-Einsatz \\
+\hline
+E-F & Datenschutz, DPO & $>$4~Jahre DSB/DPO & Branchenübergreifend \\
+\hline
+E-G & KI-Governance, Beratung & $>$3~Jahre KI-Beratung & Beratung, KMU-Fokus \\
+\hline
+E-H & Compliance, Audit & $>$5~Jahre Prüfung & Wirtschaftsprüfung / Audit \\
+\hline
+\end{tabular}
+\end{table}
+
+Jede Sitzung dauerte ca.~20~Minuten (Ablauf in Anhang~\ref{app:interviewleitfaden}): begleitete Live-Demonstration (6--7~Min), Likert-Bewertung E1--E6 (5~Min) und offene Vertiefungsrunde (5~Min). Die Evaluierenden beobachteten den Assessment-Workflow, die KI-Analyse, Ergebnisvisualisierungen und den PDF-Export in Echtzeit. Eine eigenständige Nutzung war nicht vorgesehen; die Bewertung erfolgte auf Basis der Demonstration. Die begleitete Demonstration kann einen Framing-Effekt erzeugen; eine unbegleitete Exploration hätte Usability-Probleme stärker offenlegen können.
+
+Die Rekrutierung erfolgte über professionelle Netzwerke (3), Empfehlungen der Erstbetreuung (2) und gezielte Ansprache über berufliche Netzwerke (3). Kein Evaluierender hatte Vorab-Kontakt zum Framework. Die Netzwerk-Rekrutierung birgt ein Selektionsbias-Risiko; die Ergebnisse zeigen jedoch keine systematische Korrelation zwischen Rekrutierungskanal und Bewertungshöhe.
+
+
+\section{Gütekriterien}
+\label{sec:guetekriterien}
+
+Die methodische Güte wird entlang der Kriterien von Lincoln und Guba reflektiert, ergänzt durch DSR-spezifische Gütekriterien.
+
+\textbf{Reliabilität:} Die Einzelforscher-Kodierung stellt die gewichtigste methodische Einschränkung dar. Der publizierte Kodierleitfaden (Anhang~\ref{app:kodierleitfaden}) kompensiert dies nicht vollständig, macht aber die Kodierungsentscheidungen nachvollziehbar und ermöglicht eine Nachkodierung durch Dritte in Folgearbeiten.
+
+\textbf{Interne Validität (Credibility):} Der deduktiv-induktive Hybridansatz sichert regulatorische Vollständigkeit bei gleichzeitiger Offenheit für zusätzliche Aspekte (Q1, Q2). Die vierstufige Evaluation trianguliert analytische und empirische Methoden. Ein \textit{Confirmation Bias} als Einzelforscher und Artefaktentwickler wird durch die externe Artefakt-Evaluation und die transparente Limitationsdokumentation (M1--M5, T1--T7) abgemildert.
+
+\textbf{Externe Validität (Transferability):} Die Generalisierbarkeit bleibt durch die Stichprobengröße ($n = 8$), die fehlende reale Organisationsanwendung und den europäischen Fokus begrenzt. Im DSR-Kontext ist dies konsistent: Künstliche Evaluationen sind für frühe Artefaktversionen angemessen; naturalistische Evaluationen sollten spätere Versionen validieren \autocite{Venable2016}.
+
+\textbf{Nachvollziehbarkeit (Dependability):} Die vollständige Dokumentation umfasst Kodierleitfaden (Anhang~\ref{app:kodierleitfaden}), Coverage-Mapping (Anhang~\ref{app:mapping}), Bewertungskriterien (Anhang~\ref{app:bewertungsdimensionen}), technische Architektur (Kapitel~\ref{chap:artefakt}) und Evaluationsergebnisse (Kapitel~\ref{chap:demonstration}).
+
+Zwei weitere Limitationen sind zu benennen: Das Framework reflektiert den Regulierungsstand Februar 2026; zukünftige harmonisierte Standards erfordern Aktualisierungen. Die heuristische Kalibrierung der Designparameter (Dimensionsgewichtung, Gap- und RAG-Schwellenwerte) sollte durch empirische Kalibrierung in Folgearbeiten ersetzt werden. Kapitel~\ref{chap:diskussion} reflektiert diese Limitationen vertieft.
+
+Auf dieser methodischen Grundlage beschreibt Kapitel~\ref{chap:artefakt} die Überführung der Analyseergebnisse in das Bewertungsframework und den Prototyp.

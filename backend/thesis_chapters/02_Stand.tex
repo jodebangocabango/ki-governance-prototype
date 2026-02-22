@@ -1,0 +1,377 @@
+% Kapitel 2: Stand der Forschung
+
+\chapter{Stand der Forschung}
+\label{chap:stand}
+
+Dieses Kapitel erarbeitet die theoretischen Grundlagen des Frameworks und weist die Forschungslücke nach. Dazu werden die Grundlagen der KI-Governance (Abschnitt~\ref{sec:grundlagen-ki-governance}), die regulatorischen Anforderungen des EU AI Acts (Abschnitt~\ref{sec:eu-ai-act}), bestehende Governance-Modelle (Abschnitt~\ref{sec:bestehende-modelle}) und die Reifegradtheorie (Abschnitt~\ref{sec:reifegradtheorie}) analysiert. Daraus ergibt sich das Forschungsdesiderat (Abschnitt~\ref{sec:forschungsdesiderat}).
+
+
+\section{Grundlagen der KI-Governance}
+\label{sec:grundlagen-ki-governance}
+
+\subsection{Begriffsdefinition und Abgrenzung}
+\label{subsec:begriffsdefinition}
+
+Die KI-Governance-Forschung weist ein Ungleichgewicht zugunsten normativer Beiträge auf. Birkstedt et al. belegen dies quantitativ: In ihrer systematischen Übersicht über 107~Publikationen dominieren normative Beiträge (56\,\%), während empirische Studien zur tatsächlichen Governance-Implementierung nur 23\,\% ausmachen \autocite{Birkstedt2023}. Eine einheitliche Definition von KI-Governance hat sich bislang nicht durchgesetzt.
+
+Mäntymäki et al. definieren KI-Governance als \textit{``a system of rules, practices, processes, and technological tools that are employed to ensure an organization's use of AI technologies aligns with the organization's strategies, objectives, and values; fulfills legal requirements; and meets principles of ethical AI followed by the organization''} \autocite{Mantymaki2022}. Die Definition verbindet vier Ebenen: strategische Ausrichtung, rechtliche Anforderungen, ethische Prinzipien und technologische Werkzeuge zur Durchsetzung.
+
+Von klassischer IT-Governance unterscheidet sich KI-Governance durch vier Systemeigenschaften \autocite{Mantymaki2022}: Opazität (interne Entscheidungswege sind oft nicht interpretierbar), Adaptivität (das Systemverhalten verändert sich mit neuen Daten), Stochastizität (identische Eingaben können unterschiedliche Ausgaben erzeugen) und Grundrechtsrelevanz (die Ergebnisse betreffen unmittelbar Lebenschancen von Menschen).
+
+Die vorliegende Arbeit folgt der Definition von Mäntymäki et al. Der Fokus liegt auf der Organisationsebene; die regulatorischen Anforderungen des EU AI Acts bilden den durchgängigen Referenzrahmen.
+
+
+\subsection{Governance-Ebenen}
+\label{subsec:governance-ebenen}
+
+Die KI-Governance-Literatur differenziert verschiedene Ebenen von der Team-Ebene (Mikro) bis zur internationalen Ebene (Makro) \autocite{Batool2025}. Das vorliegende Framework adressiert primär die Organisationsebene, muss aber Anforderungen der Makro-Ebene (EU AI Act) integrieren und auf der Mikro-Ebene operationalisierbare Kriterien bereitstellen. Die Übersetzung abstrakter Anforderungen (z.\,B. ``angemessene Genauigkeit'' in Art.~15 Abs.~1) in projektbezogene Praktiken ist die Kernfunktion des Frameworks.
+
+
+\subsection{Governance-Logiken und die Principle-Practice-Gap}
+\label{subsec:governance-logiken}
+
+Die in Abschnitt~\ref{subsec:praktische-herausforderungen} eingeführte \textit{Principle-Practice-Gap} wird hier vertieft. Jobin et al. zählen 84~ethische Leitlinien, von denen 73~Transparenz fordern -- ohne eine operationale Metrik dafür zu definieren \autocite{Jobin2019}. Mittelstadt argumentiert, dass diese Prinzipien eine Illusion von Konsens erzeugen, die bei der Frage nach konkreten Umsetzungsschritten zerfällt \autocite{Mittelstadt2019}. Morley et al. beschreiben die Lücke zwischen dem \textit{Was} (Prinzipien) und dem \textit{Wie} (Umsetzung) und fordern ein \textit{``translational framework''} \autocite{Morley2020}. Das vorliegende Framework folgt dieser Forderung.
+
+Mökander et al. leiten aus einer AstraZeneca-Fallstudie vier Gestaltungsprinzipien ab, die in das vorliegende Framework einfließen: auf bestehenden Governance-Strukturen aufbauen, pragmatische Terminologie verwenden, Risikomanagement als Paradigma nutzen und Mitarbeitende zur eigenständigen Anwendung befähigen \autocite{Moekander2022}.
+
+Die Gap ist kein einheitliches Problem, sondern zeigt sich auf mehreren Ebenen gleichzeitig: konzeptionell als fehlende Operationalisierung, organisational als fehlende Zuständigkeiten und Prozesse, technisch als fragmentierte Werkzeuglandschaft \autocite{Morley2020, Mikalef2022}. Ein Framework, das nur eine dieser Ebenen bedient, verschiebt das Problem lediglich.
+
+Inhaltlich zeigt die Literatur eine Konvergenz der Governance-Dimensionen: Transparenz, Fairness, Verantwortlichkeit, Privatsphäre und Sicherheit weisen die höchste Verbreitung auf \autocite{Jobin2019, Fjeld2020, HLEGAI2019}. Tabelle~\ref{tab:prinzipien-konvergenz} stellt diese Konvergenz dar.
+
+\begin{table}[htbp]
+\centering
+\caption{Konvergenz der KI-Governance-Prinzipien in zentralen Referenzdokumenten}
+\label{tab:prinzipien-konvergenz}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2.8cm}|c|c|c|c|c|}
+\hline
+\textbf{Governance-Dimension} & \textbf{Jobin} & \textbf{Floridi} & \textbf{Fjeld} & \textbf{HLEG} & \textbf{AI Act} \\
+ & \textbf{(2019)} & \textbf{(2018)} & \textbf{(2020)} & \textbf{(2019)} & \textbf{(2024)} \\
+\hline
+Transparenz/Erklärbarkeit & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Art.~13 \\
+\hline
+Fairness/Nichtdiskriminierung & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Art.~10 \\
+\hline
+Verantwortlichkeit & $\checkmark$ & ($\circ$)\footnotemark & $\checkmark$ & $\checkmark$ & Art.~9 \\
+\hline
+Privatsphäre/Datenschutz & $\checkmark$ & ($\circ$)\footnotemark & $\checkmark$ & $\checkmark$ & Art.~10 \\
+\hline
+Sicherheit/Robustheit & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Art.~15 \\
+\hline
+Menschliche Aufsicht & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Art.~14 \\
+\hline
+Dokumentation/Nachweise & -- & -- & $\checkmark$ & $\checkmark$ & Art.~11--12 \\
+\hline
+\end{tabular}
+\end{table}
+% Fußnoten für Tabelle: \footnotemark erzeugt zwei aufeinanderfolgende Markierungen;
+% die zugehörigen Texte werden hier manuell den Nummern zugeordnet.
+\addtocounter{footnote}{-1}
+\footnotetext[\value{footnote}]{Bei Floridi et al. unter \textit{Justice} subsumiert, nicht als eigenständiges Prinzip kodifiziert.}
+\stepcounter{footnote}
+\footnotetext[\value{footnote}]{Bei Floridi et al. unter \textit{Non-maleficence} adressiert, nicht als eigenständiges Prinzip benannt.}
+
+
+\section{Regulatorische Anforderungen des EU AI Acts}
+\label{sec:eu-ai-act}
+
+\subsection{Entstehungskontext und Anwendungsbereich}
+\label{subsec:entstehungskontext}
+
+Der EU AI Act (Verordnung~(EU)~2024/1689) verfolgt einen risikobasierten Regulierungsansatz \autocite{EUAIAct2024}. Die Verordnung koppelt die Regulierungsintensität an das Risikoniveau. In der Praxis beruht die Hochrisiko-Klassifikation jedoch auf einer listenbasierten Zuordnung (Anhang~III), nicht auf einer kontextspezifischen Risikoanalyse. Ebers kritisiert, dass eine systematische Risiko-Nutzen-Abwägung teilweise fehlt \autocite{Ebers2025}. Diese Kritik ist für das vorliegende Framework unmittelbar relevant: Es operationalisiert die Anforderungen, \textit{wie sie der AI Act formuliert} -- nicht wie eine idealtypische risikobasierte Regulierung sie formulieren würde. Das Framework übernimmt damit bewusst die Stärken \textit{und} Schwächen der Verordnung.
+
+Der Anwendungsbereich folgt dem Marktortprinzip (Art.~2 Abs.~1). Anbieter (Art.~3 Nr.~3) tragen die Hauptlast der Compliance-Anforderungen; Betreiber (Art.~3 Nr.~4) sind insbesondere zur menschlichen Aufsicht verpflichtet (Art.~26 Abs.~2). Durch die Rollenumqualifizierung nach Art.~25 kann ein Betreiber zum Anbieter werden. Bei Art.~5-Verstößen drohen bis zu 35~Millionen Euro oder 7\,\% des weltweiten Jahresumsatzes \autocite{EUAIAct2024}.
+
+
+\subsection{Risikokategorien und Klassifizierung}
+\label{subsec:risikokategorien}
+
+Der AI Act klassifiziert KI-Systeme in vier Risikokategorien: (1)~unannehmbares Risiko (Art.~5, verboten), (2)~Hochrisiko (Art.~6, Anhang~III), (3)~begrenztes Risiko (Art.~50, Transparenzpflichten) und (4)~minimales Risiko (keine Auflagen). Hochrisiko-Systeme werden entweder als Sicherheitskomponente eines EU-Harmonisierungsprodukts (Art.~6 Abs.~1) oder über die acht Anwendungsbereiche in Anhang~III (Art.~6 Abs.~2) klassifiziert.
+
+Art.~6 Abs.~3 nimmt Anhang-III-Systeme aus, wenn sie kein erhebliches Risiko darstellen -- etwa bei engen Verfahrensaufgaben. Ebers kritisiert Kontextblindheit und Spannungen zwischen Risikobasierung und De-facto-Listenlogik \autocite{Ebers2025}. Die Kategorien~3 und~4 werden hier nicht vertieft.
+
+Der AI Act ist Teil eines Digital-Regulierungsökosystems. Graux et al. identifizieren Überlappungen mit der DSGVO (Datenqualität), Spannungsfelder (Bias-Erkennung vs. Verarbeitungsverbot sensibler Daten) und Regelungslücken \autocite{Graux2025}. Organisationen müssen KI-Governance daher in bestehende Compliance-Strukturen integrieren.
+
+\subsubsection{Historische Analogie: DSGVO 2018 als Präzedenzfall}
+\label{subsubsec:dsgvo-analogie}
+
+Die DSGVO (Verordnung~(EU)~2016/679) bietet als regulatorischer Präzedenzfall Erfahrungen, die auf die AI-Act-Compliance übertragbar sind. Tabelle~\ref{tab:dsgvo-analogie} stellt die strukturellen Parallelen und Unterschiede gegenüber.
+
+\begin{table}[htbp]
+\centering
+\caption{Strukturvergleich: DSGVO-Einführung (2018) und EU AI Act (stufenweise Geltung 2025--2026)}
+\label{tab:dsgvo-analogie}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{3.2cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Vergleichsdimension} & \textbf{DSGVO (2018)} & \textbf{EU AI Act (2025--2026)} \\
+\hline
+Vorbereitungszeit & 2~Jahre (Verab\-schiedung 04/2016, Geltung 05/2018) & 2--3~Jahre (Inkraft\-treten 08/2024, Hochrisiko-Pflichten 08/2026) \\
+\hline
+Sanktionsrahmen & Bis 20~Mio.~\texteuro{} oder 4\,\% Jahresumsatz & Bis 35~Mio.~\texteuro{} oder 7\,\% Jahresumsatz \\
+\hline
+Betroffene Organisationen & Nahezu alle daten\-verarbeitenden Stellen & Anbieter und Betreiber von Hochrisiko-KI (Anhang~III) \\
+\hline
+Verfügbare Standards & ISO~27001, BSI-Grundschutz (vorhanden) & CEN/CENELEC harmonisierte Standards (in Entwicklung) \\
+\hline
+Compliance-Mechanismus & Datenschutz-Folgen\-abschätzung (DSFA), Verarbeitungsverzeichnis & Konformitätsbewertung (Art.~43), technische Dokumentation (Art.~11) \\
+\hline
+Typische Fehler in der Praxis & Formalistische Einwilligungsbanner, ``Papier-Compliance'' ohne Prozessintegration & (Prognostiziert:) Self-Assessment ohne Substanz, ``Governance-Theater''\footnotemark \\
+\hline
+Organisationale Rolle & Datenschutzbeauftragter (DSB/DPO) & Keine dedizierte Pflichtrolle (Q1 als Desiderat) \\
+\hline
+\end{tabular}
+\end{table}
+\footnotetext{Arbeitsbegriff des Verfassers, in Analogie zum etablierten Konzept des \textit{Security Theater}: formal sichtbare Maßnahmen ohne substanzielle Schutzwirkung.}
+
+Aus der Analogie ergeben sich drei Lehren für das vorliegende Framework.
+
+\textit{Compliance-Fristen erzeugen häufig reaktive statt transformative Anpassungen.} 2018 nutzte die Mehrheit der Organisationen die zweijährige Vorbereitungszeit nicht für eine systematische Datenschutz-Transformation. Stattdessen stellten sie kurzfristig formale Compliance her -- Cookie-Banner, aktualisierte Datenschutzerklärungen und Prozessdokumentationen ohne gelebte Praxis \autocite{Ebers2025}. Die Parallele zum AI Act liegt nahe: Die Hochrisiko-Anforderungen gelten ab August~2026, die harmonisierten Standards fehlen jedoch noch. Das Framework begegnet diesem Risiko durch die Reifegradlogik. Stufe~2 (``Grundlegende Maßnahmen, nicht standardisiert'') bildet genau den Zustand ab, den DSGVO-Papier-Compliance produziert hat. Die Unterscheidung zu Stufe~3 (``Standardisierte, dokumentierte Prozesse'') soll verhindern, dass Organisationen sich eine Compliance attestieren, die nur auf dem Papier existiert.
+
+\textit{Das Fehlen konkreter Standards erzeugt Interpretationsspielräume, die zunächst als Freiheit und später als Risiko wahrgenommen werden.} Bei der DSGVO mussten Organisationen ``angemessene technische und organisatorische Maßnahmen'' (Art.~32 DSGVO) ohne konkrete Vorgaben definieren -- die Folge waren heterogene Interpretationen und eine fragmentierte Umsetzungslandschaft. Der AI Act wiederholt dieses Muster mit Begriffen wie ``angemessene Genauigkeit'' (Art.~15 Abs.~1) und ``hinreichende Transparenz'' (Art.~13 Abs.~1). Das Framework operationalisiert diese Begriffe durch beobachtbare Indikatoren -- analog zur Funktion, die das Standard-Datenschutzmodell und die DSK-Kurzpapiere für die DSGVO übernommen haben.
+
+\textit{Die DSGVO-Erfahrung zeigt, dass Compliance-Werkzeuge allein keine Governance-Kultur schaffen.} Die DSGVO hat den Datenschutzbeauftragten (DSB/DPO) als organisationale Pflichtrolle etabliert (Art.~37 DSGVO) -- der AI Act kennt keine vergleichbare Rolle. Die Querschnittskategorie Q1 (Organisationale Verankerung) des vorliegenden Frameworks greift diese Lücke auf: Ohne eine klare Governance-Ownership riskiert die KI-Compliance dasselbe Schicksal wie viele frühe DSGVO-Umsetzungen -- formal korrekt, aber organisational unverankert.
+
+Die Analogie hat Grenzen. Die DSGVO betrifft nahezu jede datenverarbeitende Organisation; der AI Act richtet sich primär an Anbieter und Betreiber von Hochrisiko-KI-Systemen -- der betroffene Organisationskreis ist enger, die technische Komplexität jedoch höher. Zudem verfügte die Datenschutz-Community 2018 über jahrzehntelange Erfahrung mit Vorgängerregelungen (BDSG, Richtlinie 95/46/EG); die KI-Governance-Community arbeitet mit einem deutlich jüngeren Instrumentarium \autocite{Batool2025}. Gerade diese geringere institutionelle Reife macht ein strukturiertes Bewertungsinstrument dringlicher.
+
+
+\subsection{Governance-Anforderungen für Hochrisiko-Systeme (Art.~9--15)}
+\label{subsec:high-risk-anforderungen}
+
+Die Artikel~9 bis~15 kodifizieren die Anforderungen an Hochrisiko-KI-Systeme und bilden die Grundlage für die sechs Governance-Dimensionen (D1--D6) des Frameworks \autocite{EUAIAct2024}.
+
+\textbf{Artikel~9 -- Risikomanagementsystem:} Art.~9 verlangt ein lebenszyklusumfassendes, iteratives Risikomanagementsystem. Der Prozess umfasst Risikoidentifikation, -bewertung, -behandlung und Testverfahren. Ebers kritisiert die fehlende Risiko-Nutzen-Abwägung \autocite{Ebers2025}; Spindler betont die haftungsrechtliche Funktion als Sorgfaltsmaßstab \autocite{Spindler2021}. Im Framework: Dimension D1.
+
+\textbf{Artikel~10 -- Daten und Data Governance:} Art.~10 fordert Qualitätsanforderungen an Datensätze und Data-Governance-Praktiken, einschließlich Bias-Erkennung (Abs.~2 lit.~f). Die Bias-Erkennung erfordert die Analyse geschützter Merkmale, was mit der DSGVO kollidiert; Art.~10 Abs.~5 löst dies durch eine eingeschränkte Verarbeitungserlaubnis \autocite{Holtz2025}. Im Framework: Dimension D2.
+
+\textbf{Artikel~11--12 -- Technische Dokumentation und Aufzeichnung:} Art.~11 verlangt technische Dokumentation gemäß Anhang~IV vor dem Inverkehrbringen; Art.~12 fordert automatisches Logging im Betrieb. Goellner et al. benennen Nachvollziehbarkeit, Reproduzierbarkeit und Versionierung als wesentliche Herausforderungen \autocite{Goellner2024}. Im Framework: Dimension D3.
+
+\textbf{Artikel~13 -- Transparenz:} Art.~13 fordert ``hinreichend transparenten'' Betrieb. Edwards und Veale unterscheiden modell- und subjektzentrierte Transparenz \autocite{Edwards2017}; Veale und Zuiderveen Borgesius identifizieren Spannungen zwischen Erklärbarkeit und Umsetzbarkeit bei komplexen ML-Systemen \autocite{VealeBorgesius2021}. Die offene Formulierung delegiert die Ausgestaltung an den Stand der Technik. Im Framework: Dimension D4.
+
+\textbf{Artikel~14 -- Menschliche Aufsicht:} Art.~14 verlangt wirksame menschliche Aufsicht mit qualifizierten Personen, Eingriffsmöglichkeiten und Automation-Bias-Bewusstsein. Li et al. betonen, dass die organisationale Gestaltung der Aufsichtsrolle (Zeitdruck, Workload, Anreizsysteme) deren Wirksamkeit maßgeblich beeinflusst \autocite{Li2024}. Im Framework: Dimension D5.
+
+\textbf{Artikel~15 -- Genauigkeit, Robustheit und Cybersicherheit:} Art.~15 bündelt drei Qualitätsanforderungen: Genauigkeit, Robustheit und Cybersicherheit. Nolte et al. identifizieren erhebliche Lücken bei der Operationalisierung juristischer Begriffe in ML-Metriken \autocite{Nolte2025}. Im Framework: Dimension D6.
+
+\subsection{Zusammenfassung: Von Artikeln zu Dimensionen}
+\label{subsec:zusammenfassung-dimensionen}
+
+Tabelle~\ref{tab:governance-dimensionen} fasst die sechs Governance-Dimensionen zusammen. Die Dimensionen bilden die konzeptionelle Grundlage des Bewertungsframeworks; ihre Operationalisierung erfolgt in Kapitel~\ref{chap:artefakt}.
+
+\begin{table}[htbp]
+\centering
+\caption{Governance-Dimensionen basierend auf Art.~9--15 EU AI Act}
+\label{tab:governance-dimensionen}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|l|l|p{5.5cm}|}
+\hline
+\textbf{Dim.} & \textbf{Bezeichnung} & \textbf{Rechtsgrundlage} & \textbf{Kernanforderungen} \\
+\hline
+D1 & Risikomanagement & Art.~9 & Lebenszyklusumfassend, iterativ, Testverfahren, Restrisiko-Akzeptanz \\
+\hline
+D2 & Data Governance & Art.~10 & Datenqualität, Bias-Erkennung, DSGVO-Integration, Data Lineage \\
+\hline
+D3 & Dokumentation & Art.~11--12 & Technische Doku nach Anh.~IV, Logging, Versionierung \\
+\hline
+D4 & Transparenz & Art.~13 & Erklärbarkeit, Informationspflichten, KI-Kennzeichnung \\
+\hline
+D5 & Menschliche Aufsicht & Art.~14 & Human-in/on-the-loop, Qualifikation, Automation-Bias-Prävention \\
+\hline
+D6 & Technische Robustheit & Art.~15 & Genauigkeit, Robustheit, Cybersicherheit, Monitoring \\
+\hline
+\end{tabular}
+\end{table}
+
+Die Hochrisiko-Anforderungen (Art.~9--15) treten am 2.~August 2026 in Kraft \autocite{EUAIAct2024}. Die Konformitätsbewertung erfolgt für die meisten Hochrisiko-Systeme nach Anhang~III durch interne Selbstbewertung (Art.~43 Abs.~1, Anhang~VI), was robuste interne Governance-Strukturen voraussetzt. Die Dimensionierungsentscheidungen und interdimensionalen Abhängigkeiten der sechs Dimensionen werden in Kapitel~\ref{chap:artefakt} diskutiert.
+
+
+\section{Bestehende Governance- und Bewertungsmodelle}
+\label{sec:bestehende-modelle}
+
+\subsection{Wissenschaftliche Frameworks}
+\label{subsec:wissenschaftliche-frameworks}
+
+Raji et al. entwickeln ein End-to-End-Framework für internes algorithmisches Auditing mit sieben Stufen entlang des ML-Lebenszyklus -- jedoch ohne Reifegradlogik und EU-Bezug \autocite{Raji2020}. Z-Inspection von Zicari et al. bietet einen multidisziplinären Bewertungsprozess auf HLEG-Basis, jedoch keine quantitative Skala \autocite{Zicari2021}. Mökander et al. zeigen, dass bestehende Frameworks nicht ohne Weiteres auf generative KI übertragbar sind \autocite{Moekander2024}. Batool et al. stellen fest, dass von 61~Studien nur fünf alle Governance-Dimensionen angemessen abdecken \autocite{Batool2025}.
+
+\subsection{Industriestandards und Normen}
+\label{subsec:industriestandards}
+
+Das NIST AI Risk Management Framework strukturiert das Risikomanagement in vier Kernfunktionen: Govern, Map, Measure und Manage \autocite{NISTAIRMF2023}. Die ISO/IEC~42001 spezifiziert Anforderungen an ein KI-Managementsystem (AIMS) mit 39~Controls in Annex~A \autocite{ISO42001}. Beide sind weder auf den EU AI Act zugeschnitten noch mit einer Reifegradlogik versehen. Dotan et al. entwickeln ein auf dem NIST AI RMF aufbauendes Maturity Model mit drei Stufen \autocite{Dotan2024}; Cho und Park ein SPICE-basiertes Modell mit vier Stufen \autocite{Cho2023} -- beide ohne EU-Bezug. Die harmonisierten Standards (CEN/CENELEC) befinden sich noch in Entwicklung \autocite{Kilian2025}.
+
+
+\subsection{Kommerzielle KI-Governance-Tools}
+\label{subsec:kommerzielle-tools}
+
+Neben wissenschaftlichen Frameworks existieren kommerzielle Tools wie IBM AI FactSheets (modellzentrierte Dokumentation), Google Model Cards (Transparenz) und Plattformen wie Holistic AI und Credo AI (Compliance-Management). Diese verfolgen einen operativen Compliance-Fokus mit proprietären Bewertungsalgorithmen. Das vorliegende Framework grenzt sich durch zwei Merkmale ab: den wissenschaftlich fundierten, transparenten Bewertungsansatz und die spezifische EU-AI-Act-Operationalisierung. Nach Inkrafttreten der Hochrisiko-Anforderungen ist zu erwarten, dass kommerzielle Anbieter EU-AI-Act-spezifische Funktionen integrieren.
+
+
+\subsection{Vergleichende Analyse bestehender Rahmenwerke}
+\label{subsec:vergleichende-analyse}
+
+Tabelle~\ref{tab:frameworks-vergleich} stellt die Rahmenwerke anhand relevanter Bewertungskriterien gegenüber.
+
+\begin{table}[htbp]
+\centering
+\caption{Vergleichende Analyse bestehender KI-Governance-Rahmenwerke}
+\label{tab:frameworks-vergleich}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{2.8cm}|c|c|c|c|p{3.5cm}|}
+\hline
+\textbf{Rahmenwerk} & \textbf{AI-Act-} & \textbf{Operatio-} & \textbf{Reifegrad-} & \textbf{Praxis-} & \textbf{Limitation} \\
+ & \textbf{spezifisch} & \textbf{nalisiert} & \textbf{logik} & \textbf{erprobt} & \\
+\hline
+NIST AI RMF \autocite{NISTAIRMF2023} & Nein & Teilweise & Nein & Ja & Kein EU-Bezug; keine Reifegradstufen \\
+\hline
+ISO/IEC 42001 \autocite{ISO42001} & Nein & Ja & Nein & Ja & Zertifizierungs-standard; binäre Konformität \\
+\hline
+HLEG Guidelines \autocite{HLEGAI2019} & Indirekt & Nein & Nein & Ja & Ethikprinzipien; nicht messbar \\
+\hline
+Z-Inspection \autocite{Zicari2021} & Nein & Teilweise & Nein & Ja & Prozessmodell; kein Scoring \\
+\hline
+Raji et al. \autocite{Raji2020} & Nein & Ja & Nein & Ja & Auditing-Fokus; keine Reifegrade \\
+\hline
+Dotan et al. \autocite{Dotan2024} & Nein & Teilw. & Ja (3-stufig) & Nein & NIST-basiert; kein EU-Bezug \\
+\hline
+Cho \& Park \autocite{Cho2023} & Nein & Teilw. & Ja (4-stufig) & Nein & OECD-basiert; kein EU-Bezug \\
+\hline
+\textbf{Vorliegende Arbeit} & \textbf{Ja} & \textbf{Ja} & \textbf{Ja (5-stufig)} & \textbf{Prototyp} & \textbf{Einzelevaluation; Kalibr. ausstehend} \\
+\hline
+\end{tabular}
+\end{table}
+
+Aus dem Vergleich ergeben sich zwei Befunde. Zum einen dominieren deskriptive Ansätze, die Governance-Dimensionen benennen, ohne eine Bewertungsmethodik bereitzustellen. Zum anderen bietet keines der Rahmenwerke eine direkte Zuordnung zu Art.~9--15 \autocite{Batool2025}; Organisationen müssen eine EU-AI-Act-spezifische Bewertung aus Fragmenten verschiedener Rahmenwerke zusammenstellen.
+
+In historischer Perspektive lässt sich die Entwicklung als Generationenfolge beschreiben: ethische Prinzipien (2018--2020), prozedurale Auditierung (2020--2023) und regulatorische Operationalisierung (ab 2023). Jede Generation reagiert auf die Schwächen der vorigen: die zweite auf die Unverbindlichkeit der Ethikprinzipien, die dritte auf die fehlende regulatorische Verankerung der Audit-Ansätze. Das vorliegende Framework ordnet sich in diese dritte Generation ein und zielt darauf ab, die Stärken der ersten beiden -- ethische Breite und prozedurale Struktur -- in einem regulatorisch verankerten Instrument zusammenzuführen.
+
+
+\section{Theoretische Grundlagen der Reifegradmodellierung}
+\label{sec:reifegradtheorie}
+
+\subsection{Grundlagen und Begriffsbestimmung}
+\label{subsec:reifegradgrundlagen}
+
+Reifegradmodelle basieren auf der Annahme, dass sich organisationale Fähigkeiten in diskreten, diagnostizierbaren Stufen entwickeln \autocite{Mettler2011}. Für die KI-Governance bietet dieser Ansatz eine differenziertere Alternative zur binären Compliance-Frage (konform/nicht konform): Organisationen können ihren Entwicklungsstand verorten und den nächsten Schritt planen, anstatt eine vollständige Transformation gleichzeitig bewältigen zu müssen \autocite{Moekander2022}.
+
+Das Konzept geht auf das Capability Maturity Model (CMM) zurück \autocite{Paulk1993} mit fünf kumulativen Stufen: Initial, Repeatable, Defined, Managed und Optimizing. Die Kumulativität bedeutet: Eine Organisation kann nicht messungsbasiert operieren (Stufe~4), ohne dokumentierte Prozesse etabliert zu haben (Stufe~3).
+
+
+\subsection{Entwicklungsmethodik}
+\label{subsec:entwicklungsmethodik}
+
+Becker et al. formalisieren die Entwicklung in acht Schritten: Problemdefinition, Vergleich, Strategie, iterative Entwicklung, Transfer, Implementierung, Evaluation und Veröffentlichung \autocite{Becker2009}. Die vorliegende Arbeit folgt diesem Modell und verfolgt einen deskriptiv-präskriptiven Ansatz nach De Bruin et al. \autocite{DeBruin2005}.
+
+Röglinger et al. identifizieren als Kerncharakteristika valider Reifegradmodelle: distinkte Stufendefinition, kumulative Stufenlogik und Handlungsorientierung \autocite{Roeglinger2012}. Daraus ergeben sich sechs Gestaltungsprinzipien: Domänenspezifität \autocite{Wendler2012}, kumulative Stufenlogik \autocite{Paulk1993}, Handlungsorientierung \autocite{Roeglinger2012}, empirische Fundierung \autocite{Becker2009}, Evaluierbarkeit \autocite{Mettler2011} und regulatorische Verankerung.
+
+Reifegradmodelle sind keine neutrale Abbildung der Realität, sondern konstruieren eine lineare Entwicklungslogik, die empirisch nicht immer haltbar ist. Mettler benennt drei Kritikpunkte \autocite{Mettler2011}: Die \textit{Linearitätsannahme} unterstellt sequenzielle Entwicklung, obwohl Organisationen Stufen überspringen oder auf niedrigere zurückfallen können. Das \textit{Maturity Paradox} beschreibt das sinkende Kosten-Nutzen-Verhältnis auf hohen Stufen; Stufe~5 zu erreichen ist für die meisten Organisationen ökonomisch irrational. Die Diskretisierung fließender Übergänge erzeugt zudem eine Scheinpräzision, die den tatsächlichen Grauzonen nicht entspricht. Das vorliegende Framework begegnet diesen Kritikpunkten mit drei Maßnahmen: Zwischenstufen (2 und 4) mildern das Diskretisierungsproblem; die KI-gestützte Konsistenzprüfung identifiziert implausible Stufensprünge; Stufe~3 -- nicht Stufe~5 -- dient als regulatorische Baseline. Die Linearitätsannahme bleibt eine inhärente Limitation, die sich nicht auflösen, aber transparent benennen lässt.
+
+
+\subsection{Reifegradmodelle im KI-Kontext}
+\label{subsec:reifegradmodelle-ki}
+
+Reifegradmodelle für KI-Governance sind ein junges Forschungsfeld. Domänenspezifische Adaptierungen weisen einen höheren Erklärungswert auf als generische Modelle \autocite{Wendler2012}. Cho und Park entwickeln ein SPICE-basiertes Modell mit vier Stufen \autocite{Cho2023}; Dotan et al. definieren drei Stufen auf Basis des NIST AI RMF \autocite{Dotan2024}. Tabelle~\ref{tab:reifegradvergleich} stellt die Stufen vergleichend gegenüber.
+
+\begin{table}[htbp]
+\centering
+\caption{Vergleich der Reifegradstufen verschiedener Modelle}
+\label{tab:reifegradvergleich}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{3.5cm}|}
+\hline
+\textbf{Stufe} & \textbf{CMMI} \autocite{CMMI2018} & \textbf{Cho \& Park} \autocite{Cho2023} & \textbf{Dotan et al.} \autocite{Dotan2024} & \textbf{Vorliegende Arbeit} \\
+\hline
+1 & Initial & Incomplete & Ad-hoc & Initial (keine Governance) \\
+\hline
+2 & Managed & Performed & -- & Managed (Grundmaßnahmen) \\
+\hline
+3 & Defined & Managed & Structured & Defined (Baseline) \\
+\hline
+4 & Quant. Managed & Optimizing & Advanced & Managed (messungsbasiert) \\
+\hline
+5 & Optimizing & -- & -- & Optimizing (kont. Verbesserung) \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Begründung der fünfstufigen Reifegradskala}
+\label{subsec:begruendung-fuenfstufen}
+
+Die fünfstufige Skala begründet sich vierfach: Erstens ist sie Quasi-Standard in der IT-Governance \autocite{Paulk1993, CMMI2018}. Zweitens bietet sie eine Balance zwischen Differenzierung und Anwendbarkeit \autocite{Becker2009}. Drittens bildet sie die Compliance-Progression von ``keine Maßnahmen'' (Stufe~1) über ``systematische Implementierung'' (Stufe~3) bis ``kontinuierliche Optimierung'' (Stufe~5) ab. Viertens ermöglicht sie einen expliziten Compliance-Schwellenwert: Stufe~3 (Defined) ist die regulatorische Baseline, da Art.~9--15 mindestens dokumentierte Governance-Prozesse voraussetzen \autocite{EUAIAct2024}.
+
+
+\section{Forschungsdesiderat und Positionierung der Arbeit}
+\label{sec:forschungsdesiderat}
+
+Die vorangegangene Analyse verdeutlicht, dass die Forschungslücke nicht in der Abwesenheit von KI-Governance-Instrumenten besteht, sondern in deren mangelnder Integration. Keines der analysierten Rahmenwerke vereint die vier in Abschnitt~\ref{subsec:forschungsluecke} benannten Kriterien (Tab.~\ref{tab:frameworks-vergleich}).
+
+Die Lücken verstärken sich gegenseitig: Ohne operationalisierbare Kriterien lassen sich keine validen Reifegradstufen definieren. Ohne Reifegradlogik bleibt die Bewertung binär. Ohne Praxiserprobung fehlen die Daten, um die Operationalisierung zu verfeinern. Dieses zirkuläre Defizit erfordert einen integrativen Ansatz.
+
+Abbildung~\ref{fig:forschungsluecke} visualisiert die identifizierte Forschungslücke und die Positionierung der vorliegenden Arbeit.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.6cm and 1.2cm,
+    box/.style={rectangle, draw=black!60, rounded corners=3pt, minimum height=1cm, minimum width=3.2cm, text width=3cm, align=center, font=\sffamily\scriptsize},
+    gap/.style={rectangle, draw=red!70, fill=red!8, rounded corners=3pt, dashed, thick, minimum height=1cm, minimum width=3.5cm, text width=3.3cm, align=center, font=\sffamily\scriptsize\bfseries},
+    arrow/.style={-{Stealth[length=2mm]}, thick, black!50}
+]
+% Linke Spalte: Theoretische Grundlagen
+\node[box, fill=blue!10] (ethics) {Ethische Prinzipien\\(Jobin, Floridi, HLEG)};
+\node[box, fill=blue!10, below=0.5cm of ethics] (reg) {Regulierung\\(EU AI Act, Art.~9--15)};
+\node[box, fill=blue!10, below=0.5cm of reg] (mm) {Reifegradtheorie\\(CMMI, Becker, Wendler)};
+
+% Rechte Spalte: Bestehende Instrumente
+\node[box, fill=green!10, right=3.5cm of ethics] (frameworks) {Governance-Frameworks\\(NIST, ISO, Z-Insp.)};
+\node[box, fill=green!10, right=3.5cm of reg] (auditing) {Auditing-Methoden\\(Raji, Mökander, Cobbe)};
+\node[box, fill=green!10, right=3.5cm of mm] (mmki) {KI-Reifegradmodelle\\(Cho, Dotan)};
+
+% Forschungslücke: mittig unter beiden Spalten
+\path (mm.south) -- (mmki.south) coordinate[midway] (mitte);
+\node[gap, below=1.5cm of mitte] (luecke) {Forschungslücke:\\Kein integratives, EU-AI-Act-\\spezifisches Bewertungs-\\framework mit Reifegradlogik};
+
+% Pfeile von allen Boxen zur Lücke
+\draw[arrow] (ethics.south) -- ([yshift=0.3cm]luecke.north west);
+\draw[arrow] (reg.south) -- ([xshift=-0.5cm]luecke.north);
+\draw[arrow] (mm.south) -- ([xshift=-1.2cm]luecke.north);
+\draw[arrow] (frameworks.south) -- ([yshift=0.3cm]luecke.north east);
+\draw[arrow] (auditing.south) -- ([xshift=0.5cm]luecke.north);
+\draw[arrow] (mmki.south) -- ([xshift=1.2cm]luecke.north);
+
+% Vorliegende Arbeit
+\node[rectangle, draw=blue!70, fill=blue!15, rounded corners=3pt, thick, minimum height=1cm, minimum width=3.8cm, text width=3.6cm, align=center, font=\sffamily\scriptsize\bfseries, below=0.8cm of luecke] (arbeit) {Vorliegende Arbeit:\\KI-Governance-Bewertungs-\\framework (D1--D6, 31~Kriterien,\\5 Reifegrade, Prototyp)};
+
+\draw[-{Stealth[length=3mm]}, very thick, blue!60] (luecke) -- (arbeit);
+\end{tikzpicture}
+\caption{Identifizierte Forschungslücke und Positionierung der vorliegenden Arbeit}
+\label{fig:forschungsluecke}
+\end{figure}
+
+Im Sinne von Gregor und Hevner handelt es sich um einen \textit{Exaptation}-Beitrag \autocite{Gregor2013}: Die bewährte Reifegradmodellierung wird auf die Bewertung organisationaler KI-Governance unter dem EU AI Act übertragen. Dies erfordert drei Adaptionsleistungen: (1)~Verankerung der Stufen in konkreten Rechtsanforderungen, (2)~Integration nondeterministischer KI-Unterstützung in ein nachprüfbares Bewertungsinstrument und (3)~Berücksichtigung regulatorischer Dynamik durch eine aktualisierungsfähige Wissensbasis. Tabelle~\ref{tab:desiderata-zuordnung} ordnet die Desiderate den Lösungsansätzen zu.
+
+\begin{table}[htbp]
+\centering
+\caption{Zuordnung der Forschungsdesiderate zu Lösungsansätzen}
+\label{tab:desiderata-zuordnung}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|p{3.5cm}|p{4.5cm}|p{3cm}|}
+\hline
+\textbf{Nr.} & \textbf{Desiderat} & \textbf{Lösungsansatz} & \textbf{Verortung} \\
+\hline
+D1 & Operationalisierungslücke & 31~Bewertungskriterien aus qualitativer Inhaltsanalyse & Kap.~\ref{chap:methodik}, \ref{chap:artefakt} \\
+\hline
+D2 & Reifegradperspektive & 5-stufige, kumulative Reifegradskala & Kap.~\ref{chap:artefakt} \\
+\hline
+D3 & Integrationsperspektive & 6~Dimensionen (D1--D6) + 2~Querschnittskategorien (Q1--Q2) & Kap.~\ref{chap:methodik} \\
+\hline
+D4 & Praxisorientierung & Webbasierter Prototyp mit RAG-Assistent & Kap.~\ref{chap:artefakt} \\
+\hline
+\end{tabular}
+\end{table}
+
+Kapitel~\ref{chap:methodik} legt das methodische Vorgehen dar, mit dem diese Forschungslücke systematisch bearbeitet wird.

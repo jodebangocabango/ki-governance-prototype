@@ -1,0 +1,159 @@
+% Anhang E: Evaluationsprotokolle
+
+\addchap{Anhang E: Evaluationsprotokolle der Szenario-Demonstration}
+\label{app:evaluationsprotokolle}
+
+Dieser Anhang dokumentiert die Evaluationsprotokolle, die im Rahmen der deskriptiven Evaluation des KI-Governance-Bewertungsframeworks erstellt wurden.
+
+\section*{E.1 Evaluationsdesign}
+
+Die Evaluation folgt dem von Venable et al. (2016) vorgeschlagenen Framework for Evaluation in Design Science Research (FEDS) und kombiniert eine deskriptive Evaluation (Szenario-basiert) mit einer analytischen Bewertung der Designanforderungserfüllung.
+
+\begin{description}
+    \item[Evaluationstyp:] Deskriptive Evaluation -- Informed Argument und Szenarioanalyse
+    \item[Evaluationszeitpunkt:] Ex post (nach Artefaktentwicklung)
+    \item[Evaluationskriterien:] Funktionale Anforderungen (FR1--FR6), Nicht-funktionale Anforderungen (NFR1--NFR5)
+    \item[Evaluationsobjekt:] KI-Governance-Bewertungsframework inkl. Prototyp (kombinierter Ansatz: strukturierter Fragebogen mit kontextueller Wissensunterstützung, vgl. Abschnitt~\ref{subsec:vergleichende-analyse})
+\end{description}
+
+\section*{E.2 Szenario-basierte Evaluation}
+
+Die Demonstration umfasst zwei Szenarien (vgl.\ Abschnitt~\ref{sec:demonstration-szenarien}): Szenario~1 (Kreditscoring, Finanzsektor) und Szenario~2 (KI-gestütztes Recruiting, Technologiesektor). Dieser Anhang dokumentiert das detaillierte Protokoll für Szenario~1; die Ergebnisse beider Szenarien einschließlich der vergleichenden Radar-Chart-Analyse sind im Haupttext dargestellt.
+
+\subsection*{E.2.1 Szenariobeschreibung (Szenario~1)}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Parameter} & \textbf{Ausprägung} \\
+\hline
+Organisation & Mittelständisches Finanzdienstleistungsunternehmen \\
+\hline
+KI-Anwendungsfall & Kreditwürdigkeitsprüfung mittels ML-basiertem Scoring-Modell \\
+\hline
+Risikoklassifikation & Hochrisiko-KI-System gem. Art.~6 Abs.~2 i.\,V.\,m. Anhang~III Nr.~5b EU AI Act \\
+\hline
+Organisationsgröße & 500--1.000 Mitarbeiter \\
+\hline
+KI-Governance-Reifegrad & Heterogen (geschätzt: Stufe 1--3 je nach Dimension) \\
+\hline
+Branchenregulierung & BaFin-reguliert, DSGVO, EU AI Act (ab August 2026) \\
+\hline
+\end{tabular}
+\caption{Parameter des Evaluationsszenarios}
+\label{tab:szenario-parameter}
+\end{table}
+
+\subsection*{E.2.2 Durchführungsprotokoll}
+
+\begin{enumerate}
+    \item \textbf{Scoping-Phase (ca.~10 Min.):} Eingabe der organisationsspezifischen Parameter (Branche, KI-Anwendungsfall, Risikoklassifikation). Automatische Identifikation der relevanten regulatorischen Anforderungen.
+
+    \item \textbf{Assessment-Phase (ca.~60--90 Min.):} Systematische Bewertung aller 31 Kriterien über sechs Dimensionen. Für jedes Kriterium: Auswahl der zutreffenden Reifegradstufe (1--5) anhand der angezeigten Indikatoren.
+
+    \item \textbf{Analyse-Phase (ca.~15 Min.):} Automatische Berechnung der Dimensionsscores und des Gesamtscores. Identifikation von Governance-Lücken (Score $<$ 3,0). Generierung von Handlungsempfehlungen.
+
+    \item \textbf{Berichtsphase (ca.~5 Min.):} Export des Assessment-Berichts als PDF mit Radar-Chart, Dimensionsdetails und priorisierten Handlungsempfehlungen.
+\end{enumerate}
+
+\subsection*{E.2.3 Szenario-Ergebnisse}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{4.5cm}|c|c|p{5cm}|}
+\hline
+\textbf{Dimension} & \textbf{Score} & \textbf{Lücke?} & \textbf{Zentrale Beobachtung} \\
+\hline
+D1 -- Risikomanagement & 3,2 & Nein & Standardisierte Prozesse vorhanden, aber keine kontinuierliche Optimierung \\
+\hline
+D2 -- Data Governance & 2,4 & Ja & Bias-Erkennung und Data Lineage unterentwickelt \\
+\hline
+D3 -- Dokumentation & 2,6 & Ja & Techn. Dokumentation lückenhaft, kein Audit-Trail \\
+\hline
+D4 -- Transparenz & 2,0 & Ja & Erklärbarkeitsmethoden nicht eingesetzt, Informationspflichten nicht erfüllt \\
+\hline
+D5 -- Menschl. Aufsicht & 3,0 & Nein & HITL definiert, aber Qualifikation nicht systematisiert \\
+\hline
+D6 -- Techn. Robustheit & 3,4 & Nein & Gute Metriken, aber Drift-Erkennung fehlt \\
+\hline
+\textbf{Gesamtscore} & \textbf{2,77} & -- & \textbf{Reifegrad: ``Managed'' (Stufe~2--3)} \\
+\hline
+\end{tabular}
+\caption{Ergebnisse der Szenario-basierten Evaluation (Demonstrationsbeispiel)}
+\label{tab:szenario-ergebnisse}
+\end{table}
+
+\section*{E.3 Anforderungserfüllungsanalyse}
+
+Die folgenden Tabellen dokumentieren die detaillierte Anforderungserfüllung mit Nachweisen. Eine komprimierte Gesamtübersicht findet sich in Tabelle~\ref{tab:anforderungserfuellung} im Haupttext (Abschnitt~\ref{sec:evaluationsergebnisse}).
+
+\subsection*{E.3.1 Funktionale Anforderungen}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{1.2cm}|p{4.5cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Req.} & \textbf{Beschreibung} & \textbf{Erfüllung} & \textbf{Nachweis} \\
+\hline
+FR1 & Sechs Governance-Dimensionen (Art.~9--15) & Erfüllt & 6 Dimensionen mit je 5--6 Kriterien, Mapping Art.~9--15 $\rightarrow$ D1--D6 \\
+\hline
+FR2 & Bewertbare Kriterien pro Dimension & Erfüllt & 31 spezifische Bewertungskriterien \\
+\hline
+FR3 & Fünfstufiges Reifegradmodell & Erfüllt & 5-stufiges Reifegradmodell mit Indikatoren \\
+\hline
+FR4 & Handlungsempfehlungen pro Reifegrad & Erfüllt & Automatische Gap-Analyse und Empfehlungen \\
+\hline
+FR5 & Aggregierte Gesamtbewertung & Erfüllt & Arithm. Mittelwert (Dimension), gew. Mittelwert (Gesamt) \\
+\hline
+FR6 & Gap-Identifikation und Priorisierung & Teilw. erfüllt & Lückenidentifikation implementiert, sektorspezif. Module ausstehend \\
+\hline
+\end{tabular}
+\caption{Erfüllungsanalyse der funktionalen Anforderungen}
+\label{tab:fr-erfuellung}
+\end{table}
+
+\subsection*{E.3.2 Nicht-funktionale Anforderungen}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{1.2cm}|p{4.5cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Req.} & \textbf{Beschreibung} & \textbf{Erfüllung} & \textbf{Nachweis} \\
+\hline
+NFR1 & Verständlichkeit & Teilw. erfüllt & E4: MW~3,6 (SD~0,92); Zielgruppendivergenz zwischen Compliance- und ML-Perspektive \\
+\hline
+NFR2 & Effizienz & Teilw. erfüllt & E6: MW~3,5 (SD~0,93); Bewertungslast für KMU als Einstiegshürde identifiziert \\
+\hline
+NFR3 & Transparenz / Reproduzierbarkeit & Erfüllt & Standardisierte Kriterien und Indikatoren \\
+\hline
+NFR4 & Flexibilität & Erfüllt & An verschiedene Organisationskontexte anpassbar \\
+\hline
+NFR5 & Erweiterbarkeit & Teilw. erfüllt & Modularer Aufbau; harm. Standards noch ausstehend \\
+\hline
+\end{tabular}
+\caption{Erfüllungsanalyse der nicht-funktionalen Anforderungen}
+\label{tab:nfr-erfuellung}
+\end{table}
+
+\section*{E.4 Zusammenfassung der Evaluationsergebnisse}
+
+Die deskriptive Evaluation zeigt, dass das Framework die funktionalen Anforderungen weitgehend erfüllt (FR6 teilweise, da sektorspezifische Module noch ausstehen). Bei den nicht-funktionalen Anforderungen zeigt die Artefakt-Evaluation ($n = 8$) Verbesserungsbedarf bei Verständlichkeit (NFR1) und Effizienz (NFR2), die als teilweise erfüllt eingestuft werden (vgl. Abschnitt~\ref{sec:evaluationsergebnisse}). Die Szenario-basierte Evaluation demonstriert die praktische Anwendbarkeit für ein typisches Hochrisiko-KI-System im Finanzdienstleistungssektor. Die identifizierten Governance-Lücken (insbesondere in den Dimensionen Transparenz und Data Governance) sind plausibel und die generierten Handlungsempfehlungen praxisrelevant.
+
+Einschränkungen der Evaluation:
+\begin{itemize}
+    \item Die Evaluation basiert auf einem konstruierten Szenario, nicht auf realen Organisationsdaten
+    \item Eine empirische Validierung mit mehreren unabhängigen Anwendern steht noch aus
+    \item Die Inter-Rater-Reliabilität der Reifegradstufen-Zuordnung wurde nicht getestet
+    \item Die Sensitivität des Scoring-Modells gegenüber verschiedenen Gewichtungen wurde exemplarisch analysiert (vgl. Abschnitt~\ref{subsec:sensitivity-analyse}); eine umfassende Kalibrierung steht noch aus
+\end{itemize}
+
+Eine weitergehende empirische Validierung mit mehreren unabhängigen Praxispartnern wird als zukünftiges Forschungsdesiderat identifiziert (vgl. Kapitel~\ref{chap:fazit}).
