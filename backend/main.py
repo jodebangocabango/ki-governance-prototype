@@ -61,15 +61,23 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# CORS for Next.js frontend
-_default_origins = ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"]
+# CORS — allow Vercel preview/production URLs + localhost
+# Since access is controlled via frontend access code, we allow all origins
+# for this research prototype. For production, restrict to specific domains.
 _env_origins = os.getenv("CORS_ORIGINS", "")
-cors_origins = [o.strip() for o in _env_origins.split(",") if o.strip()] if _env_origins else _default_origins
+if _env_origins == "*":
+    cors_origins = ["*"]
+else:
+    cors_origins = (
+        [o.strip() for o in _env_origins.split(",") if o.strip()]
+        if _env_origins
+        else ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"]
+    )
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
-    allow_credentials=True,
+    allow_credentials=True if cors_origins != ["*"] else False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
